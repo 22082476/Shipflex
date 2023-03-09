@@ -1,2 +1,6 @@
 # PROJ1-Milkshake
-test main surd
+test main
+dit is een test bericht
+
+
+dit is zin 3
