@@ -44,10 +44,14 @@ public class Console {
         break;
     }else {
         if(getBooStart(input)){
-
-        } else if (getBooOnderhoud(input)) {
+            //start offerte
             while(true){
-
+                input = readIn();
+            }
+        } else if (getBooOnderhoud(input)) {
+            commandsOnderhoud();
+            while(true){
+            input = readIn();
             }
         }
 
