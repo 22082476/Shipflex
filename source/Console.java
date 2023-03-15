@@ -17,12 +17,15 @@ public class Console {
 
     public static void readIn(){
         String input = in.nextLine();
+        if(input.equals("stop")){
+            System.out.println("test");
+        }
     }
 
     public static void main(String[] args){
     welcome();
     while(true){
-
+    readIn();
     }
     }
 
