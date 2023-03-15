@@ -43,13 +43,17 @@ public class Console {
     }
 
     public static void checkInputCommand(String in) {
-        if (getBooOptieLijst(in)){}
+        if (getBooOptieLijst(in)){
 
-        if (getBooOptieToevoegen(in)){}
+        }else if (getBooOptieToevoegen(in)){
 
-        if (getBooOptieVerwijderen(in)){}
+        }else if (getBooOptieVerwijderen(in)){
 
-        if (getBooOfferteMaken(in)){}
+        }else if (getBooOfferteMaken(in)){
+
+        }else {
+            System.out.println("incorrecte invoer!");
+        }
 
 
     }
