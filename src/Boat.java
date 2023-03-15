@@ -31,39 +31,39 @@ public class Boat {
     }
 
     public void addOption(Option option) {
-        options.add(option);
+       this.options.add(option);
     }
 
     public void addExtraOption(Option extraOption) {
-        extraOptions.add(extraOption);
+        this.extraOptions.add(extraOption);
     }
 
     public void removeOption(Option option) {
-        options.remove(option);
+       this.options.remove(option);
     }
 
     public void removeExtraOption(Option extraOption) {
-        extraOptions.remove(extraOption);
+        this.extraOptions.remove(extraOption);
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
-    public Double getBasePrice() {
-        return basePrice;
+    public double getBasePrice() {
+        return this.basePrice;
     }
 
     public ArrayList<Option> getOptions() {
-        return options;
+        return this.options;
     }
 
     public ArrayList<Option> getExtraOptions() {
-        return extraOptions;
+        return this.extraOptions;
     }
 
 
