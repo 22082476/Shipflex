@@ -14,7 +14,6 @@ class Options{
         this.name = name;
         this.price = price;
         this.type = type;
-        this.description = description;
         this.environmentDiscount = environmentDiscount;
     }
 
