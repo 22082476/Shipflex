@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Console {
-    private Scanner in = new Scanner(System.in);
+    private static Scanner in = new Scanner(System.in);
 
     public static void welcome(){
         //standaard welcome tekst
@@ -10,13 +10,20 @@ public class Console {
     }
 
     public static void commandsText(){
-        System.out.printf("Commands: \'optieLijst\', \'offerteMaken\', \'optieToevoegen\', \'OptieVerwijderen\'%n");
+        System.out.printf("Commands: \'optieLijst\', \'offerteMaken\', \'optieToevoegen\', \'OptieVerwijderen\', \'stop\'%n");
         System.out.println();
         System.out.printf("tik een command in:%n");
     }
 
+    public static void readIn(){
+        String input = in.nextLine();
+    }
+
     public static void main(String[] args){
     welcome();
+    while(true){
+
+    }
     }
 
 
