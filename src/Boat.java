@@ -8,12 +8,12 @@ public class Boat {
    private ArrayList<Option> options;
    private ArrayList<Option> extraOptions;
 
-    Boat(String name, String type, double baseprice){
+    Boat(String name, String type, double basePrice){
         this.name = name;
         this.type = type;
-        this.basePrice = baseprice;
-        options = new ArrayList<>();
-        extraOptions = new ArrayList<>();
+        this.basePrice = basePrice;
+        this.options = new ArrayList<>();
+        this.extraOptions = new ArrayList<>();
     }
 
 
