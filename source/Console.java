@@ -36,6 +36,7 @@ public class Console {
         break;
     }else {
         check(in);
+        commandsText();
     }
     }
     }
