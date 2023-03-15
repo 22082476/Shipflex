@@ -42,10 +42,27 @@ public class Console {
     }
     }
 
-    private static void checkInputCommand(String in) {
+    public static void checkInputCommand(String in) {
 
 
     }
+
+    public boolean getBooOptieLijst(String in){
+        return
+    }
+
+    public boolean getBooOptieToevoegen(String in){
+        return
+    }
+
+    public boolean getBooOptieVerwijderen(String in){
+        return
+    }
+
+    public boolean getBooOfferteMaken(String in){
+        return
+    }
+
 
 
 }
