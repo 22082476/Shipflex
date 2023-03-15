@@ -5,12 +5,12 @@ class Options{
     String description;
     boolean environmentDiscount;
 
-    Options(String name, Double price, String type, String description, boolean environmentDiscount){
+    Options(String name, double price, String type, String description, boolean environmentDiscount){
         this(name, price, type, environmentDiscount);
         this.description = description;
     }
 
-    Options(String name, Double price, String type, boolean enviromentDiscount) {
+    Options(String name, double price, String type, boolean enviromentDiscount) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -33,7 +33,7 @@ class Options{
         this.description = description;
     }
 
-    public void setEnvironmentDiscount(Boolean environmentDiscount) {
+    public void setEnvironmentDiscount(bwoolean environmentDiscount) {
         this.environmentDiscount = environmentDiscount;
     }
 }
