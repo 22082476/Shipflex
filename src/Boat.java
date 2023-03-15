@@ -27,12 +27,20 @@ public class Boat {
         this.baseprice = baseprice;
     }
 
-    public void setOptions(ArrayList<Option> options) {
-        this.options = options;
+    public void addOption(Option option) {
+        options.add(option);
     }
 
-    public void setExtraOptions(ArrayList<Option> extraOptions) {
-        this.extraOptions = extraOptions;
+    public void addExtraOption(Option extraOption) {
+        extraOptions.add(extraOption);
+    }
+
+    public void removeOption(Option option) {
+        options.remove(option);
+    }
+
+    public void removeExtraOption(Option extraOption) {
+        extraOptions.remove(extraOption);
     }
 
     public String getName() {
