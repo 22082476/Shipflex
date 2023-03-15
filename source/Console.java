@@ -15,17 +15,28 @@ public class Console {
         System.out.printf("tik een command in:%n");
     }
 
-    public static void readIn(){
-        String input = in.nextLine();
-        if(input.equals("stop")){
-            System.out.println("test");
+    public static String readIn(){
+        return in.nextLine();
+    }
+
+    public static boolean terminate(String in){
+        if(in.equals("Stop")|| in.equals("stop")){
+            return true;
+        }else {
+            return false;
         }
     }
 
     public static void main(String[] args){
     welcome();
+    String in = null;
     while(true){
-    readIn();
+    in = readIn();
+    if(terminate(in)){
+        break;
+    }else {
+        check(in);
+    }
     }
     }
 
