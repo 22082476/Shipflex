@@ -11,6 +11,7 @@ class Options{
         this.type = type;
         this.description = description;
         this.environmentDiscount = environmentDiscount;
+        dikke lul;
     }
 }
 
