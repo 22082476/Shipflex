@@ -4,12 +4,12 @@ public class Boat {
 
     String name;
     String type;
-    Double baseprice;
+    double basePrice;
 
-    Boat(String name, String type, Double baseprice){
+    Boat(String name, String type, double baseprice){
         this.name = name;
         this.type = type;
-        this.baseprice = baseprice;
+        this.basePrice = baseprice;
     }
 
     ArrayList<Option>options = new ArrayList<>();
@@ -23,8 +23,8 @@ public class Boat {
         this.type = type;
     }
 
-    public void setBaseprice(Double baseprice) {
-        this.baseprice = baseprice;
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
 
     public void addOption(Option option) {
@@ -51,8 +51,8 @@ public class Boat {
         return type;
     }
 
-    public Double getBaseprice() {
-        return baseprice;
+    public Double getBasePrice() {
+        return basePrice;
     }
 
     public ArrayList<Option> getOptions() {
