@@ -43,23 +43,30 @@ public class Console {
     }
 
     public static void checkInputCommand(String in) {
+        if (getBooOptieLijst(in)){}
+
+        if (getBooOptieToevoegen(in)){}
+
+        if (getBooOptieVerwijderen(in)){}
+
+        if (getBooOfferteMaken(in)){}
 
 
     }
 
-    public boolean getBooOptieLijst(String in){
+    public static boolean getBooOptieLijst(String in){
         return in.equals("optieLijst") || in.equals("optielijst");
     }
 
-    public boolean getBooOptieToevoegen(String in){
+    public static boolean getBooOptieToevoegen(String in){
         return in.equals("optieToevoegen") || in.equals("optietoevoegen");
     }
 
-    public boolean getBooOptieVerwijderen(String in){
+    public static boolean getBooOptieVerwijderen(String in){
         return in.equals("optieVerwijderen") || in.equals("optieverwijderen");
     }
 
-    public boolean getBooOfferteMaken(String in){
+    public static boolean getBooOfferteMaken(String in){
         return in.equals("offerteMaken") || in.equals("offertemaken");
     }
 
