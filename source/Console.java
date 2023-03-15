@@ -35,10 +35,16 @@ public class Console {
     if(terminate(in)){
         break;
     }else {
-        check(in);
+        checkInputCommand(in);
         commandsText();
+
     }
     }
+    }
+
+    private static void checkInputCommand(String in) {
+
+
     }
 
 
