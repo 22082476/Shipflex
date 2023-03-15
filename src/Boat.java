@@ -2,18 +2,21 @@ import java.util.ArrayList;
 
 public class Boat {
 
-    String name;
-    String type;
-    double basePrice;
+   private String name;
+   private String type;
+   private double basePrice;
+   private ArrayList<Option> options;
+   private ArrayList<Option> extraOptions;
 
     Boat(String name, String type, double baseprice){
         this.name = name;
         this.type = type;
         this.basePrice = baseprice;
+        options = new ArrayList<>();
+        extraOptions = new ArrayList<>();
     }
 
-    ArrayList<Option>options = new ArrayList<>();
-    ArrayList<Option>extraOptions = new ArrayList<>();
+
 
     public void setName(String name) {
         this.name = name;
