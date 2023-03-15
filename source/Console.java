@@ -29,27 +29,27 @@ public class Console {
 
     public static void main(String[] args){
     welcome();
-    String in = null;
+    String input = null;
     while(true){
-    in = readIn();
-    if(terminate(in)){
+    input = readIn();
+    if(terminate(input)){
         break;
     }else {
-        checkInputCommand(in);
+        checkInputCommand(input);
         commandsText();
 
     }
     }
     }
 
-    public static void checkInputCommand(String in) {
-        if (getBooOptieLijst(in)){
+    public static void checkInputCommand(String input) {
+        if (getBooOptieLijst(input)){
 
-        }else if (getBooOptieToevoegen(in)){
+        }else if (getBooOptieToevoegen(input)){
 
-        }else if (getBooOptieVerwijderen(in)){
+        }else if (getBooOptieVerwijderen(input)){
 
-        }else if (getBooOfferteMaken(in)){
+        }else if (getBooOfferteMaken(input)){
 
         }else {
             System.out.println("incorrecte invoer!");
@@ -58,20 +58,20 @@ public class Console {
 
     }
 
-    public static boolean getBooOptieLijst(String in){
-        return in.equals("optieLijst") || in.equals("optielijst");
+    public static boolean getBooOptieLijst(String input){
+        return input.equals("optieLijst") || input.equals("optielijst");
     }
 
-    public static boolean getBooOptieToevoegen(String in){
+    public static boolean getBooOptieToevoegen(String input){
         return in.equals("optieToevoegen") || in.equals("optietoevoegen");
     }
 
-    public static boolean getBooOptieVerwijderen(String in){
-        return in.equals("optieVerwijderen") || in.equals("optieverwijderen");
+    public static boolean getBooOptieVerwijderen(String input){
+        return input.equals("optieVerwijderen") || input.equals("optieverwijderen");
     }
 
-    public static boolean getBooOfferteMaken(String in){
-        return in.equals("offerteMaken") || in.equals("offertemaken");
+    public static boolean getBooOfferteMaken(String input){
+        return input.equals("offerteMaken") || input.equals("offertemaken");
     }
 
 
