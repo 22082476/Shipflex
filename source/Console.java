@@ -48,19 +48,19 @@ public class Console {
     }
 
     public boolean getBooOptieLijst(String in){
-        return
+        return in.equals("optieLijst") || in.equals("optielijst");
     }
 
     public boolean getBooOptieToevoegen(String in){
-        return
+        return in.equals("optieToevoegen") || in.equals("optietoevoegen");
     }
 
     public boolean getBooOptieVerwijderen(String in){
-        return
+        return in.equals("optieVerwijderen") || in.equals("optieverwijderen");
     }
 
     public boolean getBooOfferteMaken(String in){
-        return
+        return in.equals("offerteMaken") || in.equals("offertemaken");
     }
 
 
