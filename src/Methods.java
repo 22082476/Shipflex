@@ -23,8 +23,8 @@ public class Methods {
 
     public void generateQuote(){
         printTextGenerateQuote();
-    while(true){
+        while(true){
         input = ScanInput.scanIn();
-    }
+        }
     }
 }
