@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Console {
-    private Scanner in = new Scanner(System.in);
 
     public void printInputText(){
         System.out.printf("tik een command in:%n");
@@ -23,14 +22,14 @@ public class Console {
         startText();
 
         while (true){
-            input = in.nextLine();
-            if(input.toLowerCase().equals("stop")){
+            input = ScanInput.scanIn();
+            if(input.equals("stop")){
 //                stop
                 break;
-            } else if (input.toLowerCase().equals("start")) {
+            } else if (input.equals("start")) {
 //                start
 
-            } else if (input.toLowerCase().equals("onderhoud")) {
+            } else if (input.equals("onderhoud")) {
 //                onderhoud
 
             }else {
