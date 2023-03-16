@@ -7,20 +7,21 @@ public class Console {
         System.out.printf("tik een command in:%n");
     }
 
-    public void welcome(){
+    public void welcomeText(){
         //standaard welcome tekst
         System.out.printf("Welcome by shipflex%n");
-        commandsStart();
+        startText();
     }
 
-    public void commandsStart(){
+    public void startText(){
         System.out.println("Commands: \'start\', \'onderhoud\', \'stop\'");
         printInputText();
     }
     public void startQuoteBuilder(){
         String input = null;
-        welcome();
-        commandsStart();
+        welcomeText();
+        startText();
+
         while (true){
             input = in.nextLine();
             if(input.toLowerCase().equals("stop")){
@@ -34,7 +35,7 @@ public class Console {
 
             }else {
                 System.out.println("Incorrecte invoer!");
-                commandsStart();
+                startText();
             }
         }
     }
