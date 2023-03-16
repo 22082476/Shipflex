@@ -1,106 +1,44 @@
 import java.util.Scanner;
 
 public class Console {
-    private static Scanner in = new Scanner(System.in);
+    private Scanner in = new Scanner(System.in);
 
-    public static void welcome(){
-        //standaard welcome tekst
-        System.out.printf("Welcome by shipflex%n");
-        commandsStart();
+    public void printInputText(){
+        System.out.printf("tik een command in:%n");
     }
 
-    public static void commandsStart(){
+    public void welcomeText(){
+        //standaard welcome tekst
+        System.out.printf("Welcome by shipflex%n");
+        startText();
+    }
+
+    public void startText(){
         System.out.println("Commands: \'start\', \'onderhoud\', \'stop\'");
         printInputText();
     }
-    public static void printInputText(){
-        System.out.printf("tik een command in:%n");
-    }
-    public static void commandsOnderhoud(){
-        System.out.printf("Commands: \'optieLijst\', \'offerteMaken\', \'optieToevoegen\', \'OptieVerwijderen\',\'back\', \'stop\'%n");
-        printInputText();
-    }
+    public void startQuoteBuilder(){
+        String input = null;
+        welcomeText();
+        startText();
 
+        while (true){
+            input = in.nextLine();
+            if(input.toLowerCase().equals("stop")){
+//                stop
+                break;
+            } else if (input.toLowerCase().equals("start")) {
+//                start
 
+            } else if (input.toLowerCase().equals("onderhoud")) {
+//                onderhoud
 
-    public static String readIn(){
-        return in.nextLine();
-    }
-
-    public static boolean terminate(String input){
-        if(input.toLowerCase().equals("stop")){
-            return true;
-        }else {
-            return false;
-        }
-    }
-
-    public static void main(String[] args){
-    welcome();
-    String input = null;
-    while(true){
-    input = readIn();
-    if(terminate(input)){
-        break;
-    }else {
-        if(getBooStart(input)){
-            //start offerte
-            while(true){
-                input = readIn();
-            }
-        } else if (getBooOnderhoud(input)) {
-            commandsOnderhoud();
-            while(true){
-            input = readIn();
+            }else {
+                System.out.println("Incorrecte invoer!");
+                startText();
             }
         }
-
-
     }
-    }
-    }
-
-    public static void checkInputCommand(String input) {
-        if (getBooOptieLijst(input)){
-
-        }else if (getBooOptieToevoegen(input)){
-
-        }else if (getBooOptieVerwijderen(input)){
-
-        }else if (getBooOfferteMaken(input)){
-
-        }else {
-            System.out.println("incorrecte invoer!");
-        }
-
-
-    }
-
-    public static boolean getBooOnderhoud(String input){
-        return input.toLowerCase().equals("onderhoud");
-    }
-
-    public static boolean getBooStart(String input){
-        return input.toLowerCase().equals("start");
-    }
-
-    public static boolean getBooOptieLijst(String input){
-        return input.toLowerCase().equals("optielijst");
-    }
-
-    public static boolean getBooOptieToevoegen(String input){
-        return input.toLowerCase().equals("optietoevoegen");
-    }
-
-    public static boolean getBooOptieVerwijderen(String input){
-        return input.toLowerCase().equals("optieverwijderen");
-    }
-
-    public static boolean getBooOfferteMaken(String input){
-        return input.toLowerCase().equals("offertemaken");
-    }
-
-
 
 }
 
