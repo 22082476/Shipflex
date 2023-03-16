@@ -2,17 +2,17 @@ import java.util.Scanner;
 
 public class Console {
 
-    p
+
     public static void commandsOnderhoud(){
         System.out.printf("Commands: \'optieLijst\', \'offerteMaken\', \'optieToevoegen\', \'OptieVerwijderen\',\'back\', \'stop\'%n");
-        printInputText();
+//        printInputText();
     }
 
 
 
-    public static String readIn(){
-        return in.nextLine();
-    }
+//    public static String readIn(){
+//        return in.nextLine();
+//    }
 
     public static boolean terminate(String input){
         if(input.toLowerCase().equals("stop")){
@@ -23,10 +23,10 @@ public class Console {
     }
 
     public static void main(String[] args){
-    welcome();
-    String input = null;
-    while(true){
-    input = readIn();
+//    welcome();
+//    String input = null;
+//    while(true){
+//    input = readIn();
     if(terminate(input)){
         break;
     }else {

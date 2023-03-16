@@ -1,20 +1,40 @@
 import java.util.Scanner;
 
 public class Console2 {
-    private static Scanner in = new Scanner(System.in);
+    private Scanner in = new Scanner(System.in);
 
-    public static void printInputText(){
+    public void printInputText(){
         System.out.printf("tik een command in:%n");
     }
 
-    public static void welcome(){
+    public void welcome(){
         //standaard welcome tekst
         System.out.printf("Welcome by shipflex%n");
         commandsStart();
     }
 
-    public static void commandsStart(){
+    public void commandsStart(){
         System.out.println("Commands: \'start\', \'onderhoud\', \'stop\'");
         printInputText();
     }
+    public void startQuoteBuilder(){
+        String input = null;
+        welcome();
+        commandsStart();
+        while (true){
+            input = in.nextLine();
+            if(input.toLowerCase().equals("stop")){
+//                stop
+                break;
+            } else if (input.toLowerCase().equals("start")) {
+//                start
+
+            } else if (input.toLowerCase().equals("onderhoud")) {
+//                onderhoud
+
+            }
+        }
+    }
+
 }
+
