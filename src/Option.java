@@ -4,16 +4,16 @@ public class Option {
     private double price;
     private String type;
     private String description;
-    private boolean environmentDiscount;
+    private int environmentDiscount;
 
-    Option(String name, double price, String type, boolean environmentDiscount) {
+    Option(String name, double price, String type, int environmentDiscount) {
         this.name = name;
         this.price = price;
         this.type = type;
         this.environmentDiscount = environmentDiscount;
     }
 
-    Option(String name, double price, String type, boolean environmentDiscount, String description){
+    Option(String name, double price, String type, int environmentDiscount, String description){
         this(name, price, type, environmentDiscount);
         this.description = description;
     }
@@ -34,7 +34,7 @@ public class Option {
         this.description = description;
     }
 
-    public void setEnvironmentDiscount(boolean environmentDiscount) {
+    public void setEnvironmentDiscount(int environmentDiscount) {
         this.environmentDiscount = environmentDiscount;
     }
 
@@ -54,7 +54,7 @@ public class Option {
         return this.description;
     }
 
-    public boolean isEnvironmentDiscount() {
+    public int getEnvironmentDiscount() {
         return this.environmentDiscount;
     }
 }

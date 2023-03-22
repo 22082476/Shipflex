@@ -5,6 +5,9 @@ public class Quote {
     private String Date;
     private String QuoteDate;
     private Boat boat;
+    public double CalculateEnvironmentDiscount(Option optie) {
+        return optie.getPrice() * optie.getEnvironmentDiscount();
+    }
 
     public Quote(Company companyShipbuild){
         this.companyShipbuild = companyShipbuild;
