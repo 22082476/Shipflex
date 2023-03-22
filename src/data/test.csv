@@ -1,4 +1,4 @@
 NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,DESCRIPTION
-Daxtroz,250.0,Motor,true,Zeilboot;PlezierJacht,test descriptie
-Bako,35.15,Anker,false,Speedboot,nog iets
-Zeikasd,999.00,Zeil,false,Plezierjacht
+Daxtroz,250.0,Motor,10,Zeilboot;PlezierJacht,test descriptie
+Bako,35.15,Anker,20,Speedboot,nog iets
+Zeikasd,999.00,10,false,Plezierjacht

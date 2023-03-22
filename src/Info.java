@@ -33,7 +33,7 @@ public class Info {
                 String[] essentialBoatTypes = row[4].split(";");
 
                 double price = Double.parseDouble(row[1]);
-                boolean environmentDiscount = Boolean.parseBoolean(row[3]);
+                int environmentDiscount = Integer.parseInt(row[3]);
 
                 if(row.length > 5)
                     addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes))));

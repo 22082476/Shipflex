@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Option {
 
     private String name;
@@ -6,15 +8,17 @@ public class Option {
     private String description;
     private int environmentDiscount;
 
-    Option(String name, double price, String type, int environmentDiscount) {
+    private ArrayList<String> essentialForBoatType;
+
+    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType) {
         this.name = name;
         this.price = price;
         this.type = type;
         this.environmentDiscount = environmentDiscount;
     }
 
-    Option(String name, double price, String type, int environmentDiscount, String description){
-        this(name, price, type, environmentDiscount);
+    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, String description){
+        this(name, price, type, environmentDiscount, essentialForBoatType);
         this.description = description;
     }
 
@@ -38,6 +42,13 @@ public class Option {
         this.environmentDiscount = environmentDiscount;
     }
 
+    public ArrayList<String> getEssentialForBoatType() {
+        return essentialForBoatType;
+    }
+
+    public void addEssentialForBoatType(String essentialForBoatType) {
+        this.essentialForBoatType.add(essentialForBoatType);
+    }
     public String getName() {
         return this.name;
     }
