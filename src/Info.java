@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Info {
 
@@ -29,14 +30,15 @@ public class Info {
                 }
 
                 String[] row = line.split(",");
+                String[] essentialBoatTypes = row[4].split(";");
 
                 double price = Double.parseDouble(row[1]);
                 boolean environmentDiscount = Boolean.parseBoolean(row[3]);
 
-                if(row.length > 4)
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, row[4]));
+                if(row.length > 5)
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes))));
                 else
-                    addOption(new Option(row[0], price, row[2], environmentDiscount));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), row[5]));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

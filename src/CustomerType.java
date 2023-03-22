@@ -67,21 +67,22 @@ class Customer {
 
 class BusinessCustomer extends Customer{
     // class company moet nog aangemaakt worden
-    private Company company;
+    private String companyname;
 
 
-    public BusinessCustomer(String name, String street, String postcode, String city, int houseNumber, int discount, Company company){
+
+    public BusinessCustomer(String name, String street, String postcode, String city, int houseNumber, int discount, String companyname){
         super(name,street,postcode,city,houseNumber,discount);
-        this.company = company;
+        this.companyname = companyname;
 
     }
 
-    public Company getCompany() {
-        return company;
+    public String getCompany() {
+        return companyname;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompany(String companyname) {
+        this.companyname = companyname;
     }
 }
 
