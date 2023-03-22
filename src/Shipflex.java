@@ -2,8 +2,13 @@ public class Shipflex {
 
     private static ScanInput in = new ScanInput();
 
+    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
+
+
+
     public static void main(String[] args) {
         welcomeText();
+        startText();
         String inputstr = null;
         while (true) {
         inputstr = in.scanInL();
@@ -11,7 +16,7 @@ public class Shipflex {
             if (inputstr.equals("stop")) {
 //                stop progamma
                 break;
-            } else if (inputstr.equals("Maak offerte")) {
+            } else if (inputstr.equals("maak offerte")) {
 //                start offerte maken
                 startMakeQuote();
         } else if (inputstr.equals("onderhoud")) {
@@ -35,7 +40,8 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        MakeQuote makeQuote = new MakeQuote();
+        System.out.print("Voer het boot type in: ");
+        MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
     }
 
     public static void startMaintenance(){

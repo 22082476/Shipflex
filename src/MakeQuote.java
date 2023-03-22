@@ -15,9 +15,11 @@ public class MakeQuote {
 
     public Boat getFromTypeBoat(String boatType){
         if(boatType.equals("plezier jacht")){
-            return new PleasureYacht();
-        }else{
-         return null;
+            return null;//new PleasureYacht();
+        }else if(boatType.equals("boot")){
+         return new Boat("test", "boot", 3000.00);
+        }else {
+            return null;
         }
 
     }
@@ -26,7 +28,7 @@ public class MakeQuote {
         System.out.println("Voer soort klant in:");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(), inputIntDiscount(), inputName("bedrijf")));
+            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), inputIntDiscount(), inputName("bedrijf")));
         }else if(typcustomer.equals("overheid")){
             quote.setGovermentCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(),inputIntDiscount(),inputName("ministerie")));
         }else {
