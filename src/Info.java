@@ -38,7 +38,7 @@ public class Info {
                 if(row.length > 5)
                     addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes))));
                 else
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes))));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), row[5]));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
