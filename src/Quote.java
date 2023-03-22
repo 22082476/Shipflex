@@ -34,4 +34,24 @@ public class Quote {
     public void setBoat(Boat boat) {
         this.boat = boat;
     }
+
+    public Company getCompanyShipbuild() {
+        return companyShipbuild;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public String getQuoteDate() {
+        return QuoteDate;
+    }
+
+    public Boat getBoat() {
+        return boat;
+    }
 }
