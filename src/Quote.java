@@ -10,6 +10,9 @@ public class Quote {
 
     public Quote(Company companyShipbuild){
         this.companyShipbuild = companyShipbuild;
+        this.businessCustomer = null;
+        this.customer = null;
+        this.govermentCustomer = null;
     }
 
 
