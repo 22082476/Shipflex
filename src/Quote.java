@@ -2,6 +2,8 @@ public class Quote {
     private Company companyShipbuild;
 
     private Customer customer;
+    private BusinessCustomer businessCustomer;
+    private GovermentCustomer govermentCustomer;
     private String Date;
     private String QuoteDate;
     private Boat boat;
@@ -11,12 +13,11 @@ public class Quote {
 
     public Quote(Company companyShipbuild){
         this.companyShipbuild = companyShipbuild;
+        this.businessCustomer = null;
+        this.customer = null;
+        this.govermentCustomer = null;
     }
 
-    public Quote(Company companyShipbuild, Customer customer){
-    this(companyShipbuild);
-    this.customer = customer;
-    }
 
     public void setCompanyShipbuild(Company companyShipbuild) {
         this.companyShipbuild = companyShipbuild;
@@ -24,6 +25,14 @@ public class Quote {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public void setBusinessCustomer(BusinessCustomer businessCustomer) {
+        this.businessCustomer = businessCustomer;
+    }
+
+    public void setGovermentCustomer(GovermentCustomer govermentCustomer) {
+        this.govermentCustomer = govermentCustomer;
     }
 
     public void setDate(String date) {

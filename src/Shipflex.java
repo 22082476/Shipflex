@@ -6,7 +6,7 @@ public class Shipflex {
         welcomeText();
         String inputstr = null;
         while (true) {
-        inputstr = in.scanIn();
+        inputstr = in.scanInL();
 
             if (inputstr.equals("stop")) {
 //                stop progamma
