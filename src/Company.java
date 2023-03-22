@@ -29,27 +29,27 @@
          this.city = city;
      }
 
-     public void setHousenumber(String housenumber) {
+     public void setHousenumber(int housenumber) {
          this.housenumber = housenumber;
      }
 
      public String getName() {
-         return name;
+         return this.name;
      }
 
      public String getStreet() {
-         return street;
+         return this.street;
      }
 
      public String getPostcode() {
-         return postcode;
+         return this.postcode;
      }
 
      public String getCity() {
-         return city;
+         return this.city;
      }
 
-     public String getHousenumber() {
-         return housenumber;
+     public int getHousenumber() {
+         return this.housenumber;
      }
  }
