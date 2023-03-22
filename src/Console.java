@@ -23,9 +23,7 @@ public class Console {
 
         while (true){
             input = ScanInput.scanIn();
-            if(input.equals("stop")){
-//                stop
-                break;
+
             } else if (input.equals("start")) {
 //                start
 
