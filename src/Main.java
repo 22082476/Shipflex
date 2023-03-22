@@ -8,7 +8,7 @@ public class Main {
         file.readOptionsFromFile("src\\data\\test.csv");
 
         for(Option option : file.getOptions()) {
-            System.out.println("Naam: " + option.getName() + " Prijs: " + option.getPrice() + " Discount: " + option.isEnvironmentDiscount() + " Description: " + option.getDescription());
+            System.out.println("Naam: " + option.getName() + " Boats: " + option.getEssentialForBoatTypes());
         }
     }
 }

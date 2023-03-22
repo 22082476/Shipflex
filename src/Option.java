@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Option {
@@ -9,15 +10,17 @@ public class Option {
     private boolean environmentDiscount;
     private ArrayList<String> essentialForBoatType;
 
-    Option(String name, double price, String type, boolean environmentDiscount) {
+    Option(String name, double price, String type, boolean environmentDiscount, ArrayList<String> essentialForBoatType) {
+        this.essentialForBoatType = new ArrayList<>();
         this.name = name;
         this.price = price;
         this.type = type;
         this.environmentDiscount = environmentDiscount;
+        this.essentialForBoatType = essentialForBoatType;
     }
 
-    Option(String name, double price, String type, boolean environmentDiscount, String description){
-        this(name, price, type, environmentDiscount);
+    Option(String name, double price, String type, boolean environmentDiscount, ArrayList<String> essentialForBoatType, String description){
+        this(name, price, type, environmentDiscount, essentialForBoatType);
         this.description = description;
     }
 
@@ -39,6 +42,14 @@ public class Option {
 
     public void setEnvironmentDiscount(boolean environmentDiscount) {
         this.environmentDiscount = environmentDiscount;
+    }
+
+    public void addToEssentialForBoatType(String boat) {
+        this.essentialForBoatType.add(boat);
+    }
+
+    public ArrayList<String> getEssentialForBoatTypes() {
+        return this.essentialForBoatType;
     }
 
     public String getName() {
