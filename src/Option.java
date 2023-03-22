@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Option {
 
     private String name;
@@ -5,6 +7,7 @@ public class Option {
     private String type;
     private String description;
     private boolean environmentDiscount;
+    private ArrayList<String> essentialForBoatType;
 
     Option(String name, double price, String type, boolean environmentDiscount) {
         this.name = name;
