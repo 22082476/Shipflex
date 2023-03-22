@@ -1,12 +1,14 @@
+import java.lang.reflect.Array;
+
 public class MakeQuote {
     private String boatType;
     private Boat boat;
     private Quote quote;
     private Info dataInput = new Info();
 
-    public MakeQuote(String boatType){
+    public MakeQuote(String boatType, Company company){
         this.boatType = boatType;
-        this.quote = new Quote();
+        this.quote = new Quote(company);
         this.boat = getFromTypeBoat(this.boatType);
 
     }
@@ -24,17 +26,26 @@ public class MakeQuote {
         System.out.println("Voer soort klant in:");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputHouseNumeber(), inputDiscount(), companyName()));
+            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(), inputIntDiscount(), inputName("bedrijf")));
         }else if(typcustomer.equals("overheid")){
-            quote.setCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputHouseNumeber(),));
+            quote.setGovermentCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(),inputIntDiscount(),inputName("ministerie")));
         }else {
-            quote.setCustomer(new Customer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputHouseNumeber(), inputDiscount()));
+            quote.setCustomer(new Customer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), inputIntDiscount()));
         }
     }
 
-    public String companyName(){
-        System.out.print("Voer de naam van het bedrijf in: ");
+    public String inputName(String soort){
+        System.out.printf("Voer de naam van het %s in: ", soort);
         return ScanInput.scanInH();
+    }
+    public int inputIntHouseNumber(){
+        System.out.print("Voer de huisnummer in: ");
+        return ScanInput.scanInInt();
+    }
+
+    public int inputIntDiscount(){
+        System.out.print("Voer de korting percentage in: ");
+        return ScanInput.scanInInt();
     }
 
     public String inputName(){
@@ -57,15 +68,9 @@ public class MakeQuote {
         return ScanInput.scanInH();
     }
 
-    public int inputHouseNumeber(){
-        System.out.print("Voer de huisnummer in: ");
-        return ScanInput.scanInInt();
-    }
 
-    public int inputDiscount(){
-        System.out.print("Voer de korting percentage in: ");
-        return ScanInput.scanInInt();
-    }
+
+
 
 
 }
