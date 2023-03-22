@@ -16,7 +16,7 @@ public class Shipflex {
                 startMakeQuote();
         } else if (inputstr.equals("onderhoud")) {
 //               start onderhoud
-                startMaintenace();
+                startMaintenance();
         }else {
             System.out.println("Incorrecte invoer!");
             startText();
@@ -38,7 +38,7 @@ public class Shipflex {
         MakeQuote makeQuote = new MakeQuote();
     }
 
-    public static void startMaintenace(){
-        Maintenace maintenace = new Maintenace();
+    public static void startMaintenance(){
+        Maintenance maintenance = new Maintenance();
     }
 }
