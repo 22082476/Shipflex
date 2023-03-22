@@ -9,9 +9,9 @@ public class Shipflex {
     public static void main(String[] args) {
         welcomeText();
         startText();
-        String inputstr = null;
+        String inputstr = in.scanInL();
         while (true) {
-        inputstr = in.scanInL();
+
 
             if (inputstr.equals("stop")) {
 //                stop progamma
@@ -27,6 +27,7 @@ public class Shipflex {
             startText();
         }
         }
+        inputstr = in.scanInL();
     }
 
     public static void welcomeText(){
@@ -42,6 +43,7 @@ public class Shipflex {
     public static void startMakeQuote(){
         System.out.print("Voer het boot type in: ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
+        makeQuote.start();
     }
 
     public static void startMaintenance(){

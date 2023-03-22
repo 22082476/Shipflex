@@ -66,4 +66,17 @@ public class Quote {
     public Boat getBoat() {
         return boat;
     }
+
+    public void printCustomer(){
+        if(customer != null){
+            customer.printCustomer();
+        } else if (businessCustomer != null) {
+            businessCustomer.printCustomer();
+        } else if (govermentCustomer != null) {
+            govermentCustomer.printCustomer();
+        }else {
+            System.out.println("Nog geen klant toegevoegd");
+            return;
+        }
+    }
 }

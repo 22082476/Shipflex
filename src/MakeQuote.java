@@ -13,6 +13,39 @@ public class MakeQuote {
 
     }
 
+    public void start(){
+        printTextGenerateQuote();
+        String inputstr = ScanInput.scanInL();
+        while(true) {
+
+            if (inputstr.equals("voeg klant toe")) {
+                askCustomer();
+                printTextGenerateQuote();
+                inputstr = ScanInput.scanInL();
+            } else if (inputstr.equals("terug")) {
+                break;
+            }else if(inputstr.equals("voeg optie mee")) {
+                printTextGenerateQuote();
+                inputstr = ScanInput.scanInL();
+            }else if(inputstr.equals("laat klant zien")){
+                quote.printCustomer();
+                printTextGenerateQuote();
+                inputstr = ScanInput.scanInL();
+            } else {
+                System.out.println("Incorrecte invoer!");
+                System.out.println( "probeer opniew");
+                printTextGenerateQuote();
+                inputstr = ScanInput.scanInL();
+        }
+        }
+    }
+
+    private void printTextGenerateQuote(){
+        System.out.printf("Commands: \'voeg klant toe\', \'terug\', \'laat klant zien\'%n");
+        System.out.print("Voer een command in: ");
+
+    }
+
     public Boat getFromTypeBoat(String boatType){
         if(boatType.equals("plezier jacht")){
             return null;//new PleasureYacht();
@@ -25,12 +58,12 @@ public class MakeQuote {
     }
 
     public void askCustomer(){
-        System.out.println("Voer soort klant in:");
+        System.out.print("Voer soort klant in: ");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), inputIntDiscount(), inputName("bedrijf")));
+            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), 10, inputName("bedrijf")));
         }else if(typcustomer.equals("overheid")){
-            quote.setGovermentCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(),inputIntDiscount(),inputName("ministerie")));
+            quote.setGovermentCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(),15,inputName("ministerie")));
         }else {
             quote.setCustomer(new Customer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), inputIntDiscount()));
         }

@@ -63,6 +63,14 @@ class Customer {
     public int getDiscount() {
         return discount;
     }
+
+    public void printCustomer(){
+        System.out.printf("Naam: %s%n", this.name);
+        System.out.printf("Straat: %s%n", this.street);
+        System.out.printf("Postcode: %s%n", this.postcode);
+        System.out.printf("Stad: %s%n", this.city);
+        System.out.printf("Huisnummer: %d%n", this.houseNumber);
+    }
 }
 
 class BusinessCustomer extends Customer{
@@ -84,22 +92,34 @@ class BusinessCustomer extends Customer{
     public void setCompany(String companyname) {
         this.companyname = companyname;
     }
+
+    @Override
+    public void printCustomer(){
+        super.printCustomer();
+        System.out.printf("Bedrijfsnaam: ", this.companyname);
+    }
 }
 
 class GovermentCustomer extends Customer {
 
-    private String ministy;
+    private String ministry;
 
-    public GovermentCustomer (String name, String street, String postcode, String city, int houseNumber, int discount ,String ministy){
+    public GovermentCustomer (String name, String street, String postcode, String city, int houseNumber, int discount ,String ministry){
         super(name, street, postcode, city, houseNumber,discount);
-        this.ministy = ministy;
+        this.ministry = ministry;
     }
 
     public String getMinisty() {
-        return ministy;
+        return ministry;
     }
 
     public void setMinisty(String ministy) {
-        this.ministy = ministy;
+        this.ministry = ministy;
+    }
+
+    @Override
+    public void printCustomer(){
+        super.printCustomer();
+        System.out.printf("Ministerie: ", this.ministry);
     }
 }
