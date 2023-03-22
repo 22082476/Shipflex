@@ -2,9 +2,18 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class DefaultOptions {
-    public void initOptions(String filePath, ShipBuilder shipBuilder) {
+public class Info {
+
+    // hier moet nog een customer en company list
+    private ArrayList<Option> options;
+
+    Info() {
+        this.options = new ArrayList<>();
+    }
+
+    public void readOptionsFromFile(String filePath) {
 
         String line = "";
         boolean isFirstLine = true;
@@ -25,9 +34,9 @@ public class DefaultOptions {
                 boolean environmentDiscount = Boolean.parseBoolean(row[3]);
 
                 if(row.length > 4)
-                    shipBuilder.addAvailableOption(new Option(row[0], price, row[2], environmentDiscount, row[4]));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, row[4]));
                 else
-                    shipBuilder.addAvailableOption(new Option(row[0], price, row[2], environmentDiscount));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -35,4 +44,14 @@ public class DefaultOptions {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<Option> getOptions() {
+        return this.options;
+    }
+
+    public void addOption(Option option) {
+        this.options.add(option);
+    }
+
+
 }

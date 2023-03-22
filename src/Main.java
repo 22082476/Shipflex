@@ -4,10 +4,10 @@ public class Main {
         //console.startQuoteBuilder();
         ShipBuilder shipBuilder = new ShipBuilder();
 
-        DefaultOptions file = new DefaultOptions();
-        file.initOptions("src\\data\\test.csv", shipBuilder);
+        Info file = new Info();
+        file.readOptionsFromFile("src\\data\\test.csv");
 
-        for(Option option : shipBuilder.getAvailableOptions()) {
+        for(Option option : file.getOptions()) {
             System.out.println("Naam: " + option.getName() + " Prijs: " + option.getPrice() + " Discount: " + option.isEnvironmentDiscount() + " Description: " + option.getDescription());
         }
     }
