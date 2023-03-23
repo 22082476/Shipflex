@@ -10,15 +10,19 @@ public class Option {
 
     private ArrayList<String> essentialForBoatType;
 
-    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType) {
+    private ArrayList<String> extraForBoatType;
+
+    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, ArrayList<String> extraForBoatType) {
         this.name = name;
         this.price = price;
         this.type = type;
         this.environmentDiscount = environmentDiscount;
+        this.essentialForBoatType = essentialForBoatType;
+        this.extraForBoatType = extraForBoatType;
     }
 
-    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, String description){
-        this(name, price, type, environmentDiscount, essentialForBoatType);
+    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, ArrayList<String> extraForBoatType, String description){
+        this(name, price, type, environmentDiscount, essentialForBoatType, extraForBoatType);
         this.description = description;
     }
 
@@ -45,6 +49,15 @@ public class Option {
     public ArrayList<String> getEssentialForBoatType() {
         return essentialForBoatType;
     }
+
+    public ArrayList<String> getExtraForBoatType() {
+        return extraForBoatType;
+    }
+
+    public void addExtraForBoatType(String extraForBoatType) {
+        this.extraForBoatType.add(extraForBoatType);
+    }
+
 
     public void addEssentialForBoatType(String essentialForBoatType) {
         this.essentialForBoatType.add(essentialForBoatType);

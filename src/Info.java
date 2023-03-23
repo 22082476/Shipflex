@@ -31,15 +31,17 @@ public class Info {
 
                 String[] row = line.split(",");
                 String[] essentialBoatTypes = row[4].split(";");
+                String[] extraForBoatTypes = row[5].split(";");
 
                 double price = Double.parseDouble(row[1]);
                 int environmentDiscount = Integer.parseInt(row[3]);
 
-                if(row.length > 5)
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes))));
+                if(row.length > 6)
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), new ArrayList<String>(List.of(extraForBoatTypes)), row[6]));
                 else
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), row[5]));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), new ArrayList<String>(List.of(extraForBoatTypes))));
             }
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
