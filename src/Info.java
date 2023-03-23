@@ -42,9 +42,6 @@ public class Info {
                     addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), new ArrayList<String>(List.of(extraForBoatTypes))));
             }
 
-            for(Option optie : options) {
-                System.out.println("Naam: " + optie.getName() + " Price: " + optie.getPrice() + "Essential: " + optie.getEssentialForBoatType() + "extra: " + optie.getExtraForBoatType() + "desc: " + optie.getDescription());
-            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
