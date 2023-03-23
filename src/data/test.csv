@@ -1,6 +1,9 @@
-NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,DESCRIPTION
-Speedy,1900.00,Motor,10,Speedboot;PlezierJacht,test descriptie
-ankerone,250.00,Anker,7,Speedboot,
-Zeikasd,999.00,10,false,Plezierjacht
+NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,extra,DESCRIPTION
+Yamaha,1900.00,Motor,10,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,milieuvriendelijke motor
+ParapluAnker,250.00,Anker,7,Speedboot,RubberBoot,milieuvriendelijke anker
+Pentex,100.00,Zeil,3,Speedboot,RubberBoot,milieuvriendelijk zeil
+Ledlamp,153.00,LedVerlichting,5,Speedboot;PlezierJacht;ZeilBoot,RubberBoot,milieuvriendelijke lampen
+Kunststof,65,00,Mast,5,Zeilboot,null,milieuvriendelijke mast
 
-
+Mercury,25400.00,Motor,00,Speedboot;PlezierJacht,normale motor
+SeilFlechter,965.00,OpblaasbareRubberBoot,00,

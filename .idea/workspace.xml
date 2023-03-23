@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="calculate environment discount methode gemaakt">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="bezig met opties discount">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test.csv" afterDir="false" />
     </list>
@@ -62,7 +61,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679486306856</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bezig met opties discount">
+      <created>1679560611032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679560611032</updated>
+    </task>
+    <task id="LOCAL-00003" summary="bezig met opties discount">
+      <created>1679560801729</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679560801729</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="calculate environment discount methode gemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="calculate environment discount methode gemaakt" />
+    <MESSAGE value="bezig met opties discount" />
+    <option name="LAST_COMMIT_MESSAGE" value="bezig met opties discount" />
   </component>
 </project>
