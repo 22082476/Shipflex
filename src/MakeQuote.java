@@ -14,28 +14,22 @@ public class MakeQuote {
     }
 
     public void start(){
-        printTextGenerateQuote();
-        String inputstr = ScanInput.scanInL();
         while(true) {
+            printTextGenerateQuote();
+           String inputstr = ScanInput.scanInL();
 
             if (inputstr.equals("voeg klant toe")) {
                 askCustomer();
-                printTextGenerateQuote();
-                inputstr = ScanInput.scanInL();
+
             } else if (inputstr.equals("terug")) {
                 break;
             }else if(inputstr.equals("voeg optie mee")) {
                 printTextGenerateQuote();
-                inputstr = ScanInput.scanInL();
             }else if(inputstr.equals("laat klant zien")){
                 quote.printCustomer();
-                printTextGenerateQuote();
-                inputstr = ScanInput.scanInL();
             } else {
                 System.out.println("Incorrecte invoer!");
                 System.out.println( "probeer opniew");
-                printTextGenerateQuote();
-                inputstr = ScanInput.scanInL();
         }
         }
     }

@@ -8,10 +8,11 @@ public class Shipflex {
 
     public static void main(String[] args) {
         welcomeText();
-        startText();
-        String inputstr = in.scanInL();
-        while (true) {
 
+
+        while (true) {
+            startText();
+            String inputstr = in.scanInL();
 
             if (inputstr.equals("stop")) {
 //                stop progamma
@@ -27,7 +28,7 @@ public class Shipflex {
             startText();
         }
         }
-        inputstr = in.scanInL();
+
     }
 
     public static void welcomeText(){
