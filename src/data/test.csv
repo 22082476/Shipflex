@@ -1,9 +1,26 @@
 NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,extra,DESCRIPTION
-Yamaha,1900.00,Motor,10,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,milieuvriendelijke motor
+Yamaha,1900.00,BuitenboordMotor,10,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,milieuvriendelijke motor
 ParapluAnker,250.00,Anker,7,Speedboot,RubberBoot,milieuvriendelijke anker
 Pentex,100.00,Zeil,3,Speedboot,RubberBoot,milieuvriendelijk zeil
 Ledlamp,153.00,LedVerlichting,5,Speedboot;PlezierJacht;ZeilBoot,RubberBoot,milieuvriendelijke lampen
 Kunststof,65,00,Mast,5,Zeilboot,null,milieuvriendelijke mast
-
-Mercury,25400.00,Motor,00,Speedboot;PlezierJacht,normale motor
-SeilFlechter,965.00,OpblaasbareRubberBoot,00,
+Mercury,25400.00,KrachtigeBuitenBoordMotor,00,Speedboot;PlezierJacht,RubberBoot,null,normale motor
+SeilFlechter,965.00,OpblaasbareRubberBoot,00,null,Speedboot,rubberbootje
+Kolibri,640.00,OpblaasbareRubberboot,00,null,Speedboot,rubberbootje
+Touw,25.00,Touw,00,null,Speedboot;ZeilBoot,touw voor aanmeren
+TalamexAnker,500.00,Anker,00,Speedboot,RubberBoot,anker
+Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,trailer
+TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,trailer
+Universeel,90.00,Afdekzeil,00,null,Speedboot,afdekzeil
+Universeel,229.00,Afdekzeil,00,null,Speedboot,afdekzeil
+Binnenverlichting,95.00,Verlichting,00,Speedboot;ZeilBoot;PLezierJacht,RubberBoot,binnenverlichting bij boten
+Stuurwiel,110.00,Roer,00,Speedboot;RubberBoot,null,roer voor de boten
+RoerArm,960.00,Roer,00,Speedboot;RubberBoot,null,roer van buiten de boot
+Kevlar,125.00,Zeil,00,ZeilBoot,null,zeil voor zeilboot
+Hout,75.00,Mast,00,ZeilBoot,null,masten voor de zeilboot
+Navigatie,500.00,Navigatie,null,Speedboot;RubberBoot,navigatie
+JerryCan,42.00,Accessoires,null,Speedboot;RubberBoot,jerry can voor extra brandstof
+DryBag,20.00,Accessoires,null,Speedboot;ZeilBoot;RubberBoot,een zak voor spullen
+EHBO-kit,13.00,Accessoires,null,Speedboot;ZeilBoot,RubberBoot,1e hulp box
+ReddingsVest,74.00,Accessoires,Speedboot;ZeilBoot,RubberBoot,zwemvest
+Peddel,22.00,Accessoires,null,RubberBoot,peddels
