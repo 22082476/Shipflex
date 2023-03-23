@@ -9,8 +9,8 @@ SeilFlechter,965.00,OpblaasbareRubberBoot,00,null,Speedboot,rubberbootje
 Kolibri,640.00,OpblaasbareRubberboot,00,null,Speedboot,rubberbootje
 Touw,25.00,Touw,00,null,Speedboot;ZeilBoot,touw voor aanmeren
 TalamexAnker,500.00,Anker,00,Speedboot,RubberBoot,anker
-Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,trailer
-TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,trailer
+Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,null,trailer
+TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,null,trailer
 Universeel,90.00,Afdekzeil,00,null,Speedboot,afdekzeil
 Universeel,229.00,Afdekzeil,00,null,Speedboot,afdekzeil
 Binnenverlichting,95.00,Verlichting,00,Speedboot;ZeilBoot;PLezierJacht,RubberBoot,binnenverlichting bij boten
