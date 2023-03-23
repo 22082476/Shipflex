@@ -57,5 +57,17 @@ public class Info {
         this.options.add(option);
     }
 
+    public void printOptions() {
+        for(Option option : options) {
+            System.out.println("Option: " + option.getName());
+            System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + "Environment: " + option.getEnvironmentDiscount());
 
+            if(option.getDescription() != null)
+                System.out.println("Description: " + option.getDescription());
+
+            System.out.println("Essential for boats: " + option.getEssentialForBoatType());
+            System.out.println("Extra for boats: " + option.getExtraForBoatType());
+            System.out.println();
+        }
+    }
 }
