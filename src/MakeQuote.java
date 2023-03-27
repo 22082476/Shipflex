@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 
 public class MakeQuote {
     private String boatType;
@@ -13,6 +13,7 @@ public class MakeQuote {
 
     }
 
+
     public void start(){
         while(true) {
             printTextGenerateQuote();
@@ -21,13 +22,26 @@ public class MakeQuote {
             if (inputstr.equals("voeg klant toe")) {
                 askCustomer();
 
-            } else if (inputstr.equals("terug")) {
-                break;
-            }else if(inputstr.equals("voeg optie mee")) {
+            }
+            else if (inputstr.equals("wijzig klant")) {
+                askCustomer();
+            }
+            else if (inputstr.equals("gekozen opties")) {
+
+            }
+            else if (inputstr.equals("beschikbare opties")) {
+                Info.printOptions();
+            }
+            else if(inputstr.equals("voeg optie mee")) {
                 printTextGenerateQuote();
-            }else if(inputstr.equals("laat klant zien")){
+            }
+            else if(inputstr.equals("laat klant zien")){
                 quote.printCustomer();
-            } else {
+            }
+            else if (inputstr.equals("terug")) {
+                break;
+            }
+            else {
                 System.out.println("Incorrecte invoer!");
                 System.out.println( "probeer opniew");
         }
@@ -35,12 +49,12 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'terug\', \'laat klant zien\'%n");
+        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'terug\' %n");
         System.out.print("Voer een command in: ");
 
     }
 
-    public Boat getFromTypeBoat(String boatType){
+    private Boat getFromTypeBoat(String boatType){
         if(boatType.equals("plezier jacht")){
             return null;//new PleasureYacht();
         }else if(boatType.equals("boot")){
@@ -63,36 +77,36 @@ public class MakeQuote {
         }
     }
 
-    public String inputName(String soort){
+    private String inputName(String soort){
         System.out.printf("Voer de naam van het %s in: ", soort);
         return ScanInput.scanInH();
     }
-    public int inputIntHouseNumber(){
+    private int inputIntHouseNumber(){
         System.out.print("Voer de huisnummer in: ");
         return ScanInput.scanInInt();
     }
 
-    public int inputIntDiscount(){
+    private int inputIntDiscount(){
         System.out.print("Voer de korting percentage in: ");
         return ScanInput.scanInInt();
     }
 
-    public String inputName(){
+    private String inputName(){
         System.out.print("Voer de naam in: ");
         return ScanInput.scanInH();
     }
 
-    public String inputCity(){
+    private String inputCity(){
         System.out.print("Voer de plaats in: ");
         return ScanInput.scanInH();
     }
 
-    public String inputStreet(){
+    private String inputStreet(){
         System.out.print("Voer de straat in: ");
         return ScanInput.scanInH();
     }
 
-    public String inputPostcode(){
+    private String inputPostcode(){
         System.out.print("Voer de postcode in: ");
         return ScanInput.scanInH();
     }
