@@ -1,5 +1,5 @@
-import  org.junit.jupiter.api.Test;
 
-public class test_askCostumer {
+
+public cass test_askCostumer {
 
 }
