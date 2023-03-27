@@ -27,7 +27,7 @@ public class MakeQuote {
                 askCustomer();
             }
             else if (inputstr.equals("gekozen opties")) {
-
+//                quote.printOptions();
             }
             else if (inputstr.equals("beschikbare opties")) {
                 Info.printOptions();
