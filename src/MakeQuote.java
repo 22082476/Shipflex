@@ -22,13 +22,26 @@ public class MakeQuote {
             if (inputstr.equals("voeg klant toe")) {
                 askCustomer();
 
-            } else if (inputstr.equals("terug")) {
-                break;
-            }else if(inputstr.equals("voeg optie mee")) {
+            }
+            else if (inputstr.equals("wijzig klant")) {
+                askCustomer();
+            }
+            else if (inputstr.equals("gekozen opties")) {
+
+            }
+            else if (inputstr.equals("beschikbare opties")) {
+                Info.printOptions();
+            }
+            else if(inputstr.equals("voeg optie mee")) {
                 printTextGenerateQuote();
-            }else if(inputstr.equals("laat klant zien")){
+            }
+            else if(inputstr.equals("laat klant zien")){
                 quote.printCustomer();
-            } else {
+            }
+            else if (inputstr.equals("terug")) {
+                break;
+            }
+            else {
                 System.out.println("Incorrecte invoer!");
                 System.out.println( "probeer opniew");
         }
@@ -36,7 +49,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'terug\', \'laat klant zien\'%n");
+        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'terug\' %n");
         System.out.print("Voer een command in: ");
 
     }

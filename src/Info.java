@@ -8,13 +8,13 @@ import java.util.List;
 public class Info {
 
     // hier moet nog een customer en company list
-    private ArrayList<Option> options;
+    private static ArrayList<Option> options;
 
     Info() {
         this.options = new ArrayList<>();
     }
 
-    public void readOptionsFromFile(String filePath) {
+    public static void readOptionsFromFile(String filePath) {
 
         String line = "";
         boolean isFirstLine = true;
@@ -49,15 +49,15 @@ public class Info {
         }
     }
 
-    public ArrayList<Option> getOptions() {
-        return this.options;
+    public static ArrayList<Option> getOptions() {
+        return options;
     }
 
-    public void addOption(Option option) {
-        this.options.add(option);
+    public static void addOption(Option option) {
+        options.add(option);
     }
 
-    public void printOptions(String boatType) {
+    public static void printOptions(String boatType) {
         for(Option option : options) {
 
             System.out.println("[ESSENTIAL OPTIONS]");
@@ -80,7 +80,7 @@ public class Info {
         }
     }
 
-    public void printOptionInfo(Option option) {
+    public static void printOptionInfo(Option option) {
         System.out.println("Option: " + option.getName());
         System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount: " + option.getEnvironmentDiscount());
 
