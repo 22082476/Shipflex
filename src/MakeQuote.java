@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 
 public class MakeQuote {
     private String boatType;
@@ -12,6 +12,7 @@ public class MakeQuote {
         this.boat = getFromTypeBoat(this.boatType);
 
     }
+
 
     public void start(){
         while(true) {
@@ -40,7 +41,7 @@ public class MakeQuote {
 
     }
 
-    public Boat getFromTypeBoat(String boatType){
+    private Boat getFromTypeBoat(String boatType){
         if(boatType.equals("plezier jacht")){
             return null;//new PleasureYacht();
         }else if(boatType.equals("boot")){
