@@ -96,7 +96,7 @@ class BusinessCustomer extends Customer{
     @Override
     public void printCustomer(){
         super.printCustomer();
-        System.out.printf("Bedrijfsnaam: ", this.companyname);
+        System.out.printf("Bedrijfsnaam: %s%n", this.companyname);
     }
 }
 
@@ -120,6 +120,6 @@ class GovermentCustomer extends Customer {
     @Override
     public void printCustomer(){
         super.printCustomer();
-        System.out.printf("Ministerie: ", this.ministry);
+        System.out.printf("Ministerie: %s%n", this.ministry);
     }
 }
