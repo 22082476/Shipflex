@@ -39,6 +39,9 @@ public class Shipflex {
     public static void startText(){
         System.out.println("Commands: \'Maak offerte\', \'onderhoud\', \'stop\'");
         System.out.print("Voer een command in: ");
+
+
+
     }
 
     public static void startMakeQuote(){
