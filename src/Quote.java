@@ -8,7 +8,7 @@ public class Quote {
     private String QuoteDate;
     private Boat boat;
     public double CalculateEnvironmentDiscount(Option optie) {
-        return optie.getPrice() * optie.getEnvironmentDiscount();
+        return optie.getPrice() * optie.getEnvironmentDiscount()/100;
     }
 
     public Quote(Company companyShipbuild){
