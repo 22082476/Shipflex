@@ -68,12 +68,12 @@ public class Quote {
     }
 
     public void printCustomer(){
-        if(customer != null){
-            customer.printCustomer();
+        if(govermentCustomer != null){
+            govermentCustomer.printCustomer();
         } else if (businessCustomer != null) {
             businessCustomer.printCustomer();
-        } else if (govermentCustomer != null) {
-            govermentCustomer.printCustomer();
+        } else if (customer != null) {
+            customer.printCustomer();
         }else {
             System.out.println("Nog geen klant toegevoegd");
             return;
