@@ -8,8 +8,9 @@ public class Shipflex {
 
     public static void main(String[] args) {
         welcomeText();
-
-
+        Info info = new Info();
+        info.readOptionsFromFile("src\\data\\options.csv");
+        info.printOptions("Speedboot");
         while (true) {
             startText();
             String inputstr = in.scanInL();
