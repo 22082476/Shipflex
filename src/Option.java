@@ -58,7 +58,6 @@ public class Option {
         this.extraForBoatType.add(extraForBoatType);
     }
 
-
     public void addEssentialForBoatType(String essentialForBoatType) {
         this.essentialForBoatType.add(essentialForBoatType);
     }

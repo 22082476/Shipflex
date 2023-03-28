@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Info {
 
@@ -37,9 +38,9 @@ public class Info {
                 int environmentDiscount = Integer.parseInt(row[3]);
 
                 if(row.length > 6)
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), new ArrayList<String>(List.of(extraForBoatTypes)), row[6]));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<>(List.of(essentialBoatTypes)), new ArrayList<>(List.of(extraForBoatTypes)), row[6]));
                 else
-                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<String>(List.of(essentialBoatTypes)), new ArrayList<String>(List.of(extraForBoatTypes))));
+                    addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<>(List.of(essentialBoatTypes)), new ArrayList<>(List.of(extraForBoatTypes))));
             }
 
         } catch (FileNotFoundException e) {
@@ -57,32 +58,58 @@ public class Info {
         options.add(option);
     }
 
-    public static void printOptions(String boatType) {
+    public static void printOptionsForBoatType(String boatType) {
+        boolean essential = false;
+        boolean extra = false;
+        boolean foundEssentialOption = false;
+        boolean foundExtraOption = false;
+
+        // Loop door essentiele en extra opties, check of het past bij de gegeven boat type en dan pas uitprinten
         for(Option option : options) {
 
-            System.out.println("[ESSENTIAL OPTIONS]");
+            // Zorg ervoor dat dit maar 1x wordt geprint
+            if(!essential) {
+                System.out.println("[ESSENTIAL OPTIONS]");
+                essential = true;
+            }
+
             for(String boat : option.getEssentialForBoatType()) {
-                if(!boat.equals(boatType))
+                if(!boat.equalsIgnoreCase(boatType))
                     continue;
 
+                foundEssentialOption = true;
                 printOptionInfo(option);
                 System.out.println();
             }
 
-            System.out.println("[EXTRA OPTIONS]");
+            if(!extra) {
+                System.out.println("[ESSENTIAL OPTIONS]");
+                extra = true;
+            }
+
             for(String boat : option.getExtraForBoatType()) {
-                if(!boat.equals(boatType))
+                if(!boat.equalsIgnoreCase(boatType))
                     continue;
 
+                foundExtraOption = true;
                 printOptionInfo(option);
                 System.out.println();
             }
         }
+
+        if(!foundEssentialOption)
+            System.out.println("Geen essentiele opties gevonden voor boot type " + boatType);
+
+        if(!foundExtraOption)
+            System.out.println("Geen extra opties gevonden voor boot type " + boatType);
     }
 
     public static void printOptionInfo(Option option) {
         System.out.println("Option: " + option.getName());
-        System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount: " + option.getEnvironmentDiscount());
+        System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount percentage: " + option.getEnvironmentDiscount());
+
+        if(option.calculateEnvironmentDiscount() != option.getPrice())
+            System.out.println("Price w/ discount: " + option.calculateEnvironmentDiscount());
 
         if(option.getDescription() != null)
             System.out.println("Description: " + option.getDescription());
