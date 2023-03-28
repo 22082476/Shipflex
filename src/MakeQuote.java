@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class MakeQuote {
     private String boatType;
     private Boat boat;

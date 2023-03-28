@@ -58,9 +58,16 @@ public class Info {
     }
 
     public void printOptions(String boatType) {
+        boolean essential = false;
+        boolean extra = false;
+
         for(Option option : options) {
 
-            System.out.println("[ESSENTIAL OPTIONS]");
+            if(essential) {
+                System.out.println("[ESSENTIAL OPTIONS]");
+                essential = true;
+            }
+
             for(String boat : option.getEssentialForBoatType()) {
                 if(!boat.equals(boatType))
                     continue;
@@ -69,7 +76,11 @@ public class Info {
                 System.out.println();
             }
 
-            System.out.println("[EXTRA OPTIONS]");
+            if(extra) {
+                System.out.println("[ESSENTIAL OPTIONS]");
+                extra = true;
+            }
+
             for(String boat : option.getExtraForBoatType()) {
                 if(!boat.equals(boatType))
                     continue;
@@ -82,7 +93,10 @@ public class Info {
 
     public void printOptionInfo(Option option) {
         System.out.println("Option: " + option.getName());
-        System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount: " + option.getEnvironmentDiscount());
+        System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount percentage: " + option.getEnvironmentDiscount());
+
+        if(option.calculateEnvironmentDiscount() != option.getPrice())
+            System.out.println("Price w/ discount: " + option.calculateEnvironmentDiscount());
 
         if(option.getDescription() != null)
             System.out.println("Description: " + option.getDescription());
