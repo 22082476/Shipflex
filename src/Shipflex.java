@@ -4,8 +4,6 @@ public class Shipflex {
 
     private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
 
-
-
     public static void main(String[] args) {
         welcomeText();
 
