@@ -1,15 +1,14 @@
 
 
 public class MakeQuote {
-    private String boatType;
+//    private String boatType;
     private Boat boat;
     private Quote quote;
     private Info dataInput = new Info();
 
     public MakeQuote(String boatType, Company company){
-        this.boatType = boatType;
         this.quote = new Quote(company);
-        this.boat = getFromTypeBoat(this.boatType);
+        this.boat = getFromTypeBoat(boatType);
 
     }
 
@@ -30,7 +29,7 @@ public class MakeQuote {
                     quote.printCustomer();
                     break;
                 case "beschikbare opties":
-                    Info.printOptionsForBoatType(this.boatType);
+                    Info.printOptionsForBoatType(boat.getType());
                     break;
                 case "voeg optie toe":
                     printTextGenerateQuote();
@@ -52,13 +51,13 @@ public class MakeQuote {
     }
 
     private Boat getFromTypeBoat(String boatType){
-        if(boatType.equals("Plezier jacht")){
+        if(boatType.equals("plezier jacht")){
             return new PleasureYacht();
-        }else if(boatType.equals("Rubberboot")){
+        }else if(boatType.equals("rubberboot")){
          return new InflatableBoat();
-        }else if(boatType.equals("Speedboot")){
+        }else if(boatType.equals("speedboot")){
             return new SpeedBoat();
-        }else if(boatType.equals("Zeilboot")){
+        }else if(boatType.equals("zeilboot")){
             return new SailBoat();
         }else {
             return null;
@@ -70,51 +69,18 @@ public class MakeQuote {
         System.out.print("Voer soort klant in: ");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), 10, inputName("bedrijf")));
+            quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de bedrijf")));
         }else if(typcustomer.equals("overheid")){
-            quote.setGovermentCustomer(new GovermentCustomer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(),15,inputName("ministerie")));
+            quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de ministerie")));
+        }else if(typcustomer.equals("stichting")){
+            quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de stiching")));
         }else {
-            quote.setCustomer(new Customer(inputName(), inputStreet(), inputPostcode(), inputCity(),inputIntHouseNumber(), inputIntDiscount()));
+            quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage"))));
         }
     }
 
-    private String inputName(String soort){
-        System.out.printf("Voer de naam van het %s in: ", soort);
+    private String inputQuestion(String soort){
+        System.out.printf("Voer %s in: ", soort);
         return ScanInput.scanInH();
     }
-    private int inputIntHouseNumber(){
-        System.out.print("Voer de huisnummer in: ");
-        return ScanInput.scanInInt();
-    }
-
-    private int inputIntDiscount(){
-        System.out.print("Voer de korting percentage in: ");
-        return ScanInput.scanInInt();
-    }
-
-    private String inputName(){
-        System.out.print("Voer de naam in: ");
-        return ScanInput.scanInH();
-    }
-
-    private String inputCity(){
-        System.out.print("Voer de plaats in: ");
-        return ScanInput.scanInH();
-    }
-
-    private String inputStreet(){
-        System.out.print("Voer de straat in: ");
-        return ScanInput.scanInH();
-    }
-
-    private String inputPostcode(){
-        System.out.print("Voer de postcode in: ");
-        return ScanInput.scanInH();
-    }
-
-
-
-
-
-
 }
