@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="fix static">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerType.java" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="optimzing">
       <change beforePath="$PROJECT_DIR$/src/MakeQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakeQuote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quote.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679563089623</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="optimzing">
+      <created>1680092218375</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680092218375</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="calculate environment discount methode gemaakt" />
     <MESSAGE value="bezig met opties discount" />
-    <option name="LAST_COMMIT_MESSAGE" value="bezig met opties discount" />
+    <MESSAGE value="optimzing" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimzing" />
   </component>
 </project>
