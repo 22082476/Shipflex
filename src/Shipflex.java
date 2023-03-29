@@ -4,11 +4,8 @@ public class Shipflex {
 
     private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
 
-
-
     public static void main(String[] args) {
         welcomeText();
-
 
         while (true) {
             startText();
@@ -39,9 +36,6 @@ public class Shipflex {
     public static void startText(){
         System.out.println("Commands: \'Maak offerte\', \'onderhoud\', \'stop\'");
         System.out.print("Voer een command in: ");
-
-
-
     }
 
     public static void startMakeQuote(){

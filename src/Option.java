@@ -58,7 +58,6 @@ public class Option {
         this.extraForBoatType.add(extraForBoatType);
     }
 
-
     public void addEssentialForBoatType(String essentialForBoatType) {
         this.essentialForBoatType.add(essentialForBoatType);
     }
@@ -80,5 +79,13 @@ public class Option {
 
     public int getEnvironmentDiscount() {
         return this.environmentDiscount;
+    }
+
+    // return de prijs met de discount erbij (als het discount heeft)
+    public double calculateEnvironmentDiscount() {
+        if(this.getEnvironmentDiscount() == 0)
+            return this.getPrice();
+
+        return this.getPrice() - (this.getPrice() / 100 * this.getEnvironmentDiscount());
     }
 }

@@ -30,7 +30,7 @@ public class MakeQuote {
 //                quote.printOptions();
             }
             else if (inputstr.equals("beschikbare opties")) {
-                Info.printOptions();
+                Info.printOptionsForBoatType(this.boatType);
             }
             else if(inputstr.equals("voeg optie mee")) {
                 printTextGenerateQuote();
