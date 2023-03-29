@@ -11,21 +11,22 @@ public class Shipflex {
             startText();
             String inputstr = in.scanInL();
 
-            if (inputstr.equals("stop")) {
-//                stop progamma
-                break;
-            } else if (inputstr.equals("maak offerte")) {
-//                start offerte maken
-                startMakeQuote();
-        } else if (inputstr.equals("onderhoud")) {
-//               start onderhoud
-                startMaintenance();
-        }else {
-            System.out.println("Incorrecte invoer!");
-            startText();
-        }
-        }
+            switch (inputstr) {
+                case "stop":
+                    System.exit(0);
+                    break;
+                case "maak offerte":
+                    startMakeQuote();
+                    break;
+                case "onderhoud":
+                    startMaintenance();
+                    break;
+                default:
+                    System.out.println("Incorrecte invoer!");
+                    startText();
 
+            }
+        }
     }
 
     public static void welcomeText(){
@@ -34,7 +35,7 @@ public class Shipflex {
     }
 
     public static void startText(){
-        System.out.println("Commands: \'Maak offerte\', \'onderhoud\', \'stop\'");
+        System.out.println("Commands: \'maak offerte\', \'onderhoud\', \'stop\'");
         System.out.print("Voer een command in: ");
     }
 
@@ -45,7 +46,7 @@ public class Shipflex {
         makeQuote.start();
     }
 
-    public static void startMaintenance(){
+    public void startMaintenance(){
 //        Maintenance maintenance = new Maintenance();
     }
 }
