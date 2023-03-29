@@ -17,34 +17,31 @@ public class MakeQuote {
     public void start(){
         while(true) {
             printTextGenerateQuote();
-           String inputstr = ScanInput.scanInL();
+            String inputstr = ScanInput.scanInL();
 
-            if (inputstr.equals("voeg klant toe")) {
-                askCustomer();
+            switch (inputstr) {
+                case "voeg klant toe", "wijzig klant":
+                    askCustomer();
+                    break;
+                case "gekozen opties":
+//                   quote.printOptions();
+                    break;
+                case "laat klant zien":
+                    quote.printCustomer();
+                    break;
+                case "beschikbare opties":
+                    Info.printOptionsForBoatType(this.boatType);
+                    break;
+                case "voeg optie toe":
+                    printTextGenerateQuote();
+                    break;
+                case "terug":
+                    return;
+                default:
+                    System.out.println("Incorrecte invoer!");
+                    System.out.println("probeer opniew");
+            }
 
-            }
-            else if (inputstr.equals("wijzig klant")) {
-                askCustomer();
-            }
-            else if (inputstr.equals("gekozen opties")) {
-//                quote.printOptions();
-            }
-            else if (inputstr.equals("beschikbare opties")) {
-                Info.printOptionsForBoatType(this.boatType);
-            }
-            else if(inputstr.equals("voeg optie mee")) {
-                printTextGenerateQuote();
-            }
-            else if(inputstr.equals("laat klant zien")){
-                quote.printCustomer();
-            }
-            else if (inputstr.equals("terug")) {
-                break;
-            }
-            else {
-                System.out.println("Incorrecte invoer!");
-                System.out.println( "probeer opniew");
-        }
         }
     }
 
@@ -66,8 +63,8 @@ public class MakeQuote {
         }else {
             return null;
         }
+}
 
-    }
 
     public void askCustomer(){
         System.out.print("Voer soort klant in: ");
