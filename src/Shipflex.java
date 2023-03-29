@@ -39,6 +39,7 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
+        Info.readOptionsFromFile("src/data/options.csv");
         System.out.print("Voer het boot type in: ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();

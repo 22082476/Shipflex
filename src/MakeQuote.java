@@ -55,10 +55,14 @@ public class MakeQuote {
     }
 
     private Boat getFromTypeBoat(String boatType){
-        if(boatType.equals("plezier jacht")){
-            return null;//new PleasureYacht();
-        }else if(boatType.equals("boot")){
-         return new Boat("test", "boot", 3000.00);
+        if(boatType.equals("Plezier jacht")){
+            return new PleasureYacht();
+        }else if(boatType.equals("Rubberboot")){
+         return new InflatableBoat();
+        }else if(boatType.equals("Speedboot")){
+            return new SpeedBoat();
+        }else if(boatType.equals("Zeilboot")){
+            return new SailBoat();
         }else {
             return null;
         }
