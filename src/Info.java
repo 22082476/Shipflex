@@ -3,12 +3,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Info {
 
     // hier moet nog een customer en company list
-    private static ArrayList<Option> options;
+    private static ArrayList<Option> options = new ArrayList<>();;
 
     Info() {
         this.options = new ArrayList<>();
@@ -42,6 +44,9 @@ public class Info {
                     addOption(new Option(row[0], price, row[2], environmentDiscount, new ArrayList<>(List.of(essentialBoatTypes)), new ArrayList<>(List.of(extraForBoatTypes))));
             }
 
+            // Sorteer alles op de categorie in de arraylist (zit nu alfabetisch met elkaar in de array)
+            Collections.sort(options, Comparator.comparing(Option::getType));
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -58,34 +63,29 @@ public class Info {
     }
 
     public static void printOptionsForBoatType(String boatType) {
-        boolean essential = false;
-        boolean extra = false;
         boolean foundEssentialOption = false;
         boolean foundExtraOption = false;
 
+        // Misschien een betere manier om de essentiele en extra opties te printen ipv 2 loops?
+
         // Loop door essentiele en extra opties, check of het past bij de gegeven boat type en dan pas uitprinten
+        System.out.println("[ESSENTIAL OPTIONS]");
         for(Option option : options) {
-
-            // Zorg ervoor dat dit maar 1x wordt geprint
-            if(!essential) {
-                System.out.println("[ESSENTIAL OPTIONS]");
-                essential = true;
-            }
-
-            for(String boat : option.getEssentialForBoatType()) {
-                if(!boat.equalsIgnoreCase(boatType))
+            for (String boat : option.getEssentialForBoatType()) {
+                if (!boat.equalsIgnoreCase(boatType))
                     continue;
 
                 foundEssentialOption = true;
                 printOptionInfo(option);
                 System.out.println();
             }
+        }
 
-            if(!extra) {
-                System.out.println("[ESSENTIAL OPTIONS]");
-                extra = true;
-            }
+        if(!foundEssentialOption)
+            System.out.println("Geen essentiele opties gevonden voor boot type " + boatType);
 
+        System.out.println("[EXTRA OPTIONS]");
+        for(Option option : options) {
             for(String boat : option.getExtraForBoatType()) {
                 if(!boat.equalsIgnoreCase(boatType))
                     continue;
@@ -96,21 +96,18 @@ public class Info {
             }
         }
 
-        if(!foundEssentialOption)
-            System.out.println("Geen essentiele opties gevonden voor boot type " + boatType);
-
         if(!foundExtraOption)
             System.out.println("Geen extra opties gevonden voor boot type " + boatType);
     }
 
     public static void printOptionInfo(Option option) {
-        System.out.println("Option: " + option.getName());
-        System.out.println("Type: " + option.getType() + " Price: " + option.getPrice() + " Environment discount percentage: " + option.getEnvironmentDiscount());
+        System.out.println("Optie: " + option.getName());
+        System.out.println("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())
-            System.out.println("Price w/ discount: " + option.calculateEnvironmentDiscount());
+            System.out.println("Prijs incl. korting: " + option.calculateEnvironmentDiscount());
 
         if(option.getDescription() != null)
-            System.out.println("Description: " + option.getDescription());
+            System.out.println("Beschrijving: " + option.getDescription());
     }
 }
