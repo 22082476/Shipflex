@@ -1,15 +1,14 @@
 
 
 public class MakeQuote {
-    private String boatType;
+//    private String boatType;
     private Boat boat;
     private Quote quote;
     private Info dataInput = new Info();
 
     public MakeQuote(String boatType, Company company){
-        this.boatType = boatType;
         this.quote = new Quote(company);
-        this.boat = getFromTypeBoat(this.boatType);
+        this.boat = getFromTypeBoat(boatType);
 
     }
 
@@ -30,7 +29,7 @@ public class MakeQuote {
                     quote.printCustomer();
                     break;
                 case "beschikbare opties":
-                    Info.printOptionsForBoatType(this.boatType);
+                    Info.printOptionsForBoatType(boat.getType());
                     break;
                 case "voeg optie toe":
                     printTextGenerateQuote();
@@ -52,13 +51,13 @@ public class MakeQuote {
     }
 
     private Boat getFromTypeBoat(String boatType){
-        if(boatType.equals("Plezier jacht")){
+        if(boatType.equals("plezier jacht")){
             return new PleasureYacht();
-        }else if(boatType.equals("Rubberboot")){
+        }else if(boatType.equals("rubberboot")){
          return new InflatableBoat();
-        }else if(boatType.equals("Speedboot")){
+        }else if(boatType.equals("speedboot")){
             return new SpeedBoat();
-        }else if(boatType.equals("Zeilboot")){
+        }else if(boatType.equals("zeilboot")){
             return new SailBoat();
         }else {
             return null;
