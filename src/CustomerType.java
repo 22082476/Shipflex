@@ -134,12 +134,12 @@ class FoundationCustomer extends Customer {
         this.foundation = foundation;
     }
 
-    public String getMinisty() {
+    public String getFoundation() {
         return foundation;
     }
 
-    public void setMinisty(String ministy) {
-        this.foundation = ministy;
+    public void setFoundation(String foundation) {
+        this.foundation = foundation;
     }
 
     @Override

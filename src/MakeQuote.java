@@ -69,17 +69,17 @@ public class MakeQuote {
         System.out.print("Voer soort klant in: ");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputVar("de naam"), inputVar("de straat"), inputVar("de postcode"), inputVar("de plaats"), Integer.parseInt(inputVar("het huisnummer")), Integer.parseInt(inputVar("het korting percentage")), inputVar("de naam van de bedrijf")));
+            quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de bedrijf")));
         }else if(typcustomer.equals("overheid")){
-            quote.setGovermentCustomer(new GovermentCustomer(inputVar("de naam"), inputVar("de straat"), inputVar("de postcode"), inputVar("de plaats"), Integer.parseInt(inputVar("het huisnummer")), Integer.parseInt(inputVar("het korting percentage")), inputVar("de naam van de ministerie")));
+            quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de ministerie")));
         }else if(typcustomer.equals("stichting")){
-            quote.setFoundationCustomer(new FoundationCustomer(inputVar("de naam"), inputVar("de straat"), inputVar("de postcode"), inputVar("de plaats"), Integer.parseInt(inputVar("het huisnummer")), Integer.parseInt(inputVar("het korting percentage")), inputVar("de naam van de stiching")));
+            quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de stiching")));
         }else {
-            quote.setCustomer(new Customer(inputVar("de naam"), inputVar("de straat"), inputVar("de postcode"), inputVar("de plaats"), Integer.parseInt(inputVar("het huisnummer")), Integer.parseInt(inputVar("het korting percentage"))));
+            quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage"))));
         }
     }
 
-    private String inputVar(String soort){
+    private String inputQuestion(String soort){
         System.out.printf("Voer %s in: ", soort);
         return ScanInput.scanInH();
     }
