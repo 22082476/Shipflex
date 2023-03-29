@@ -46,7 +46,7 @@ public class Shipflex {
         makeQuote.start();
     }
 
-    public void startMaintenance(){
+    public static void startMaintenance(){
 //        Maintenance maintenance = new Maintenance();
     }
 }
