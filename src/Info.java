@@ -12,9 +12,6 @@ public class Info {
     // hier moet nog een customer en company list
     private static ArrayList<Option> options = new ArrayList<>();;
 
-    Info() {
-        this.options = new ArrayList<>();
-    }
 
     public static void readOptionsFromFile(String filePath) {
 

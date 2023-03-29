@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MakeQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakeQuote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shipflex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex.java" afterDir="false" />
     </list>
@@ -123,5 +125,16 @@
     <MESSAGE value="calculate environment discount methode gemaakt" />
     <MESSAGE value="bezig met opties discount" />
     <option name="LAST_COMMIT_MESSAGE" value="bezig met opties discount" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Shipflex.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
