@@ -9,12 +9,13 @@ public class Quote {
     private String QuoteDate;
     private Boat boat;
 
-    public Quote(Company companyShipbuild){
+    public Quote(Company companyShipbuild, Boat boat){
         this.companyShipbuild = companyShipbuild;
         this.businessCustomer = null;
         this.customer = null;
         this.govermentCustomer = null;
         this.foundationCustomer = null;
+        this.boat = boat;
     }
 
 
@@ -81,6 +82,12 @@ public class Quote {
             foundationCustomer.printCustomer();
         }else {
             System.out.println("Nog geen klant toegevoegd");
+        }
+    }
+
+    public void printOptions() {
+        for(Option option : this.boat.getOptions()) {
+            Info.printOptionInfo(option, -1);
         }
     }
 }

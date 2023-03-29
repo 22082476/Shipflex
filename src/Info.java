@@ -58,9 +58,11 @@ public class Info {
         options.add(option);
     }
 
-    public static void printOptionsForBoatType(String boatType) {
+    public static ArrayList<Integer> printOptionsForBoatType(String boatType) {
         boolean foundEssentialOption = false;
         boolean foundExtraOption = false;
+        int index = 0;
+        ArrayList<Integer> validOptionsIndexes = new ArrayList();
 
         // Misschien een betere manier om de essentiele en extra opties te printen ipv 2 loops?
 
@@ -72,13 +74,18 @@ public class Info {
                     continue;
 
                 foundEssentialOption = true;
-                printOptionInfo(option);
+                printOptionInfo(option, index);
+                validOptionsIndexes.add(index);
                 System.out.println();
             }
+
+            index++;
         }
 
         if(!foundEssentialOption)
             System.out.println("Geen essentiele opties gevonden voor boot type " + boatType);
+
+        index = 0; // Reset index om de juiste te krijgen voor de volgende loop
 
         System.out.println("[EXTRA OPTIONS]");
         for(Option option : options) {
@@ -87,17 +94,22 @@ public class Info {
                     continue;
 
                 foundExtraOption = true;
-                printOptionInfo(option);
+                printOptionInfo(option, index);
+                validOptionsIndexes.add(index);
                 System.out.println();
             }
+
+            index++;
         }
 
         if(!foundExtraOption)
             System.out.println("Geen extra opties gevonden voor boot type " + boatType);
+
+        return validOptionsIndexes;
     }
 
-    public static void printOptionInfo(Option option) {
-        System.out.println("Optie: " + option.getName());
+    public static void printOptionInfo(Option option, int index) {
+        System.out.println("[" + index + "] Optie:" + option.getName());
         System.out.println("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())

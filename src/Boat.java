@@ -5,15 +5,13 @@ public class Boat {
    private String name;
    private String type;
    private double basePrice;
-   private ArrayList<Option> essentialoptions;
-   private ArrayList<Option> extraOptions;
+   private ArrayList<Option> options;
 
     Boat(String name, String type, double basePrice){
         this.name = name;
         this.type = type;
         this.basePrice = basePrice;
-        this.essentialoptions = new ArrayList<>();
-        this.extraOptions = new ArrayList<>();
+        this.options = new ArrayList<>();
     }
 
 
@@ -30,20 +28,13 @@ public class Boat {
         this.basePrice = basePrice;
     }
 
-    public void addEssentialOption(Option option) {
-       this.essentialoptions.add(option);
-    }
 
-    public void addExtraOption(Option extraOption) {
-        this.extraOptions.add(extraOption);
+    public void addOption(Option Option) {
+        this.options.add(Option);
     }
 
     public void removeOption(Option option) {
-       this.essentialoptions.remove(option);
-    }
-
-    public void removeExtraOption(Option extraOption) {
-        this.extraOptions.remove(extraOption);
+       this.options.remove(option);
     }
 
     public String getName() {
@@ -59,11 +50,7 @@ public class Boat {
     }
 
     public ArrayList<Option> getOptions() {
-        return this.essentialoptions;
-    }
-
-    public ArrayList<Option> getExtraOptions() {
-        return this.extraOptions;
+        return this.options;
     }
 
 

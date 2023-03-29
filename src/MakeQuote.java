@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class MakeQuote {
 //    private String boatType;
@@ -7,9 +7,8 @@ public class MakeQuote {
     private Info dataInput = new Info();
 
     public MakeQuote(String boatType, Company company){
-        this.quote = new Quote(company);
         this.boat = getFromTypeBoat(boatType);
-
+        this.quote = new Quote(company, this.boat);
     }
 
 
@@ -23,7 +22,7 @@ public class MakeQuote {
                     askCustomer();
                     break;
                 case "gekozen opties":
-//                   quote.printOptions();
+                    quote.printOptions();
                     break;
                 case "laat klant zien":
                     quote.printCustomer();
@@ -32,7 +31,7 @@ public class MakeQuote {
                     Info.printOptionsForBoatType(boat.getType());
                     break;
                 case "voeg optie toe":
-                    printTextGenerateQuote();
+                    selectOption();
                     break;
                 case "terug":
                     return;
@@ -45,7 +44,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'terug\' %n");
+        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'voeg optie toe\', \'terug\' %n");
         System.out.print("Voer een command in: ");
 
     }
@@ -76,6 +75,38 @@ public class MakeQuote {
             quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de stiching")));
         }else {
             quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage"))));
+        }
+    }
+
+    public void selectOption() {
+        ArrayList<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
+        System.out.print("Typ de nummer in van de optie die je toe wilt voegen of -1 om te stoppen:");
+
+        int optionIndex = ScanInput.scanInInt();
+
+        if(optionIndex == -1) {
+            printTextGenerateQuote();
+            return;
+        }
+
+        if(!validIndexes.contains(optionIndex)) {
+            System.out.println("Verkeerde nummer ingevuld!");
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            selectOption();
+        } else {
+            quote.getBoat().addOption(Info.getOptions().get(optionIndex));
+            System.out.print("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
+            try {
+                Thread.sleep(3500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            selectOption();
         }
     }
 
