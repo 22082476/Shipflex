@@ -4,6 +4,7 @@ public class Quote {
     private Customer customer;
     private BusinessCustomer businessCustomer;
     private GovermentCustomer govermentCustomer;
+    private FoundationCustomer foundationCustomer;
     private String Date;
     private String QuoteDate;
     private Boat boat;
@@ -13,6 +14,7 @@ public class Quote {
         this.businessCustomer = null;
         this.customer = null;
         this.govermentCustomer = null;
+        this.foundationCustomer = null;
     }
 
 
@@ -30,6 +32,10 @@ public class Quote {
 
     public void setGovermentCustomer(GovermentCustomer govermentCustomer) {
         this.govermentCustomer = govermentCustomer;
+    }
+
+    public void setFoundationCustomer(FoundationCustomer foundationCustomer) {
+        this.foundationCustomer = foundationCustomer;
     }
 
     public void setDate(String date) {
@@ -71,9 +77,10 @@ public class Quote {
             businessCustomer.printCustomer();
         } else if (customer != null) {
             customer.printCustomer();
+        } else if (foundationCustomer != null) {
+            foundationCustomer.printCustomer();
         }else {
             System.out.println("Nog geen klant toegevoegd");
-            return;
         }
     }
 }
