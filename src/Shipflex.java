@@ -6,7 +6,8 @@ public class Shipflex {
 
     public static void main(String[] args) {
         welcomeText();
-
+        Info.readOptionsFromFile("src\\data\\options.csv");
+        Info.printOptionsForBoatType("te");
         while (true) {
             startText();
             String inputstr = in.scanInL();
