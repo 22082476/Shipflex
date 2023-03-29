@@ -8,7 +8,7 @@ public class ScanInput {
     }
 
     public static String scanInH(){
-        return in.nextLine().toLowerCase();
+        return in.nextLine();
     }
 
     public static int scanInInt(){
