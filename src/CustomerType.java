@@ -70,6 +70,7 @@ class Customer {
         System.out.printf("Postcode: %s%n", this.postcode);
         System.out.printf("Stad: %s%n", this.city);
         System.out.printf("Huisnummer: %d%n", this.houseNumber);
+        System.out.printf("Kortingpercentage: %d%n", this.discount);
     }
 }
 
@@ -121,5 +122,29 @@ class GovermentCustomer extends Customer {
     public void printCustomer(){
         super.printCustomer();
         System.out.printf("Ministerie: %s%n", this.ministry);
+    }
+}
+
+class FoundationCustomer extends Customer {
+
+    private String foundation;
+
+    public FoundationCustomer (String name, String street, String postcode, String city, int houseNumber, int discount, String foundation){
+        super(name, street, postcode, city, houseNumber,discount);
+        this.foundation = foundation;
+    }
+
+    public String getMinisty() {
+        return foundation;
+    }
+
+    public void setMinisty(String ministy) {
+        this.foundation = ministy;
+    }
+
+    @Override
+    public void printCustomer(){
+        super.printCustomer();
+        System.out.printf("Stichting: %s%n", this.foundation);
     }
 }

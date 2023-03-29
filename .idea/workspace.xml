@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="fix static">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MakeQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakeQuote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shipflex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quote.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="Optimize-If-statements" />
+    <option name="NEW_BASE" value="Change-Customer" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -125,16 +124,5 @@
     <MESSAGE value="calculate environment discount methode gemaakt" />
     <MESSAGE value="bezig met opties discount" />
     <option name="LAST_COMMIT_MESSAGE" value="bezig met opties discount" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Shipflex.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
