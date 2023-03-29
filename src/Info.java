@@ -62,7 +62,6 @@ public class Info {
         boolean foundEssentialOption = false;
         boolean foundExtraOption = false;
 
-        System.out.println(boatType);
         // Misschien een betere manier om de essentiele en extra opties te printen ipv 2 loops?
 
         // Loop door essentiele en extra opties, check of het past bij de gegeven boat type en dan pas uitprinten
