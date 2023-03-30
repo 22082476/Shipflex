@@ -47,6 +47,7 @@ public class Shipflex {
     }
 
     public static void startMaintenance(){
-//        Maintenance maintenance = new Maintenance();
+        Maintenance maintenance = new Maintenance();
+        maintenance.start();
     }
 }
