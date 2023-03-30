@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class MakeQuote {
 //    private String boatType;
@@ -7,9 +7,8 @@ public class MakeQuote {
     private Info dataInput = new Info();
 
     public MakeQuote(String boatType, Company company){
-        this.quote = new Quote(company);
         this.boat = getFromTypeBoat(boatType);
-
+        this.quote = new Quote(company, this.boat);
     }
 
 
@@ -23,7 +22,7 @@ public class MakeQuote {
                     askCustomer();
                     break;
                 case "gekozen opties":
-//                   quote.printOptions();
+                    quote.printOptions();
                     break;
                 case "laat klant zien":
                     quote.printCustomer();
@@ -32,7 +31,7 @@ public class MakeQuote {
                     Info.printOptionsForBoatType(boat.getType());
                     break;
                 case "voeg optie toe":
-                    printTextGenerateQuote();
+                    selectOption();
                     break;
                 case "terug":
                     return;
@@ -45,7 +44,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'terug\' %n");
+        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'voeg optie toe\', \'terug\' %n");
         System.out.print("Voer een command in: ");
 
     }
@@ -79,8 +78,88 @@ public class MakeQuote {
         }
     }
 
+    public void selectOption() {
+        ArrayList<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
+
+        String inputString = inputQuestion("de nummer van de optie (stop om te stoppen)");
+
+        if(!ableToParse(inputString)) {
+            if(inputString.equalsIgnoreCase("stop")) {
+                printTextGenerateQuote();
+                return;
+            }
+            System.out.println("Geen nummer ingevuld!");
+            delaySelectOption();
+            return;
+        }
+
+        int optionIndex = Integer.parseInt(inputString);
+
+        if(!validIndexes.contains(optionIndex)) {
+            System.out.println("Verkeerde nummer ingevuld!");
+            delaySelectOption();
+        } else if(quote.getBoat().getOptions().contains(Info.getOptions().get(optionIndex))) {
+            System.out.println("Deze optie is al toegevoegd!");
+            delaySelectOption();
+        } else {
+            quote.getBoat().addOption(Info.getOptions().get(optionIndex));
+            System.out.println("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
+
+            String answer = inputQuestion("ja of nee voor milieukorting");
+
+            if(!answer.equalsIgnoreCase("ja")) {
+                System.out.println("Geen milieukorting toegepast voor optie " + Info.getOptions().get(optionIndex).getName());
+                delaySelectOption();
+            } else {
+                askEnvironmentDiscountForOption(Info.getOptions().get(optionIndex));
+            }
+        }
+    }
+
+    public void askEnvironmentDiscountForOption(Option option) {
+        String inputString = inputQuestion("de milieukorting percentage");
+
+        if(!ableToParse(inputString)) {
+            System.out.println("Geen nummer ingevuld!");
+            delaySelectOption();
+            return;
+        }
+
+        int discount = Integer.parseInt(inputString);
+
+        if(discount < 1 || discount > 100) {
+            System.out.println("Vul een getal in boven 0 en onder de 100!");
+            askEnvironmentDiscountForOption(option);
+            return;
+        }
+
+        option.setEnvironmentDiscount(discount);
+        System.out.println("Je hebt " + discount + "% milieukorting toegevoegd aan optie " + option.getName());
+
+        delaySelectOption();
+    }
+
+    public void delaySelectOption() {
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        selectOption();
+    }
+
     private String inputQuestion(String soort){
         System.out.printf("Voer %s in: ", soort);
         return ScanInput.scanInH();
+    }
+
+    private boolean ableToParse(String text) {
+        try {
+            Integer.parseInt(text);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

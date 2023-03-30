@@ -1,13 +1,8 @@
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-
+.idea/workspace.xml
+.idea/misc.xml
 ### IntelliJ IDEA ###
 out/
-!**/src/main/**/out/
+!**/src/main/**/out/ja
 !**/src/test/**/out/
 
 ### Eclipse ###
@@ -19,7 +14,7 @@ out/
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
+!**/src/main/**/bin/java
 !**/src/test/**/bin/
 
 ### NetBeans ###
