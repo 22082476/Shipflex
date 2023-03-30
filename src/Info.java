@@ -109,7 +109,7 @@ public class Info {
     }
 
     public static void printOptionInfo(Option option, int index) {
-        System.out.println("[" + index + "] Optie:" + option.getName());
+        System.out.println("[" + index + "] Optie: " + option.getName());
         System.out.println("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())
