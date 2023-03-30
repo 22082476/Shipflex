@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Test_InfoReadFile {
 
     @ParameterizedTest
-    @CsvSource ({"src/data/options.csv, 25"})
-    public void Correcte_aatalRegelsMetInlezenInfo(String source, int aantalRijen){
+    @CsvSource ({"src/data/options.csv, 25", "src/data/options2.csv, 50", "src/data/test2.csv, 56"})
+    public void Correcte_aatalRegelsMetInlezenInfo(String source, int expectedRowNumbers){
         //Arrange
         Info.readOptionsFromFile(source);
         ArrayList<Option> temp = null;
@@ -17,7 +17,7 @@ public class Test_InfoReadFile {
         temp = Info.getOptions();
 
         //Assert
-        assertEquals(aantalRijen, temp.size());
+        assertEquals(expectedRowNumbers, temp.size());
 
     }
 }

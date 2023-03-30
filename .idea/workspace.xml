@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Test Source/TestData/test1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test Source/TestData/test3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test Source/Test_BerekeningMileuKorting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test Source/Test_InfoReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/test2.csv" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Flile reader test">
+      <change afterPath="$PROJECT_DIR$/src/data/options2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Source/Test_makeQuote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Source/TestData/test1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Source/TestData/test3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Source/Test_BerekeningMileuKorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_BerekeningMileuKorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Source/Test_InfoReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_InfoReadFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/thomv/IntelliJ Projects/PROJ1/Test Source/TestData",
+    "last_opened_file_path": "C:/Users/thomv/IntelliJ Projects/PROJ1/src/data",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -60,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\thomv\IntelliJ Projects\PROJ1\src\data" />
       <recent name="C:\Users\thomv\IntelliJ Projects\PROJ1\Test Source\TestData" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -144,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680092218375</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Flile reader test">
+      <created>1680098812942</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680098812942</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,7 +180,8 @@
     <MESSAGE value="calculate environment discount methode gemaakt" />
     <MESSAGE value="bezig met opties discount" />
     <MESSAGE value="optimzing" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimzing" />
+    <MESSAGE value="Flile reader test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flile reader test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
