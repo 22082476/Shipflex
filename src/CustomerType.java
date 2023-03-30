@@ -77,6 +77,10 @@ class   Customer {
     public void AddCustomerType () {
         if
     }
+
+    public void AddCustomerType () {
+        if
+    }
 }
 
 class BusinessCustomer extends Customer{
