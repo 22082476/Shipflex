@@ -1,0 +1,7 @@
+NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,extra,DESCRIPTION
+Navigatie,500.00,Navigatie,0,null,Speedboot;RubberBoot,navigatie
+JerryCan,42.00,Accessoires,0,null,Speedboot;RubberBoot,jerry can voor extra brandstof
+DryBag,20.00,Accessoires,0,null,Speedboot;ZeilBoot;RubberBoot,een zak voor spullen
+EHBO-kit,13.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,1e hulp box
+ReddingsVest,74.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,zwemvest
+Peddel,22.00,Accessoires,0,RubberBoot,null,peddels
