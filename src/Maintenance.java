@@ -1,34 +1,33 @@
-public class Maintenance {
-    private static ScanInput in = new ScanInput();
-    public String maintenance = in.scanInL();
+import java.util.ArrayList;
 
-    public void CheckInput(){
-        String inputstr = ScanInput.scanInL();
-        while(true) {
-            inputstr = ScanInput.scanInL();
-            break;
-        }
-        System.out.println("Welke optie wilt u toevoegen?") ;
+public class Maintenance {
+    private static ScanInput input = new ScanInput();
+
+    public String askQuestionForStringInput(String question){
+        System.out.println(question);
+        return input.scanInH();
     }
 
-    public void start(){
-        String inputstr = ScanInput.scanInL();
-        while(true) {
-
-            if (inputstr.equals("opties toevoegen")) {
-                inputstr = ScanInput.scanInL();
-            }
-            else if (inputstr.equals("stop")) {
-                break;
-            }else if(inputstr.equals("voeg optie toe")) {
-                inputstr = ScanInput.scanInL();
-            }else if(inputstr.equals("laat klant zien")){
-                inputstr = ScanInput.scanInL();
-            } else {
-                System.out.println("Incorrecte invoer!");
-                System.out.println("probeer opniew");
-                inputstr = ScanInput.scanInL();
+    public int askQuestionForStringInt(String question) {
+        System.out.println(question);
+        return input.scanInInt();
+    }
+    public ArrayList<String> inleesinput() {
+        ArrayList inleesinput = new ArrayList();
+        while (!input.equals("stop")) {
+            if (!inleesinput.equals("")) {
+                inleesinput.add(input);
             }
         }
+        return inleesinput;
+    }
+    public void start(){
+        String input;
+        input = askQuestionForStringInput("Commands: optie aanmaken");
+
+        if(input.equalsIgnoreCase("optie aanmaken")) {
+            Info.addOption(new Option(askQuestionForStringInput("Wat is de naam van het onderdeel?"), askQuestionForStringInt("Wat is de prijs van het onderdeel?"), askQuestionForStringInput("Wat voor soort onderdeel is het?"), askQuestionForStringInt("Wat is de korting?")));
+        }
+
     }
 }

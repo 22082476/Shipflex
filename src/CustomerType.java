@@ -73,6 +73,10 @@ class   Customer {
         Printer.printLine("Kortingpercentage: " + this.discount);
 
     }
+
+    public void AddCustomerType () {
+        if
+    }
 }
 
 class BusinessCustomer extends Customer{
