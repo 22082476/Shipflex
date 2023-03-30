@@ -139,7 +139,7 @@ public class MakeQuote {
         delaySelectOption();
     }
 
-    public void delaySelectOption() {
+    private void delaySelectOption() {
         try {
             Thread.sleep(2500);
         } catch (InterruptedException e) {
