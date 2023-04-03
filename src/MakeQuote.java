@@ -18,23 +18,23 @@ public class MakeQuote {
             int inputIndex = ScanInput.scanInt();
 
             switch (inputIndex) {
+                case 0:
+                    return;
                 case 1, 2:
                     askCustomer();
-                    break;
-                case 5:
-                    quote.printOptions();
                     break;
                 case 3:
                     quote.printCustomer();
                     break;
-                case 4:
+               case 4:
                     Info.printOptionsForBoatType(boat.getType());
+                    break;
+               case 5:
+                    quote.printOptions();
                     break;
                 case 6:
                     selectOption();
                     break;
-                case 0:
-                    return;
                 default:
                     System.out.println("Incorrecte invoer!");
                     System.out.println("probeer opniew");
