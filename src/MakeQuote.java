@@ -154,13 +154,13 @@ public class MakeQuote {
         return ScanInput.scanInH();
     }
 
-    private int inputNumber(String soort){
-       String tempstr = inputQuestion(soort);
-       if(ableToParse(tempstr)){
-           return Integer.parseInt(tempstr);
+    private int inputNumber(String question){
+       String string = inputQuestion(question);
+       if(ableToParse(question)){
+           return Integer.parseInt(question);
        }else {
            System.out.println("Geen nummer!");
-           inputNumber(soort);
+           inputNumber(question);
        }
        return 0;
     }
