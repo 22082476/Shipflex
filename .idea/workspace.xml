@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Flile test finsih">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MakeQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakeQuote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScanInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScanInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shipflex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex.java" afterDir="false" />
-    </list>
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="refactor commands to index" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680098812942</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor commands to index">
+      <created>1680528463704</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680528463704</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +189,18 @@
     <MESSAGE value="bezig met opties discount" />
     <MESSAGE value="optimzing" />
     <MESSAGE value="Flile reader test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flile reader test" />
+    <MESSAGE value="refactor commands to index" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor commands to index" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MakeQuote.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
