@@ -1,4 +1,4 @@
-class Customer {
+class   Customer {
     protected String name;
     protected String street;
     protected String postcode;

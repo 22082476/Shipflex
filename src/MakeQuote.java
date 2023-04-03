@@ -15,25 +15,25 @@ public class MakeQuote {
     public void start(){
         while(true) {
             printTextGenerateQuote();
-            String inputstr = ScanInput.scanInL();
+            int inputIndex = ScanInput.scanInt();
 
-            switch (inputstr) {
-                case "voeg klant toe", "wijzig klant":
+            switch (inputIndex) {
+                case 1, 2:
                     askCustomer();
                     break;
-                case "gekozen opties":
+                case 5:
                     quote.printOptions();
                     break;
-                case "laat klant zien":
+                case 3:
                     quote.printCustomer();
                     break;
-                case "beschikbare opties":
+                case 4:
                     Info.printOptionsForBoatType(boat.getType());
                     break;
-                case "voeg optie toe":
+                case 6:
                     selectOption();
                     break;
-                case "terug":
+                case 0:
                     return;
                 default:
                     System.out.println("Incorrecte invoer!");
@@ -44,7 +44,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'voeg optie toe\', \'terug\' %n");
+        System.out.printf("Commands: [0]terug, [1]voeg klant toe, [2]wijzig klant, [3]laat klant zien, [4]beschikbare opties, [5]gekozen opties, [6]voeg optie toe%n");
         System.out.print("Voer een command in: ");
 
     }
