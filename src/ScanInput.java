@@ -11,11 +11,13 @@ public class ScanInput {
         return in.nextLine();
     }
 
-    public static int scanInInt(){
-        int out = in.nextInt();
+    public static int scanInt(){
+        int temp = in.nextInt();
         in.nextLine();
-        return out;
+        return temp;
     }
+
+
 
 
 }
