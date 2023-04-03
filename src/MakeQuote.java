@@ -85,7 +85,6 @@ public class MakeQuote {
 
         if(!ableToParse(inputString)) {
             if(inputString.equalsIgnoreCase("stop")) {
-                printTextGenerateQuote();
                 return;
             }
             System.out.println("Geen nummer ingevuld!");
