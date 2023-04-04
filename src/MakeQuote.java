@@ -15,26 +15,26 @@ public class MakeQuote {
     public void start(){
         while(true) {
             printTextGenerateQuote();
-            String inputstr = ScanInput.scanInL();
+            int inputIndex = ScanInput.scanInt();
 
-            switch (inputstr) {
-                case "voeg klant toe", "wijzig klant":
+            switch (inputIndex) {
+                case 0:
+                    return;
+                case 1, 2:
                     askCustomer();
                     break;
-                case "gekozen opties":
-                    quote.printOptions();
-                    break;
-                case "laat klant zien":
+                case 3:
                     quote.printCustomer();
                     break;
-                case "beschikbare opties":
+               case 4:
                     Info.printOptionsForBoatType(boat.getType());
                     break;
-                case "voeg optie toe":
+               case 5:
+                    quote.printOptions();
+                    break;
+                case 6:
                     selectOption();
                     break;
-                case "terug":
-                    return;
                 default:
                     System.out.println("Incorrecte invoer!");
                     System.out.println("probeer opniew");
@@ -44,7 +44,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        System.out.printf("Commands: \'voeg klant toe\', \'wijzig klant\', \'laat klant zien\', \'beschikbare opties\', \'gekozen opties\', \'voeg optie toe\', \'terug\' %n");
+        System.out.printf("Commands: [0]terug, [1]voeg klant toe, [2]wijzig klant, [3]laat klant zien, [4]beschikbare opties, [5]gekozen opties, [6]voeg optie toe%n");
         System.out.print("Voer een command in: ");
 
     }
@@ -68,13 +68,13 @@ public class MakeQuote {
         System.out.print("Voer soort klant in: ");
         String typcustomer = ScanInput.scanInL();
         if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de bedrijf")));
+            quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de bedrijf")));
         }else if(typcustomer.equals("overheid")){
-            quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de ministerie")));
+            quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de ministerie")));
         }else if(typcustomer.equals("stichting")){
-            quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage")), inputQuestion("de naam van de stiching")));
+            quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de stiching")));
         }else {
-            quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), Integer.parseInt(inputQuestion("het huisnummer")), Integer.parseInt(inputQuestion("het korting percentage"))));
+            quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage")));
         }
     }
 
@@ -85,7 +85,6 @@ public class MakeQuote {
 
         if(!ableToParse(inputString)) {
             if(inputString.equalsIgnoreCase("stop")) {
-                printTextGenerateQuote();
                 return;
             }
             System.out.println("Geen nummer ingevuld!");
@@ -151,7 +150,19 @@ public class MakeQuote {
 
     private String inputQuestion(String soort){
         System.out.printf("Voer %s in: ", soort);
+
         return ScanInput.scanInH();
+    }
+
+    private int inputNumber(String question){
+       String string = inputQuestion(question);
+       if(ableToParse(question)){
+           return Integer.parseInt(question);
+       }else {
+           System.out.println("Geen nummer!");
+           inputNumber(question);
+       }
+       return 0;
     }
 
     private boolean ableToParse(String text) {

@@ -9,16 +9,16 @@ public class Shipflex {
 
         while (true) {
             startText();
-            String inputstr = in.scanInL();
+            int inputIndex = ScanInput.scanInt();
 
-            switch (inputstr) {
-                case "stop":
+            switch (inputIndex) {
+                case 0:
                     System.exit(0);
                     break;
-                case "maak offerte":
+                case 1:
                     startMakeQuote();
                     break;
-                case "onderhoud":
+                case 2:
                     startMaintenance();
                     break;
                 default:
@@ -35,7 +35,7 @@ public class Shipflex {
     }
 
     public static void startText(){
-        System.out.println("Commands: \'maak offerte\', \'onderhoud\', \'stop\'");
+        System.out.println("Commands: [0]stop, [1]maak offerte, [2]onderhoud");
         System.out.print("Voer een command in: ");
     }
 
