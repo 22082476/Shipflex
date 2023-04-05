@@ -146,6 +146,6 @@ class FoundationCustomer extends Customer {
     @Override
     public void printCustomer(){
         super.printCustomer();
-        System.out.printf("Stichting: %s%n", this.foundation);
+        Printer.printLine("Stichting: " + this.foundation);
     }
 }
