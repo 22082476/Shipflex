@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Maintenance {
 
-
     public ArrayList<String> readBoatList(String question) {
         ArrayList boatList = new ArrayList();
         String userinput = MakeQuote.inputQuestion(question);
