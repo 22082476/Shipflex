@@ -1,7 +1,7 @@
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,7 +12,7 @@ public class Test_InfoReadFile {
     public void Correcte_aatalRegelsMetInlezenInfo(String source, int expectedRowNumbers){
         //Arrange
         Info.readOptionsFromFile(source);
-        ArrayList<Option> temp = null;
+        List<Option> temp = null;
         //Act
         temp = Info.getOptions();
 

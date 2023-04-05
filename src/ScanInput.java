@@ -12,9 +12,9 @@ public class ScanInput {
     }
 
     public static int scanInt(){
-        int int = in.nextInt();
+        int integer = in.nextInt();
         in.nextLine();
-        return int;
+        return integer;
     }
 
 

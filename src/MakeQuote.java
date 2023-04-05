@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MakeQuote {
 //    private String boatType;
@@ -80,7 +81,7 @@ public class MakeQuote {
     }
 
     public void selectOption() {
-        ArrayList<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
+        List<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
 
         String inputString = inputQuestion("de nummer van de optie (stop om te stoppen)");
 

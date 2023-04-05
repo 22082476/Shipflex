@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Option {
 
@@ -8,11 +8,11 @@ public class Option {
     private String description;
     private int environmentDiscount;
 
-    private ArrayList<String> essentialForBoatType;
+    private List<String> essentialForBoatType;
 
-    private ArrayList<String> extraForBoatType;
+    private List<String> extraForBoatType;
 
-    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, ArrayList<String> extraForBoatType) {
+    Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -21,7 +21,7 @@ public class Option {
         this.extraForBoatType = extraForBoatType;
     }
 
-    Option(String name, double price, String type, int environmentDiscount, ArrayList<String> essentialForBoatType, ArrayList<String> extraForBoatType, String description){
+    Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType, String description){
         this(name, price, type, environmentDiscount, essentialForBoatType, extraForBoatType);
         this.description = description;
     }
@@ -46,11 +46,11 @@ public class Option {
         this.environmentDiscount = environmentDiscount;
     }
 
-    public ArrayList<String> getEssentialForBoatType() {
+    public List<String> getEssentialForBoatType() {
         return essentialForBoatType;
     }
 
-    public ArrayList<String> getExtraForBoatType() {
+    public List<String> getExtraForBoatType() {
         return extraForBoatType;
     }
 
