@@ -9,7 +9,7 @@ public class Test_AskEnvironmentDiscountForOption {
     @Test
     public void testAskEnvironmentDiscountForOption() {
         // Set up test object
-        Option option = new Option(/* Parameters */);
+        Option option = new Option("Talamex anker", 499,99  , "Anker", 10, );
 
         // Test valid input
         setInput("50");
