@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class MakeQuote {
@@ -67,10 +66,9 @@ public class MakeQuote {
 
 
     public void askCustomer(){
-        Printer.print("Voer soort klant in: ");
-        String typcustomer = ScanInput.scanInL();
+        String customerType = inputQuestion("soort klant");
 
-        switch (typcustomer){
+        switch (customerType){
             case "zakelijk":
                 quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de bedrijf")));
                 break;
@@ -84,6 +82,8 @@ public class MakeQuote {
                 quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage")));
                 break;
         }
+
+        askForExtraGegevens();
     }
 
     public void selectOption() {
@@ -180,5 +180,34 @@ public class MakeQuote {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    private void askForExtraGegevens() {
+        Printer.printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
+        String input = inputQuestion("ja of nee in voor extra gegevens");
+        String[] gegevens;
+
+        if(input.equalsIgnoreCase("ja")) {
+            gegevens = getExtraGegevensFromInput();
+            if(quote.getCustomer() != null)
+                quote.getCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getBusinessCustomer() != null)
+                quote.getBusinessCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getFoundationCustomer() != null)
+                quote.getFoundationCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getGovermentCustomer() != null)
+                quote.getGovermentCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+
+            askForExtraGegevens();
+        }
+    }
+
+    private String[] getExtraGegevensFromInput() {
+        String key = inputQuestion("de type gegeven (bijv. 'email')");
+        String value = inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
+
+        String[] ret = {key, value};
+
+        return ret;
     }
 }
