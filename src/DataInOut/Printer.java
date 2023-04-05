@@ -14,6 +14,12 @@ public static void empytLine(){
     printLine("");
 }
 
+public static void printSpaces(int number){
+    for(int i = 1; i <= number; i++){
+        print(" ");
+    }
+}
+
 
     
 }
