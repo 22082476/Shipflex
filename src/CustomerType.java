@@ -98,7 +98,7 @@ class BusinessCustomer extends Customer{
     @Override
     public void printCustomer(){
         super.printCustomer();
-        System.out.printf("Bedrijfsnaam: %s%n", this.companyname);
+        Printer.printLine("Bedrijfsnaam: " + this.companyname);
     }
 }
 
