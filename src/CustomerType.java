@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class   Customer {
     protected String name;
     protected String street;
@@ -5,7 +8,7 @@ class   Customer {
     protected String city;
     protected int houseNumber;
     protected int discount;
-
+    protected HashMap<String, String> extraGegevens;
 
     public Customer(String name, String street, String postcode, String city, int houseNumber, int discount) {
         this.name = name;
@@ -14,6 +17,7 @@ class   Customer {
         this.city = city;
         this.houseNumber = houseNumber;
         this.discount = discount;
+        this.extraGegevens = new HashMap<>();
     }
 
     public void setName(String name) {
@@ -64,6 +68,10 @@ class   Customer {
         return discount;
     }
 
+    public void addExtraGegeven(String type, String value) {
+        this.extraGegevens.put(type, value);
+    }
+
     public void printCustomer(){
         Printer.printLine("Naam: " + this.name);
         Printer.printLine("Straat: " + this.street);
@@ -72,6 +80,12 @@ class   Customer {
         Printer.printLine("Huisnummer: " + this.houseNumber);
         Printer.printLine("Kortingpercentage: " + this.discount);
 
+        if(!this.extraGegevens.isEmpty()){
+            Printer.printLine("Extra gegevens:");
+            for (Map.Entry<String, String> entry : extraGegevens.entrySet()) {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+        }
     }
 }
 
@@ -97,8 +111,8 @@ class BusinessCustomer extends Customer{
 
     @Override
     public void printCustomer(){
-        super.printCustomer();
         Printer.printLine("Bedrijfsnaam: " + this.companyname);
+        super.printCustomer();
     }
 }
 
@@ -121,8 +135,8 @@ class GovermentCustomer extends Customer {
 
     @Override
     public void printCustomer(){
-        super.printCustomer();
         Printer.printLine("Ministerie: " + this.ministry);
+        super.printCustomer();
     }
 }
 
