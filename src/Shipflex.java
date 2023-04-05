@@ -50,6 +50,4 @@ public class Shipflex {
         Maintenance maintenance = new Maintenance();
         maintenance.start();
     }
-
-//    public static void start
 }
