@@ -117,7 +117,7 @@ public class MakeQuote {
     }
 
     public void askEnvironmentDiscountForOption(Option option) {
-        String inputString = inputQuestion("de milieukorting percentage");
+        String inputString = inputQuestion("de milieukorting percent age");
 
         if(!ableToParse(inputString)) {
             System.out.println("Geen nummer ingevuld!");
