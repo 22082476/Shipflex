@@ -26,16 +26,5 @@ public class Maintenance {
             readBoatList("voor welke soort boten het onderdeel essentieel is"),
             readBoatList("voor welke soort boten het onderdeel optioneel is")));
         }
-}
-    public ArrayList<String> readCustomerType (String question) {
-        ArrayList customerType = new ArrayList();
-        String userinput = MakeQuote.inputQuestion(question);
-        if (!userinput.equalsIgnoreCase("stop")) {
-            if (!customerType.equals("")) {
-                customerType.add(userinput);
-                readCustomerType(question);
-            }
-        }
-        return customerType;
     }
 }
