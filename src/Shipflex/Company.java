@@ -1,4 +1,6 @@
- class Company {
+package Shipflex;
+
+class Company {
     private String name;
     private String street;
     private String postcode;

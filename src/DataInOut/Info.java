@@ -1,3 +1,5 @@
+package DataInOut;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -5,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import Boat.Option;
 
 public class Info {
 
@@ -86,4 +89,6 @@ public class Info {
         if(option.getDescription() != null)
             Printer.printLine("Beschrijving: " + option.getDescription());
     }
+
+
 }
