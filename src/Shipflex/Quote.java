@@ -159,4 +159,7 @@ public class Quote {
         Printer.print(String.valueOf(boat.getBasePrice()));
         Printer.printLine(String.valueOf(boat.getOptions()));
     }
+    public void printQuote(){
+    
+    }
 }
