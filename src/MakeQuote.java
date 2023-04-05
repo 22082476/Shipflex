@@ -49,34 +49,40 @@ public class MakeQuote {
         Printer.print("Voer een command in: ");
     }
 
-// to switch!
+
     private Boat getFromTypeBoat(String boatType){
-        if(boatType.equals("plezier jacht")){
-            return new PleasureYacht();
-        }else if(boatType.equals("rubberboot")){
-         return new InflatableBoat();
-        }else if(boatType.equals("speedboot")){
-            return new SpeedBoat();
-        }else if(boatType.equals("zeilboot")){
-            return new SailBoat();
-        }else {
-            return null;
+        switch (boatType){
+            case "plezierjacht":
+                return new PleasureYacht();
+            case "rubberboot":
+                return new InflatableBoat();
+            case "speedboot":
+                return new SpeedBoat();
+            case "zeilboot":
+                return new SailBoat();
+            default:
+                return null;
         }
 }
 
-// to switch!
+
     public void askCustomer(){
         Printer.print("Voer soort klant in: ");
         String typcustomer = ScanInput.scanInL();
 
-        if(typcustomer.equals("zakelijk")){
-            quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de bedrijf")));
-        }else if(typcustomer.equals("overheid")){
-            quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de ministerie")));
-        }else if(typcustomer.equals("stichting")){
-            quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de stiching")));
-        }else {
-            quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage")));
+        switch (typcustomer){
+            case "zakelijk":
+                quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de bedrijf")));
+                break;
+            case "overheid":
+                quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de ministerie")));
+                break;
+            case "stichting":
+                quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de stiching")));
+                break;
+            default:
+                quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage")));
+                break;
         }
     }
 
