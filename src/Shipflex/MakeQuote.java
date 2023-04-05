@@ -40,6 +40,8 @@ public class MakeQuote {
                 case 6:
                     selectOption();
                     break;
+                case 7:
+                    quote.printQuote();
                 default:
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
@@ -49,7 +51,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        Printer.printLine("Commands: [0] terug, [1] voeg klant toe, [2] wijzig klant, [3] laat klant zien, [4] beschikbare opties, [5] gekozen opties, [6] voeg optie toe");
+        Printer.printLine("Commands: [0] terug, [1] voeg klant toe, [2] wijzig klant, [3] laat klant zien, [4] beschikbare opties, [5] gekozen opties, [6] voeg optie toe, [7] offerte printen");
         Printer.print("Voer een command in: ");
     }
 
