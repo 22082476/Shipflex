@@ -22,11 +22,11 @@ public class Maintenance {
     }
     public void start(){
         String input;
-        input = ScanInput.inputQuestion(" optie toevoegen of customer type toevoegen");
+        input = ScanInput.inputQuestion("optie toevoegen of customer type toevoegen");
 
         if(input.equalsIgnoreCase("optie toevoegen")) {
             Info.addOption(new Option(ScanInput.inputQuestion("de naam van het onderdeel"),
-            ScanInput.inputNumber("de prijs van het onderdeel"),
+            ScanInput.inputNumberD("de prijs(bijv. 1.00) van het onderdeel"),
             ScanInput.inputQuestion("soort van onderdeel"),
             ScanInput.inputNumber("het kortingsperctentage"),
             readBoatList("voor welke soort boten het onderdeel essentieel is"),

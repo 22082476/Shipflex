@@ -37,7 +37,7 @@ public class Shipflex {
     }
 
     public static void startText(){
-        Printer.printLine("Commands: [0]stop, [1]maak offerte, [2]onderhoud");
+        Printer.printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
         Printer.print("Voer een command in: ");
     }
 
