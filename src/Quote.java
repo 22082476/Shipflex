@@ -92,20 +92,15 @@ public class Quote {
         }
     }
 
-    public void printBasicInformation() {
-
-        companyShipbuild.getName();
-        companyShipbuild.getStreet();
-        companyShipbuild.getHousenumber();
-        companyShipbuild.getPostcode();
-        companyShipbuild.getCity();
+    private void printCompany(){
         Printer.printLine(companyShipbuild.getName());
         Printer.print(companyShipbuild.getStreet());
         Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
         Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
         Printer.printLine(companyShipbuild.getCity());
+    }
 
-
+    private void printCustomerType(){
 
         if (customer != null) {
             Printer.printLine(customer.getName());
@@ -134,7 +129,9 @@ public class Quote {
         } else {
             Printer.printLine("Nog geen klant toegevoegd");
         }
+    }
 
+    private void printBoat(){
         Printer.printLine(boat.getName());
         Printer.printLine(boat.getType());
         Printer.print(String.valueOf(boat.getBasePrice()));
