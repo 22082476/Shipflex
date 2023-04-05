@@ -39,6 +39,18 @@ public class Quote {
         this.foundationCustomer = foundationCustomer;
     }
 
+    public BusinessCustomer getBusinessCustomer() {
+        return businessCustomer;
+    }
+
+    public GovermentCustomer getGovermentCustomer() {
+        return govermentCustomer;
+    }
+
+    public FoundationCustomer getFoundationCustomer() {
+        return foundationCustomer;
+    }
+
     public void setDate(String date) {
         Date = date;
     }
