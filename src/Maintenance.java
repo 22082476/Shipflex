@@ -26,13 +26,7 @@ public class Maintenance {
             readBoatList("voor welke soort boten het onderdeel essentieel is"),
             readBoatList("voor welke soort boten het onderdeel optioneel is")));
         }
-       // if (input.equalsIgnoreCase("customer type toevoegen")) {
-         //   Info.addOption(new Option(askQuestionForStringInput("Wat voor soort klant is het?"),
-           // askQuestionForStringInt("Wat is de prijs voor deze klant?"),
-            //askQuestionForStringInt("Wat is het kortingspercentage voor dit klanttype?");
-            //askQuestionForStringInt();
-       // }
-    }
+}
     public ArrayList<String> readCustomerType (String question) {
         ArrayList customerType = new ArrayList();
         String userinput = MakeQuote.inputQuestion(question);
