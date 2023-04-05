@@ -122,7 +122,7 @@ class GovermentCustomer extends Customer {
     @Override
     public void printCustomer(){
         super.printCustomer();
-        System.out.printf("Ministerie: %s%n", this.ministry);
+        Printer.printLine("Ministerie: " + this.ministry);
     }
 }
 
