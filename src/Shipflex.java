@@ -22,7 +22,7 @@ public class Shipflex {
                     startMaintenance();
                     break;
                 default:
-                    System.out.println("Incorrecte invoer!");
+                    Printer.printLine("Incorrecte invoer!");
                     startText();
 
             }
@@ -31,17 +31,17 @@ public class Shipflex {
 
     public static void welcomeText(){
         //standaard welcome tekst
-        System.out.printf("Welcome by shipflex%n");
+        Printer.printLine("Welcome by shipflex");
     }
 
     public static void startText(){
-        System.out.println("Commands: [0]stop, [1]maak offerte, [2]onderhoud");
-        System.out.print("Voer een command in: ");
+        Printer.printLine("Commands: [0]stop, [1]maak offerte, [2]onderhoud");
+        Printer.print("Voer een command in: ");
     }
 
     public static void startMakeQuote(){
         Info.readOptionsFromFile("src/data/options.csv");
-        System.out.print("Voer het boot type in: ");
+        Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
     }
