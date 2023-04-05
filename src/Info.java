@@ -69,7 +69,7 @@ public class Info {
     private static void printOptionsInList(List<Option> options, List<Integer> indexes) {
         for(int i = 0; i < options.size(); i++) { // Indexes en options zijn altijd even lang dus maakt niet uit welke size je gebruikt
             printOptionInfo(options.get(i), indexes.get(i));
-            System.out.println();
+            Printer.printLine("");
         }
     }
 
@@ -77,13 +77,13 @@ public class Info {
     public static void printOptionInfo(Option option, int index) {
         String stringIndex = (index == -1 ? "X" : String.valueOf(index));
 
-        System.out.println("[" + stringIndex + "] Optie: " + option.getName());
-        System.out.println("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
+        Printer.printLine("[" + stringIndex + "] Optie: " + option.getName());
+        Printer.printLine("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())
-            System.out.println("Prijs incl. korting: " + option.calculateEnvironmentDiscount());
+            Printer.printLine("Prijs incl. korting: " + option.calculateEnvironmentDiscount());
 
         if(option.getDescription() != null)
-            System.out.println("Beschrijving: " + option.getDescription());
+            Printer.printLine("Beschrijving: " + option.getDescription());
     }
 }
