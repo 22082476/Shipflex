@@ -1,9 +1,11 @@
-import DataInOut.Printer;
+package Customer;
+
+import DataInOut.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class   Customer {
+public class Customer {
     protected String name;
     protected String street;
     protected String postcode;
@@ -46,6 +48,10 @@ class   Customer {
         this.discount = discount;
     }
 
+    public void addExtraGegeven(String type, String value) {
+        this.extraGegevens.put(type, value);
+    }
+
     public String getName() {
         return name;
     }
@@ -70,10 +76,6 @@ class   Customer {
         return discount;
     }
 
-    public void addExtraGegeven(String type, String value) {
-        this.extraGegevens.put(type, value);
-    }
-
     public void printCustomer(){
         Printer.printLine("Naam: " + this.name);
         Printer.printLine("Straat: " + this.street);
@@ -88,80 +90,5 @@ class   Customer {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }
         }
-    }
-}
-
-class BusinessCustomer extends Customer{
-    // class company moet nog aangemaakt worden
-    private String companyname;
-
-
-
-    public BusinessCustomer(String name, String street, String postcode, String city, int houseNumber, int discount, String companyname){
-        super(name,street,postcode,city,houseNumber,discount);
-        this.companyname = companyname;
-
-    }
-
-    public String getCompany() {
-        return companyname;
-    }
-
-    public void setCompany(String companyname) {
-        this.companyname = companyname;
-    }
-
-    @Override
-    public void printCustomer(){
-        Printer.printLine("Bedrijfsnaam: " + this.companyname);
-        super.printCustomer();
-    }
-}
-
-class GovermentCustomer extends Customer {
-
-    private String ministry;
-
-    public GovermentCustomer (String name, String street, String postcode, String city, int houseNumber, int discount ,String ministry){
-        super(name, street, postcode, city, houseNumber,discount);
-        this.ministry = ministry;
-    }
-
-    public String getMinisty() {
-        return ministry;
-    }
-
-    public void setMinisty(String ministy) {
-        this.ministry = ministy;
-    }
-
-    @Override
-    public void printCustomer(){
-        Printer.printLine("Ministerie: " + this.ministry);
-        super.printCustomer();
-    }
-}
-
-class FoundationCustomer extends Customer {
-
-    private String foundation;
-
-    public FoundationCustomer (String name, String street, String postcode, String city, int houseNumber, int discount, String foundation){
-        super(name, street, postcode, city, houseNumber,discount);
-        this.foundation = foundation;
-    }
-
-    public String getFoundation() {
-        return foundation;
-    }
-
-    public void setFoundation(String foundation) {
-        this.foundation = foundation;
-    }
-
-    @Override
-    public void printCustomer(){
-        Printer.printLine("Stichting: " + this.foundation);
-        super.printCustomer();
     }
 }

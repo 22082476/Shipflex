@@ -1,7 +1,9 @@
+package Shipflex;
+
+import DataInOut.*;
+
+
 public class Shipflex {
-
-    private static ScanInput in = new ScanInput();
-
     private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
 
     public static void main(String[] args) {
@@ -35,7 +37,7 @@ public class Shipflex {
     }
 
     public static void startText(){
-        Printer.printLine("Commands: [0]stop, [1]maak offerte, [2]onderhoud");
+        Printer.printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
         Printer.print("Voer een command in: ");
     }
 

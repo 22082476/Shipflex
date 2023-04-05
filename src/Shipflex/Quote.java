@@ -1,3 +1,10 @@
+package Shipflex;
+
+import Boat.*;
+import Customer.*;
+import DataInOut.*;
+
+
 public class Quote {
     private Company companyShipbuild;
 

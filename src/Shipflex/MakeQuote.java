@@ -1,10 +1,15 @@
+package Shipflex;
+
+import Boat.*;
+import Customer.*;
+import DataInOut.*;
+
 import java.util.List;
 
 public class MakeQuote {
-//    private String boatType;
     private Boat boat;
     private Quote quote;
-    private Info dataInput = new Info();
+
 
     public MakeQuote(String boatType, Company company){
         this.boat = getFromTypeBoat(boatType);
@@ -44,7 +49,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        Printer.printLine("Commands: [0]terug, [1]voeg klant toe, [2]wijzig klant, [3]laat klant zien, [4]beschikbare opties, [5]gekozen opties, [6]voeg optie toe");
+        Printer.printLine("Commands: [0] terug, [1] voeg klant toe, [2] wijzig klant, [3] laat klant zien, [4] beschikbare opties, [5] gekozen opties, [6] voeg optie toe");
         Printer.print("Voer een command in: ");
     }
 
@@ -66,20 +71,20 @@ public class MakeQuote {
 
 
     public void askCustomer(){
-        String customerType = inputQuestion("soort klant");
+        String customerType = ScanInput.inputQuestion("soort klant");
 
         switch (customerType){
             case "zakelijk":
-                quote.setBusinessCustomer(new BusinessCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de bedrijf")));
+                quote.setBusinessCustomer(new BusinessCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de bedrijf")));
                 break;
             case "overheid":
-                quote.setGovermentCustomer(new GovermentCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de ministerie")));
+                quote.setGovermentCustomer(new GovermentCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de ministerie")));
                 break;
             case "stichting":
-                quote.setFoundationCustomer(new FoundationCustomer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage"), inputQuestion("de naam van de stiching")));
+                quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
                 break;
             default:
-                quote.setCustomer(new Customer(inputQuestion("de naam"), inputQuestion("de straat"), inputQuestion("de postcode"), inputQuestion("de plaats"), inputNumber("het huisnummer"), inputNumber("het korting percentage")));
+                quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage")));
                 break;
         }
 
@@ -89,9 +94,9 @@ public class MakeQuote {
     public void selectOption() {
         List<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
 
-        String inputString = inputQuestion("de nummer van de optie (stop om te stoppen)");
+        String inputString = ScanInput.inputQuestion("de nummer van de optie (stop om te stoppen)");
 
-        if(!ableToParse(inputString)) {
+        if(!ScanInput.ableToParse(inputString)) {
             if(inputString.equalsIgnoreCase("stop")) {
                 return;
             }
@@ -112,7 +117,7 @@ public class MakeQuote {
             quote.getBoat().addOption(Info.getOptions().get(optionIndex));
             Printer.printLine("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
 
-            String answer = inputQuestion("ja of nee voor milieukorting");
+            String answer = ScanInput.inputQuestion("ja of nee voor milieukorting");
 
             if(!answer.equalsIgnoreCase("ja")) {
                 Printer.printLine("Geen milieukorting toegepast voor optie " + Info.getOptions().get(optionIndex).getName());
@@ -124,9 +129,9 @@ public class MakeQuote {
     }
 
     public void askEnvironmentDiscountForOption(Option option) {
-        String inputString = inputQuestion("de milieukorting percentage");
+        String inputString = ScanInput.inputQuestion("de milieukorting percentage");
 
-        if(!ableToParse(inputString)) {
+        if(!ScanInput.ableToParse(inputString)) {
             Printer.printLine("Geen nummer ingevuld!");
             delaySelectOption();
             return;
@@ -156,35 +161,9 @@ public class MakeQuote {
         selectOption();
     }
 
-    public static String inputQuestion(String soort){
-        Printer.print("Voer " + soort + " in: ");
-
-        return ScanInput.scanInH();
-    }
-
-    public static int inputNumber(String question){
-       String input = inputQuestion(question);
-       if(ableToParse(input)){
-           return Integer.parseInt(input);
-       }else {
-           Printer.printLine("Geen nummer!");
-           inputNumber(question);
-       }
-       return 0;
-    }
-
-    private static boolean ableToParse(String text) {
-        try {
-            Integer.parseInt(text);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
     private void askForExtraGegevens() {
         Printer.printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
-        String input = inputQuestion("ja of nee in voor extra gegevens");
+        String input = ScanInput.inputQuestion("ja of nee in voor extra gegevens");
         String[] gegevens;
 
         if(input.equalsIgnoreCase("ja")) {
@@ -203,8 +182,8 @@ public class MakeQuote {
     }
 
     private String[] getExtraGegevensFromInput() {
-        String key = inputQuestion("de type gegeven (bijv. 'email')");
-        String value = inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
+        String key = ScanInput.inputQuestion("de type gegeven (bijv. 'email')");
+        String value = ScanInput.inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
 
         String[] ret = {key, value};
 

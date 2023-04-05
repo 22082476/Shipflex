@@ -1,3 +1,5 @@
+package Boat;
+
 import java.util.List;
 
 public class Option {
@@ -12,7 +14,7 @@ public class Option {
 
     private List<String> extraForBoatType;
 
-    Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType) {
+    public Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -21,7 +23,7 @@ public class Option {
         this.extraForBoatType = extraForBoatType;
     }
 
-    Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType, String description){
+    public Option(String name, double price, String type, int environmentDiscount, List<String> essentialForBoatType, List<String> extraForBoatType, String description){
         this(name, price, type, environmentDiscount, essentialForBoatType, extraForBoatType);
         this.description = description;
     }

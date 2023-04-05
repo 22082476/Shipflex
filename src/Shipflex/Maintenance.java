@@ -1,3 +1,9 @@
+package Shipflex;
+
+import Boat.*;
+import DataInOut.Info;
+import DataInOut.ScanInput;
+
 import java.util.ArrayList;
 
 public class Maintenance {
@@ -5,7 +11,7 @@ public class Maintenance {
 
     public ArrayList<String> readBoatList(String question) {
         ArrayList boatList = new ArrayList();
-        String userinput = MakeQuote.inputQuestion(question);
+        String userinput = ScanInput.inputQuestion(question);
         if(!userinput.equalsIgnoreCase("stop")) {
             if (!boatList.equals("")) {
                 boatList.add(userinput);
@@ -16,13 +22,13 @@ public class Maintenance {
     }
     public void start(){
         String input;
-        input = MakeQuote.inputQuestion(" optie toevoegen of customer type toevoegen");
+        input = ScanInput.inputQuestion("optie toevoegen of customer type toevoegen");
 
         if(input.equalsIgnoreCase("optie toevoegen")) {
-            Info.addOption(new Option(MakeQuote.inputQuestion("de naam van het onderdeel"),
-            MakeQuote.inputNumber("de prijs van het onderdeel"),
-            MakeQuote.inputQuestion("soort van onderdeel"),
-            MakeQuote.inputNumber("het kortingsperctentage"),
+            Info.addOption(new Option(ScanInput.inputQuestion("de naam van het onderdeel"),
+            ScanInput.inputNumberD("de prijs(bijv. 1.00) van het onderdeel"),
+            ScanInput.inputQuestion("soort van onderdeel"),
+            ScanInput.inputNumber("het kortingsperctentage"),
             readBoatList("voor welke soort boten het onderdeel essentieel is"),
             readBoatList("voor welke soort boten het onderdeel optioneel is")));
         }

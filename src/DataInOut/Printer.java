@@ -1,3 +1,5 @@
+package DataInOut;
+
 public class Printer {
 
 public static void print(String text){
@@ -10,6 +12,12 @@ public static void printLine(String text){
 
 public static void empytLine(){
     printLine("");
+}
+
+public static void printSpaces(int number){
+    for(int i = 1; i <= number; i++){
+        print(" ");
+    }
 }
 
 
