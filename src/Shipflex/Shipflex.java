@@ -1,3 +1,8 @@
+package Shipflex;
+
+import DataInOut.*;
+
+
 public class Shipflex {
 
     private static ScanInput in = new ScanInput();
