@@ -90,7 +90,6 @@ public class Quote {
         for (Option option : this.boat.getOptions()) {
             Info.printOptionInfo(option, -1);
         }
-        printBasicInformation();
     }
 
     public void printBasicInformation() {
