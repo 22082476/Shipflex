@@ -93,11 +93,18 @@ public class Quote {
     }
 
     public void printBasicInformation() {
+
         companyShipbuild.getName();
         companyShipbuild.getStreet();
         companyShipbuild.getHousenumber();
         companyShipbuild.getPostcode();
         companyShipbuild.getCity();
+        Printer.printLine(companyShipbuild.getName());
+        Printer.print(companyShipbuild.getStreet());
+        Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
+        Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
+        Printer.printLine(companyShipbuild.getCity());
+
 
 
         if (customer != null) {
@@ -106,18 +113,33 @@ public class Quote {
             customer.getHouseNumber();
             customer.getPostcode();
             customer.getCity();
+            Printer.printLine(customer.getName());
+            Printer.print(customer.getStreet());
+            Printer.print(String.valueOf(customer.getHouseNumber()));
+            Printer.printLine(String.valueOf(customer.getPostcode()));
+            Printer.printLine(customer.getCity());
         } else if (businessCustomer != null) {
             businessCustomer.getName();
             businessCustomer.getStreet();
             businessCustomer.getHouseNumber();
             businessCustomer.getPostcode();
             businessCustomer.getCity();
+            Printer.printLine(customer.getName());
+            Printer.print(customer.getStreet());
+            Printer.print(String.valueOf(customer.getHouseNumber()));
+            Printer.printLine(String.valueOf(customer.getPostcode()));
+            Printer.printLine(customer.getCity());
         } else if (govermentCustomer != null) {
             govermentCustomer.getName();
             govermentCustomer.getStreet();
             govermentCustomer.getHouseNumber();
             govermentCustomer.getPostcode();
             govermentCustomer.getCity();
+            Printer.printLine(customer.getName());
+            Printer.print(customer.getStreet());
+            Printer.print(String.valueOf(customer.getHouseNumber()));
+            Printer.printLine(String.valueOf(customer.getPostcode()));
+            Printer.printLine(customer.getCity());
         } else if (foundationCustomer != null) {
             foundationCustomer.getName();
             foundationCustomer.getFoundation();
@@ -125,6 +147,11 @@ public class Quote {
             foundationCustomer.getHouseNumber();
             foundationCustomer.getPostcode();
             foundationCustomer.getCity();
+            Printer.printLine(customer.getName());
+            Printer.print(customer.getStreet());
+            Printer.print(String.valueOf(customer.getHouseNumber()));
+            Printer.printLine(String.valueOf(customer.getPostcode()));
+            Printer.printLine(customer.getCity());
         } else {
             Printer.printLine("Nog geen klant toegevoegd");
         }
@@ -133,5 +160,9 @@ public class Quote {
         boat.getType();
         boat.getBasePrice();
         boat.getOptions();
+        Printer.printLine(boat.getName());
+        Printer.printLine(boat.getType());
+        Printer.print(String.valueOf(boat.getBasePrice()));
+        Printer.printLine(String.valueOf(boat.getOptions()));
     }
 }
