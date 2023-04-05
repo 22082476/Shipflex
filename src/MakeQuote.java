@@ -150,16 +150,16 @@ public class MakeQuote {
         selectOption();
     }
 
-    private String inputQuestion(String soort){
+    public static String inputQuestion(String soort){
         Printer.print("Voer " + soort + " in: ");
 
         return ScanInput.scanInH();
     }
 
-    private int inputNumber(String question){
-       String string = inputQuestion(question);
-       if(ableToParse(question)){
-           return Integer.parseInt(question);
+    public static int inputNumber(String question){
+       String input = inputQuestion(question);
+       if(ableToParse(input)){
+           return Integer.parseInt(input);
        }else {
            Printer.printLine("Geen nummer!");
            inputNumber(question);
@@ -167,7 +167,7 @@ public class MakeQuote {
        return 0;
     }
 
-    private boolean ableToParse(String text) {
+    private static boolean ableToParse(String text) {
         try {
             Integer.parseInt(text);
             return true;
