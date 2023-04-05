@@ -81,7 +81,7 @@ public class Quote {
         } else if (foundationCustomer != null) {
             foundationCustomer.printCustomer();
         }else {
-            System.out.println("Nog geen klant toegevoegd");
+            Printer.printLine("Nog geen klant toegevoegd");
         }
     }
 
