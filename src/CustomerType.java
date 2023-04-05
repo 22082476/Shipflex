@@ -65,12 +65,13 @@ class Customer {
     }
 
     public void printCustomer(){
-        System.out.printf("Naam: %s%n", this.name);
-        System.out.printf("Straat: %s%n", this.street);
-        System.out.printf("Postcode: %s%n", this.postcode);
-        System.out.printf("Stad: %s%n", this.city);
-        System.out.printf("Huisnummer: %d%n", this.houseNumber);
-        System.out.printf("Kortingpercentage: %d%n", this.discount);
+        Printer.printLine("Naam: " + this.name);
+        Printer.printLine("Straat: " + this.street);
+        Printer.printLine("Postcode: " + this.postcode);
+        Printer.printLine("Stad: " + this.street);
+        Printer.printLine("Huisnummer: " + this.houseNumber);
+        Printer.printLine("Kortingpercentage: " + this.discount);
+
     }
 }
 
