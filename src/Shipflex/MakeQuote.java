@@ -50,7 +50,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        Printer.printLine("Commands: [0]terug, [1]voeg klant toe, [2]wijzig klant, [3]laat klant zien, [4]beschikbare opties, [5]gekozen opties, [6]voeg optie toe");
+        Printer.printLine("Commands: [0] terug, [1] voeg klant toe, [2] wijzig klant, [3] laat klant zien, [4] beschikbare opties, [5] gekozen opties, [6] voeg optie toe");
         Printer.print("Voer een command in: ");
     }
 
