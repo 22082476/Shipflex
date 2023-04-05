@@ -90,6 +90,7 @@ public class Quote {
         for (Option option : this.boat.getOptions()) {
             Info.printOptionInfo(option, -1);
         }
+        printBasicInformation();
     }
 
     public void printBasicInformation() {
@@ -108,58 +109,33 @@ public class Quote {
 
 
         if (customer != null) {
-            customer.getName();
-            customer.getStreet();
-            customer.getHouseNumber();
-            customer.getPostcode();
-            customer.getCity();
             Printer.printLine(customer.getName());
             Printer.print(customer.getStreet());
             Printer.print(String.valueOf(customer.getHouseNumber()));
             Printer.printLine(String.valueOf(customer.getPostcode()));
             Printer.printLine(customer.getCity());
         } else if (businessCustomer != null) {
-            businessCustomer.getName();
-            businessCustomer.getStreet();
-            businessCustomer.getHouseNumber();
-            businessCustomer.getPostcode();
-            businessCustomer.getCity();
-            Printer.printLine(customer.getName());
-            Printer.print(customer.getStreet());
-            Printer.print(String.valueOf(customer.getHouseNumber()));
-            Printer.printLine(String.valueOf(customer.getPostcode()));
-            Printer.printLine(customer.getCity());
+            Printer.printLine(businessCustomer.getName());
+            Printer.print(businessCustomer.getStreet());
+            Printer.print(String.valueOf(businessCustomer.getHouseNumber()));
+            Printer.printLine(String.valueOf(businessCustomer.getPostcode()));
+            Printer.printLine(businessCustomer.getCity());
         } else if (govermentCustomer != null) {
-            govermentCustomer.getName();
-            govermentCustomer.getStreet();
-            govermentCustomer.getHouseNumber();
-            govermentCustomer.getPostcode();
-            govermentCustomer.getCity();
-            Printer.printLine(customer.getName());
-            Printer.print(customer.getStreet());
-            Printer.print(String.valueOf(customer.getHouseNumber()));
-            Printer.printLine(String.valueOf(customer.getPostcode()));
-            Printer.printLine(customer.getCity());
+            Printer.printLine(govermentCustomer.getName());
+            Printer.print(govermentCustomer.getStreet());
+            Printer.print(String.valueOf(govermentCustomer.getHouseNumber()));
+            Printer.printLine(String.valueOf(govermentCustomer.getPostcode()));
+            Printer.printLine(govermentCustomer.getCity());
         } else if (foundationCustomer != null) {
-            foundationCustomer.getName();
-            foundationCustomer.getFoundation();
-            foundationCustomer.getStreet();
-            foundationCustomer.getHouseNumber();
-            foundationCustomer.getPostcode();
-            foundationCustomer.getCity();
-            Printer.printLine(customer.getName());
-            Printer.print(customer.getStreet());
-            Printer.print(String.valueOf(customer.getHouseNumber()));
-            Printer.printLine(String.valueOf(customer.getPostcode()));
-            Printer.printLine(customer.getCity());
+            Printer.printLine(foundationCustomer.getName());
+            Printer.print(foundationCustomer.getStreet());
+            Printer.print(String.valueOf(foundationCustomer.getHouseNumber()));
+            Printer.printLine(String.valueOf(foundationCustomer.getPostcode()));
+            Printer.printLine(foundationCustomer.getCity());
         } else {
             Printer.printLine("Nog geen klant toegevoegd");
         }
 
-        boat.getName();
-        boat.getType();
-        boat.getBasePrice();
-        boat.getOptions();
         Printer.printLine(boat.getName());
         Printer.printLine(boat.getType());
         Printer.print(String.valueOf(boat.getBasePrice()));

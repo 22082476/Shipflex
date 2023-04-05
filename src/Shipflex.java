@@ -40,7 +40,7 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        Info.readOptionsFromFile("src/data/options.csv");
+        //Info.readOptionsFromFile("src/data/options.csv");
         Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
