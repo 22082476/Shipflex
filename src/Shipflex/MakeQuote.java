@@ -4,7 +4,6 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
-
 import java.util.List;
 
 public class MakeQuote {
@@ -72,10 +71,9 @@ public class MakeQuote {
 
 
     public void askCustomer(){
-        Printer.print("Voer soort klant in: ");
-        String typcustomer = ScanInput.scanInL();
+        String customerType = ScanInput.inputQuestion("soort klant");
 
-        switch (typcustomer){
+        switch (customerType){
             case "zakelijk":
                 quote.setBusinessCustomer(new BusinessCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de bedrijf")));
                 break;
@@ -89,6 +87,8 @@ public class MakeQuote {
                 quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage")));
                 break;
         }
+
+        askForExtraGegevens();
     }
 
     public void selectOption() {
@@ -161,29 +161,32 @@ public class MakeQuote {
         selectOption();
     }
 
-//    public static String inputQuestion(String soort){
-//        Printer.print("Voer " + soort + " in: ");
-//
-//        return ScanInput.scanInH();
-//    }
-//
-//    public static int inputNumber(String question){
-//       String input = inputQuestion(question);
-//       if(ableToParse(input)){
-//           return Integer.parseInt(input);
-//       }else {
-//           Printer.printLine("Geen nummer!");
-//           inputNumber(question);
-//       }
-//       return 0;
-//    }
+    private void askForExtraGegevens() {
+        Printer.printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
+        String input = ScanInput.inputQuestion("ja of nee in voor extra gegevens");
+        String[] gegevens;
 
-//    private static boolean ableToParse(String text) {
-//        try {
-//            Integer.parseInt(text);
-//            return true;
-//        } catch (NumberFormatException e) {
-//            return false;
-//        }
-//    }
+        if(input.equalsIgnoreCase("ja")) {
+            gegevens = getExtraGegevensFromInput();
+            if(quote.getCustomer() != null)
+                quote.getCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getBusinessCustomer() != null)
+                quote.getBusinessCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getFoundationCustomer() != null)
+                quote.getFoundationCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            else if (quote.getGovermentCustomer() != null)
+                quote.getGovermentCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+
+            askForExtraGegevens();
+        }
+    }
+
+    private String[] getExtraGegevensFromInput() {
+        String key = ScanInput.inputQuestion("de type gegeven (bijv. 'email')");
+        String value = ScanInput.inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
+
+        String[] ret = {key, value};
+
+        return ret;
+    }
 }
