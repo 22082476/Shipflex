@@ -10,7 +10,7 @@ public class Quote {
     private Boat boat;
 
 
-    public Quote(Company companyShipbuild, Boat boat){
+    public Quote(Company companyShipbuild, Boat boat) {
         this.companyShipbuild = companyShipbuild;
         this.businessCustomer = null;
         this.customer = null;
@@ -72,8 +72,8 @@ public class Quote {
         return boat;
     }
 
-    public void printCustomer(){
-        if(govermentCustomer != null){
+    public void printCustomer() {
+        if (govermentCustomer != null) {
             govermentCustomer.printCustomer();
         } else if (businessCustomer != null) {
             businessCustomer.printCustomer();
@@ -81,18 +81,18 @@ public class Quote {
             customer.printCustomer();
         } else if (foundationCustomer != null) {
             foundationCustomer.printCustomer();
-        }else {
+        } else {
             Printer.printLine("Nog geen klant toegevoegd");
         }
     }
 
     public void printOptions() {
-        for(Option option : this.boat.getOptions()) {
+        for (Option option : this.boat.getOptions()) {
             Info.printOptionInfo(option, -1);
         }
     }
 
-    public void printBasicInformation (){
+    public void printBasicInformation() {
         companyShipbuild.getName();
         companyShipbuild.getStreet();
         companyShipbuild.getHousenumber();
@@ -100,44 +100,38 @@ public class Quote {
         companyShipbuild.getCity();
 
 
-     if (customer != null){
-         customer.getName();
-         customer.getStreet();
-         customer.getHouseNumber();
-         customer.getPostcode();
-         customer.getCity();
-     }
-     else if (businessCustomer != null) {
-         businessCustomer.getName();
-         businessCustomer.getStreet();
-         businessCustomer.getHouseNumber();
-         businessCustomer.getPostcode();
-         businessCustomer.getCity();
-     }
-     else if (govermentCustomer != null) {
-         govermentCustomer.getName();
-         govermentCustomer.getStreet();
-         govermentCustomer.getHouseNumber();
-         govermentCustomer.getPostcode();
-         govermentCustomer.getCity();
-     }
-     else if(foundationCustomer != null){
-         foundationCustomer.getName();
-         foundationCustomer.getFoundation();
-         foundationCustomer.getStreet();
-         foundationCustomer.getHouseNumber();
-         foundationCustomer.getPostcode();
-         foundationCustomer.getCity();
-        }
-     else {
-         Printer.printLine("Nog geen klant toegevoegd");
+        if (customer != null) {
+            customer.getName();
+            customer.getStreet();
+            customer.getHouseNumber();
+            customer.getPostcode();
+            customer.getCity();
+        } else if (businessCustomer != null) {
+            businessCustomer.getName();
+            businessCustomer.getStreet();
+            businessCustomer.getHouseNumber();
+            businessCustomer.getPostcode();
+            businessCustomer.getCity();
+        } else if (govermentCustomer != null) {
+            govermentCustomer.getName();
+            govermentCustomer.getStreet();
+            govermentCustomer.getHouseNumber();
+            govermentCustomer.getPostcode();
+            govermentCustomer.getCity();
+        } else if (foundationCustomer != null) {
+            foundationCustomer.getName();
+            foundationCustomer.getFoundation();
+            foundationCustomer.getStreet();
+            foundationCustomer.getHouseNumber();
+            foundationCustomer.getPostcode();
+            foundationCustomer.getCity();
+        } else {
+            Printer.printLine("Nog geen klant toegevoegd");
         }
 
-     boat.getName();
-     boat.getType();
-     boat.getBasePrice();
-     boat.getOptions();
-
-
+        boat.getName();
+        boat.getType();
+        boat.getBasePrice();
+        boat.getOptions();
     }
 }
