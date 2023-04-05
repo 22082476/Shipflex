@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Maintenance {
-    private static ScanInput input = new ScanInput();
+
 
     public ArrayList<String> readBoatList(String question) {
         ArrayList boatList = new ArrayList();
