@@ -50,29 +50,39 @@ public class Info {
 
     public static List<Integer> printOptionsForBoatType(String boatType) {
         System.out.println();
+
         List<Integer> validOptionsIndexes = new ArrayList<>();
-        List<Option> validOptions = new ArrayList<>();
+        List<Option> essentialOptions = new ArrayList<>();
+        List<Option> extraOptions = new ArrayList<>();
 
         int index = 0;
 
         for(Option option : options) {
-            if(option.getEssentialForBoatType().contains(boatType.toLowerCase()) || option.getExtraForBoatType().contains(boatType.toLowerCase())) {
-                validOptions.add(option);
-                validOptionsIndexes.add(index);
+            if(option.getEssentialForBoatType().contains(boatType.toLowerCase())) {
+                essentialOptions.add(option);
+            } else if (option.getExtraForBoatType().contains(boatType.toLowerCase())) {
+                extraOptions.add(option);
             }
 
+            validOptionsIndexes.add(index);
             index++;
         }
 
-        printOptionsInList(validOptions, validOptionsIndexes);
+        Printer.printLine("ESSENTIËLE OPTIES");
+        Printer.emptyLine();
+        printOptionsInList(essentialOptions);
+
+        Printer.printLine("EXTRA OPTIES");
+        Printer.emptyLine();
+        printOptionsInList(extraOptions);
 
         return validOptionsIndexes;
     }
 
-    private static void printOptionsInList(List<Option> options, List<Integer> indexes) {
+    private static void printOptionsInList(List<Option> options) {
         for(int i = 0; i < options.size(); i++) { // Indexes en options zijn altijd even lang dus maakt niet uit welke size je gebruikt
-            printOptionInfo(options.get(i), indexes.get(i));
-            Printer.printLine("");
+            printOptionInfo(options.get(i), getOptions().indexOf(options.get(i)));
+            Printer.emptyLine();
         }
     }
 

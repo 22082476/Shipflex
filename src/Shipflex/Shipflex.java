@@ -45,7 +45,7 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        Printer.print("Voer het boot type in(rubberboot, zeilboot, speedboot, plezierjacht): ");
+        Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
     }

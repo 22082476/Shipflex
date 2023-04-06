@@ -41,8 +41,8 @@ public class MakeQuote {
                     Info.printOptionsForBoatType(quote.getBoat().getType());
                     break;
                case 5:
-                   Printer.emptyLine();
-                    quote.printOptions();
+                    quote.printOptions(false);
+                    Printer.emptyLine();
                     break;
                 case 6:
                     Printer.emptyLine();
@@ -58,6 +58,9 @@ public class MakeQuote {
                 case 9:
                     Printer.emptyLine();
                     quote.printBasicInformation();
+                    break;
+                case 10:
+                    removeOptionFromBoat();
                     break;
                 default:
                     Printer.emptyLine();
@@ -78,7 +81,7 @@ public class MakeQuote {
     }
 
     private void printTextGenerateQuote(){
-        String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien"};
+        String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien", "optie weghalen"};
         Printer.print("Commands: ");
         for(int i = 0; i < input.length; i++){
             if(i == input.length-1){
@@ -86,6 +89,9 @@ public class MakeQuote {
             }else {
                 Printer.print("[" +i+ "] " + input[i] + ", ");
             }
+
+            if (i == input.length / 2)
+                Printer.emptyLine();
         }
         Printer.print("Voer een command in: ");
     }
@@ -225,5 +231,19 @@ public class MakeQuote {
         String[] ret = {key, value};
 
         return ret;
+    }
+
+    private void removeOptionFromBoat() {
+        quote.printOptions(true);
+        int indexInput = ScanInput.inputNumber("de nummer in van de optie die je wilt weghalen");
+        Option option = Info.getOptions().get(indexInput);
+
+        if(!quote.getBoat().getOptions().contains(option)) {
+            Printer.printLine("Die nummer zit niet in de lijst, probeer opnieuw.");
+        } else {
+            quote.getBoat().removeOption(option);
+        }
+
+        Printer.printLine("Je hebt optie " + option.getName() + " weggehaald.");
     }
 }
