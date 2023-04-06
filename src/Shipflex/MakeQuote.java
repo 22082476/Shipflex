@@ -30,6 +30,16 @@ public class MakeQuote {
                     MakeQuoteGeneral makeQuoteGeneral = new MakeQuoteGeneral();
                     makeQuoteGeneral.start();
                     break;
+                case 2:
+                    Printer.emptyLine();
+                    MakeQuoteCustomer makeQuoteCustomer = new MakeQuoteCustomer();
+                    makeQuoteCustomer.start();
+                    break;
+                case 3:
+                    Printer.emptyLine();
+                    MakeQuoteBoat makeQuoteBoat = new MakeQuoteBoat();
+                    makeQuoteBoat.start();
+                    break;
                 default:
                     Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
