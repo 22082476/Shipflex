@@ -49,7 +49,7 @@ public class MakeQuote {
                     askBasicInfo();
                     break;
                 case 9:
-                    quote.printDate();
+                    quote.printBasicInformation();
                     break;
                 default:
                     Printer.printLine("Incorrecte invoer!");
@@ -173,7 +173,8 @@ public class MakeQuote {
         }
 
         option.setEnvironmentDiscount(discount);
-        Printer.printLine("Je hebt " + discount + "% milieukorting toegevoegd aan optie " + option.getName());
+//        System.out.println("Je hebt " + discount + "% milieukorting toegevoegd aan optie " + option.getName());
+        Printer.printLine("Je hebt " + discount + "%% milieukorting toegevoegd aan optie " + option.getName());
 
         delaySelectOption();
     }
