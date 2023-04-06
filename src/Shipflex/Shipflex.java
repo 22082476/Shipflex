@@ -2,6 +2,8 @@ package Shipflex;
 
 import DataInOut.*;
 
+import static DataInOut.ScanInput.inputNumber;
+
 
 public class Shipflex {
     private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
@@ -11,7 +13,7 @@ public class Shipflex {
 
         while (true) {
             startText();
-            int inputIndex = ScanInput.scanInt();
+            int inputIndex = inputNumber("een command");
 
             switch (inputIndex) {
                 case 0:
@@ -25,8 +27,6 @@ public class Shipflex {
                     break;
                 default:
                     Printer.printLine("Incorrecte invoer!");
-                    startText();
-
             }
         }
     }
@@ -38,7 +38,6 @@ public class Shipflex {
 
     public static void startText(){
         Printer.printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
-        Printer.print("Voer een command in: ");
     }
 
     public static void startMakeQuote(){
