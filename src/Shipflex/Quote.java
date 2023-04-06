@@ -128,8 +128,8 @@ public class Quote {
     }
 
     public void printDate(){
-        Printer.printLine(this.Date);
-        Printer.printLine(this.QuoteDate);
+        Printer.printLine("Datum: " + this.Date);
+        Printer.printLine("Geldigsheid datum: " + this.QuoteDate);
     }
 
 
