@@ -80,7 +80,7 @@ public class Info {
     }
 
     private static void printOptionsInList(List<Option> options) {
-        for(int i = 0; i < options.size(); i++) { // Indexes en options zijn altijd even lang dus maakt niet uit welke size je gebruikt
+        for(int i = 0; i < options.size(); i++) {
             printOptionInfo(options.get(i), getOptions().indexOf(options.get(i)));
             Printer.emptyLine();
         }
