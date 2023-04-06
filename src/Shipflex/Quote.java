@@ -140,7 +140,7 @@ public class Quote {
         Printer.empytLine();
        printDate();
         Printer.empytLine();
-       Printer.printLine(this.about);
+       Printer.printLine("Betreft: " + this.about);
         Printer.empytLine();
 
 
