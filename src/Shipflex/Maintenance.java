@@ -29,8 +29,8 @@ public class Maintenance {
             ScanInput.inputNumberD("de prijs(bijv. 1.00) van het onderdeel"),
             ScanInput.inputQuestion("categorie van onderdeel"),
             0,
-            readBoatList("voor welke soort boten het onderdeel essentieel is"),
-            readBoatList("voor welke soort boten het onderdeel optioneel is")));
+            readBoatList("voor welke soort boten het onderdeel essentieel is (stop om te stoppen)"),
+            readBoatList("voor welke soort boten het onderdeel optioneel is (stop om te stoppen)")));
         }
     }
 }
