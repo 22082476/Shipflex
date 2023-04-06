@@ -6,7 +6,7 @@ import static DataInOut.ScanInput.inputNumber;
 
 
 public class Shipflex {
-    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
+    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000 EA", "Den haag", 14);
 
     public static void main(String[] args) {
         Info.readOptionsFromFile("src/data/options.csv");
@@ -18,12 +18,15 @@ public class Shipflex {
 
             switch (inputIndex) {
                 case 0:
+                    Printer.emptyLine();
                     System.exit(0);
                     break;
                 case 1:
+                    Printer.emptyLine();
                     startMakeQuote();
                     break;
                 case 2:
+                    Printer.emptyLine();
                     startMaintenance();
                     break;
                 default:

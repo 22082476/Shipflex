@@ -122,28 +122,21 @@ public class Quote {
         }
     }
 
-    public void printCompany(){
-        Printer.printLine(companyShipbuild.getName());
-        Printer.print(companyShipbuild.getStreet());
-        Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
-        Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
-        Printer.printLine(companyShipbuild.getCity());
-    }
 
     public void printDate(){
-        Printer.printLine(this.Date);
-        Printer.printLine(this.QuoteDate);
+        Printer.printLine("Datum: " + this.Date);
+        Printer.printLine("Geldigsheid datum: " + this.QuoteDate);
     }
 
 
     public void printBasicInformation() {
-        printCompany();
+        companyShipbuild.printCompany();
         Printer.emptyLine();
         printCustomer();
         Printer.emptyLine();
         printDate();
         Printer.emptyLine();
-        Printer.printLine(this.about);
+        Printer.printLine("Betreft: " + this.about);
         Printer.emptyLine();
     }
 

@@ -94,7 +94,7 @@ public class Info {
         Printer.printLine("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())
-            Printer.printLine("Prijs incl. korting: " + option.calculateEnvironmentDiscount());
+            Printer.printLine(String.format("Prijs incl. korting: %.2f", option.calculateEnvironmentDiscount()));
 
         if(option.getDescription() != null)
             Printer.printLine("Beschrijving: " + option.getDescription());
