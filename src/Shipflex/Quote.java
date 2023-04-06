@@ -12,9 +12,11 @@ public class Quote {
     private BusinessCustomer businessCustomer;
     private GovermentCustomer govermentCustomer;
     private FoundationCustomer foundationCustomer;
-    private String Date;
-    private String QuoteDate;
+    private String date;
+    private String quoteDate;
     private String about;
+
+    private double workHoursCost;
     private Boat boat;
 
 
@@ -56,11 +58,11 @@ public class Quote {
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public void setQuoteDate(String quoteDate) {
-        QuoteDate = quoteDate;
+        this.quoteDate = quoteDate;
     }
 
     public void setBoat(Boat boat) {
@@ -72,7 +74,7 @@ public class Quote {
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public Customer getCustomer() {
@@ -80,7 +82,7 @@ public class Quote {
     }
 
     public String getQuoteDate() {
-        return QuoteDate;
+        return quoteDate;
     }
 
     public Boat getBoat() {
@@ -97,6 +99,14 @@ public class Quote {
 
     public FoundationCustomer getFoundationCustomer() {
         return foundationCustomer;
+    }
+
+    public double getWorkHoursCost() {
+        return workHoursCost;
+    }
+
+    public void setWorkHoursCost(double workHoursCost) {
+        this.workHoursCost = workHoursCost;
     }
 
     public void printCustomer() {
@@ -122,10 +132,17 @@ public class Quote {
         }
     }
 
+    public void printCompany(){
+        Printer.printLine(companyShipbuild.getName());
+        Printer.print(companyShipbuild.getStreet());
+        Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
+        Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
+        Printer.printLine(companyShipbuild.getCity());
+    }
 
     public void printDate(){
-        Printer.printLine("Datum: " + this.Date);
-        Printer.printLine("Geldigsheid datum: " + this.QuoteDate);
+        Printer.printLine("Datum: " + this.date);
+        Printer.printLine("Geldigsheid datum: " + this.quoteDate);
     }
 
 

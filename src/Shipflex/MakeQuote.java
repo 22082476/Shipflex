@@ -1,16 +1,15 @@
 package Shipflex;
 
 import Boat.*;
-import Customer.*;
-import DataInOut.*;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import DataInOut.*;
+import static DataInOut.Printer.printTextGenerateQuote;
 
 public class MakeQuote {
 
-    private Quote quote;
+    protected static Quote quote;
+    private String [] commands = {"terug", "algemeen", "klant", "boot", "offerte printen"};
+
 
 
     public MakeQuote(String boatType, Company company){
@@ -19,83 +18,36 @@ public class MakeQuote {
 
 
     public void start(){
-        askBasicInfo();
-
-        while(true) {
-            printTextGenerateQuote();
+        Printer.emptyLine();
+         while(true) {
+            printTextGenerateQuote(commands);
             int inputIndex = ScanInput.scanInt();
-
+             Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
-                case 1, 2:
-                    Printer.emptyLine();
-                    askCustomer();
+                case 1:
+                    MakeQuoteGeneral makeQuoteGeneral = new MakeQuoteGeneral();
+                    makeQuoteGeneral.start();
+                    break;
+                case 2:
+                    MakeQuoteCustomer makeQuoteCustomer = new MakeQuoteCustomer();
+                    makeQuoteCustomer.start();
                     break;
                 case 3:
-                    Printer.emptyLine();
-                    quote.printCustomer();
+                    MakeQuoteBoat makeQuoteBoat = new MakeQuoteBoat();
+                    makeQuoteBoat.start();
                     break;
-               case 4:
-                   Printer.emptyLine();
-                    Info.printOptionsForBoatType(quote.getBoat().getType());
-                    break;
-               case 5:
-                    quote.printOptions(false);
-                    Printer.emptyLine();
-                    break;
-                case 6:
-                    Printer.emptyLine();
-                    selectOption();
-                    break;
-                case 7:
+                case 4:
                     quote.printQuote();
                     break;
-                case 8:
-                    Printer.emptyLine();
-                    askBasicInfo();
-                    break;
-                case 9:
-                    Printer.emptyLine();
-                    quote.printBasicInformation();
-                    break;
-                case 10:
-                    removeOptionFromBoat();
-                    break;
                 default:
-                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
-
+             Printer.emptyLine();
         }
     }
-
-    public void askBasicInfo(){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = new Date();
-        quote.setDate(sdf.format(date));
-        quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte(dd-mm-yyyy)"));
-        quote.setAbout(ScanInput.inputQuestion("de betreft"));
-        Printer.emptyLine();
-    }
-
-    private void printTextGenerateQuote(){
-        String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien", "optie weghalen"};
-        Printer.print("Commands: ");
-        for(int i = 0; i < input.length; i++){
-            if(i == input.length-1){
-                Printer.printLine("[" +i+ "] " + input[i]);
-            }else {
-                Printer.print("[" +i+ "] " + input[i] + ", ");
-            }
-
-            if (i == input.length / 2)
-                Printer.emptyLine();
-        }
-        Printer.print("Voer een command in: ");
-    }
-
 
     private Boat getFromTypeBoat(String boatType){
         switch (boatType){
@@ -111,139 +63,4 @@ public class MakeQuote {
                 return null;
         }
 }
-
-
-    public void askCustomer(){
-        String customerType = ScanInput.inputQuestion("soort klant (zakelijk, overheid, stichting, anders)");
-
-        switch (customerType){
-            case "zakelijk":
-                quote.setBusinessCustomer(new BusinessCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de bedrijf")));
-                break;
-            case "overheid":
-                quote.setGovermentCustomer(new GovermentCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de ministerie")));
-                break;
-            case "stichting":
-                quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
-                break;
-            default:
-                quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage")));
-                break;
-        }
-
-        askForExtraGegevens();
-    }
-
-    public void selectOption() {
-        List<Integer> validIndexes = Info.printOptionsForBoatType(quote.getBoat().getType());
-
-        String inputString = ScanInput.inputQuestion("de nummer van de optie (stop om te stoppen)");
-
-        if(!ScanInput.ableToParse(inputString)) {
-            if(inputString.equalsIgnoreCase("stop")) {
-                return;
-            }
-            Printer.printLine("Geen nummer ingevuld!");
-            delaySelectOption();
-            return;
-        }
-
-        int optionIndex = Integer.parseInt(inputString);
-
-        if(!validIndexes.contains(optionIndex)) {
-            Printer.printLine("Verkeerde nummer ingevuld!");
-            delaySelectOption();
-        } else if(quote.getBoat().getOptions().contains(Info.getOptions().get(optionIndex))) {
-            Printer.printLine("Deze optie is al toegevoegd!");
-            delaySelectOption();
-        } else {
-            quote.getBoat().addOption(Info.getOptions().get(optionIndex));
-            Printer.printLine("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
-
-            String answer = ScanInput.inputQuestion("ja of nee voor milieukorting");
-
-            if(!answer.equalsIgnoreCase("ja")) {
-                Printer.printLine("Geen milieukorting toegepast voor optie " + Info.getOptions().get(optionIndex).getName());
-                delaySelectOption();
-            } else {
-                askEnvironmentDiscountForOption(Info.getOptions().get(optionIndex));
-            }
-        }
-    }
-
-    public void askEnvironmentDiscountForOption(Option option) {
-        String inputString = ScanInput.inputQuestion("de milieukorting percentage");
-
-        if(!ScanInput.ableToParse(inputString)) {
-            Printer.printLine("Geen nummer ingevuld!");
-            delaySelectOption();
-            return;
-        }
-
-        int discount = Integer.parseInt(inputString);
-
-        if(discount < 1 || discount > 100) {
-            Printer.printLine("Vul een getal in boven 0 en onder de 100!");
-            askEnvironmentDiscountForOption(option);
-            return;
-        }
-
-        option.setEnvironmentDiscount(discount);
-        Printer.printLine("Je hebt " + discount + "%% milieukorting toegevoegd aan optie " + option.getName());
-
-        delaySelectOption();
-    }
-
-    private void delaySelectOption() {
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        selectOption();
-    }
-
-    private void askForExtraGegevens() {
-        Printer.printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
-        String input = ScanInput.inputQuestion("ja of nee in voor extra gegevens");
-        String[] gegevens;
-
-        if(input.equalsIgnoreCase("ja")) {
-            gegevens = getExtraGegevensFromInput();
-            if(quote.getCustomer() != null)
-                quote.getCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
-            else if (quote.getBusinessCustomer() != null)
-                quote.getBusinessCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
-            else if (quote.getFoundationCustomer() != null)
-                quote.getFoundationCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
-            else if (quote.getGovermentCustomer() != null)
-                quote.getGovermentCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
-
-            askForExtraGegevens();
-        }
-    }
-
-    private String[] getExtraGegevensFromInput() {
-        String key = ScanInput.inputQuestion("de type gegeven (bijv. 'email')");
-        String value = ScanInput.inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
-
-        String[] ret = {key, value};
-
-        return ret;
-    }
-
-    private void removeOptionFromBoat() {
-        quote.printOptions(true);
-        int indexInput = ScanInput.inputNumber("de nummer in van de optie die je wilt weghalen");
-        Option option = Info.getOptions().get(indexInput);
-
-        if(!quote.getBoat().getOptions().contains(option)) {
-            Printer.printLine("Die nummer zit niet in de lijst, probeer opnieuw.");
-        } else {
-            quote.getBoat().removeOption(option);
-        }
-
-        Printer.printLine("Je hebt optie " + option.getName() + " weggehaald.");
-    }
 }
