@@ -9,6 +9,7 @@ public class Shipflex {
     private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
 
     public static void main(String[] args) {
+        Info.readOptionsFromFile("src/data/options.csv");
         welcomeText();
 
         while (true) {
@@ -41,7 +42,6 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        Info.readOptionsFromFile("src/data/options.csv");
         Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
