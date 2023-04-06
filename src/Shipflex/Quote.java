@@ -144,5 +144,16 @@ public class Quote {
         printBasicInformation();
         boat.printBoat();
         printOptions(false);
+        printTotal();
+    }
+
+    public void printTotal() {
+        double totalPrice = 0;
+
+        for (Option option : boat.getOptions()) {
+            totalPrice += option.getPrice();
+        }
+        Printer.printLine("Totaal prijs:" + totalPrice);
+        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
     }
 }
