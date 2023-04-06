@@ -134,14 +134,14 @@ public class Quote {
 
 
     public void printBasicInformation() {
-       printCompany();
-       Printer.empytLine();
-       printCustomer();
-        Printer.empytLine();
-       printDate();
-        Printer.empytLine();
-       Printer.printLine(this.about);
-        Printer.empytLine();
+        printCompany();
+        Printer.emptyLine();
+        printCustomer();
+        Printer.emptyLine();
+        printDate();
+        Printer.emptyLine();
+        Printer.printLine(this.about);
+        Printer.emptyLine();
 
 
 
