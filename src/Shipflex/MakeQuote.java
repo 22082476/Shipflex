@@ -4,7 +4,10 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MakeQuote {
 
@@ -17,6 +20,7 @@ public class MakeQuote {
 
 
     public void start(){
+        askBasicInfo();
         while(true) {
             printTextGenerateQuote();
             int inputIndex = ScanInput.scanInt();
@@ -41,6 +45,13 @@ public class MakeQuote {
                     break;
                 case 7:
                     quote.printQuote();
+                    break;
+                case 8:
+                    askBasicInfo();
+                    break;
+                case 9:
+                    quote.printDate();
+                    break;
                 default:
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
@@ -49,8 +60,24 @@ public class MakeQuote {
         }
     }
 
+    void askBasicInfo(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date();
+        quote.setDate(sdf.format(date));
+        quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte (dd-mm-yyyy)"));
+        quote.setRe(ScanInput.inputQuestion("de betreft"));
+    }
+
     private void printTextGenerateQuote(){
-        Printer.printLine("Commands: [0] terug, [1] voeg klant toe, [2] wijzig klant, [3] laat klant zien, [4] beschikbare opties, [5] gekozen opties, [6] voeg optie toe, [7] offerte printen");
+        String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien"};
+        Printer.print("Commands: ");
+        for(int i = 0; i < input.length; i++){
+            if(i == input.length-1){
+                Printer.printLine("[" +i+ "] " + input[i]);
+            }else {
+                Printer.print("[" +i+ "] " + input[i] + ", ");
+            }
+        }
         Printer.print("Voer een command in: ");
     }
 

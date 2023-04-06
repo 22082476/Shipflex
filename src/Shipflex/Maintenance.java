@@ -27,8 +27,8 @@ public class Maintenance {
         if(input.equalsIgnoreCase("optie toevoegen")) {
             Info.addOption(new Option(ScanInput.inputQuestion("de naam van het onderdeel"),
             ScanInput.inputNumberD("de prijs(bijv. 1.00) van het onderdeel"),
-            ScanInput.inputQuestion("soort van onderdeel"),
-            ScanInput.inputNumber("het kortingsperctentage"),
+            ScanInput.inputQuestion("categorie van onderdeel"),
+            0,
             readBoatList("voor welke soort boten het onderdeel essentieel is"),
             readBoatList("voor welke soort boten het onderdeel optioneel is")));
         }
