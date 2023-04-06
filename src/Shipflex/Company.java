@@ -1,5 +1,7 @@
 package Shipflex;
 
+import DataInOut.Printer;
+
 class Company {
     private String name;
     private String street;
@@ -54,4 +56,12 @@ class Company {
      public int getHousenumber() {
          return this.housenumber;
      }
+
+    public void printCompany(){
+        Printer.printLine(getName());
+        Printer.print(getStreet());
+        Printer.print("" + getHousenumber());
+        Printer.printLine(""+ getPostcode());
+        Printer.printLine(getCity());
+    }
  }

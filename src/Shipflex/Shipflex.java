@@ -6,7 +6,7 @@ import static DataInOut.ScanInput.inputNumber;
 
 
 public class Shipflex {
-    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000EA", "Den haag", 14);
+    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000 EA", "Den haag", 14);
 
     public static void main(String[] args) {
         Info.readOptionsFromFile("src/data/options.csv");
@@ -18,12 +18,15 @@ public class Shipflex {
 
             switch (inputIndex) {
                 case 0:
+                    Printer.empytLine();
                     System.exit(0);
                     break;
                 case 1:
+                    Printer.empytLine();
                     startMakeQuote();
                     break;
                 case 2:
+                    Printer.empytLine();
                     startMaintenance();
                     break;
                 default:
@@ -42,7 +45,7 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
+        Printer.print("Voer het boot type in(rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
     }

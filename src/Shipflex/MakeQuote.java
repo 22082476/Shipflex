@@ -20,6 +20,7 @@ public class MakeQuote {
 
     public void start(){
         askBasicInfo();
+
         while(true) {
             printTextGenerateQuote();
             int inputIndex = ScanInput.scanInt();
@@ -28,30 +29,38 @@ public class MakeQuote {
                 case 0:
                     return;
                 case 1, 2:
+                    Printer.empytLine();
                     askCustomer();
                     break;
                 case 3:
+                    Printer.empytLine();
                     quote.printCustomer();
                     break;
                case 4:
+                   Printer.empytLine();
                     Info.printOptionsForBoatType(quote.getBoat().getType());
                     break;
                case 5:
+                   Printer.empytLine();
                     quote.printOptions();
                     break;
                 case 6:
+                    Printer.empytLine();
                     selectOption();
                     break;
                 case 7:
                     quote.printQuote();
                     break;
                 case 8:
+                    Printer.empytLine();
                     askBasicInfo();
                     break;
                 case 9:
+                    Printer.empytLine();
                     quote.printBasicInformation();
                     break;
                 default:
+                    Printer.empytLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
@@ -63,8 +72,9 @@ public class MakeQuote {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         quote.setDate(sdf.format(date));
-        quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte (dd-mm-yyyy)"));
+        quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte(dd-mm-yyyy)"));
         quote.setAbout(ScanInput.inputQuestion("de betreft"));
+        Printer.empytLine();
     }
 
     private void printTextGenerateQuote(){
@@ -98,20 +108,20 @@ public class MakeQuote {
 
 
     public void askCustomer(){
-        String customerType = ScanInput.inputQuestion("soort klant");
+        String customerType = ScanInput.inputQuestion("soort klant (zakelijk, overheid, stichting, anders)");
 
         switch (customerType){
             case "zakelijk":
-                quote.setBusinessCustomer(new BusinessCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de bedrijf")));
+                quote.setBusinessCustomer(new BusinessCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de bedrijf")));
                 break;
             case "overheid":
-                quote.setGovermentCustomer(new GovermentCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de ministerie")));
+                quote.setGovermentCustomer(new GovermentCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de ministerie")));
                 break;
             case "stichting":
-                quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
+                quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
                 break;
             default:
-                quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage")));
+                quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputNumber("het korting percentage")));
                 break;
         }
 
