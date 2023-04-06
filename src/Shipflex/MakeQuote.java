@@ -173,7 +173,6 @@ public class MakeQuote {
         }
 
         option.setEnvironmentDiscount(discount);
-//        System.out.println("Je hebt " + discount + "% milieukorting toegevoegd aan optie " + option.getName());
         Printer.printLine("Je hebt " + discount + "%% milieukorting toegevoegd aan optie " + option.getName());
 
         delaySelectOption();
