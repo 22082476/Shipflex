@@ -8,7 +8,7 @@ import static DataInOut.Printer.printTextGenerateQuote;
 public class MakeQuote {
 
     protected static Quote quote;
-    private String [] commands = {"terug", "algemeen", "klant", "boot"};
+    private String [] commands = {"terug", "algemeen", "klant", "boot", "offerte maken"};
 
 
 
@@ -40,6 +40,9 @@ public class MakeQuote {
                     MakeQuoteBoat makeQuoteBoat = new MakeQuoteBoat();
                     makeQuoteBoat.start();
                     break;
+                case 4:
+                    Printer.emptyLine();
+                    quote.printQuote();
                 default:
                     Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
