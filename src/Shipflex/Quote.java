@@ -14,7 +14,7 @@ public class Quote {
     private FoundationCustomer foundationCustomer;
     private String Date;
     private String QuoteDate;
-    private String Re;
+    private String about;
     private Boat boat;
 
 
@@ -27,12 +27,12 @@ public class Quote {
         this.boat = boat;
     }
 
-    public String getRe() {
-        return Re;
+    public String getAbout() {
+        return about;
     }
 
-    public void setRe(String re) {
-        Re = re;
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public void setCompanyShipbuild(Company companyShipbuild) {
@@ -140,7 +140,7 @@ public class Quote {
         Printer.empytLine();
        printDate();
         Printer.empytLine();
-       Printer.printLine(this.Re);
+       Printer.printLine(this.about);
         Printer.empytLine();
 
 

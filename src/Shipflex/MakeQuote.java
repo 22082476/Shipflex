@@ -7,7 +7,6 @@ import DataInOut.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class MakeQuote {
 
@@ -60,12 +59,12 @@ public class MakeQuote {
         }
     }
 
-    void askBasicInfo(){
+    public void askBasicInfo(){
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         quote.setDate(sdf.format(date));
         quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte (dd-mm-yyyy)"));
-        quote.setRe(ScanInput.inputQuestion("de betreft"));
+        quote.setAbout(ScanInput.inputQuestion("de betreft"));
     }
 
     private void printTextGenerateQuote(){
