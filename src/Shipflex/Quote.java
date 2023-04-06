@@ -132,6 +132,13 @@ public class Quote {
         }
     }
 
+    public void printCompany(){
+        Printer.printLine(companyShipbuild.getName());
+        Printer.print(companyShipbuild.getStreet());
+        Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
+        Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
+        Printer.printLine(companyShipbuild.getCity());
+    }
 
     public void printDate(){
         Printer.printLine("Datum: " + this.Date);
