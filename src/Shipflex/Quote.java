@@ -15,6 +15,8 @@ public class Quote {
     private String Date;
     private String QuoteDate;
     private String about;
+
+    private int Workhours;
     private Boat boat;
 
 
@@ -97,6 +99,14 @@ public class Quote {
 
     public FoundationCustomer getFoundationCustomer() {
         return foundationCustomer;
+    }
+
+    public int getWorkhours() {
+        return Workhours;
+    }
+
+    public void setWorkhours(int workhours) {
+        Workhours = workhours;
     }
 
     public void printCustomer() {

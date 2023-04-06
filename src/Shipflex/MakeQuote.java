@@ -52,7 +52,6 @@ public class MakeQuote {
                     quote.printQuote();
                     break;
                 case 8:
-                    Printer.emptyLine();
                     askBasicInfo();
                     break;
                 case 9:
@@ -61,6 +60,9 @@ public class MakeQuote {
                     break;
                 case 10:
                     removeOptionFromBoat();
+                    break;
+                case 10:
+                    quote.setWorkhours(ScanInput.inputNumber("de arbeidsuren"));
                     break;
                 default:
                     Printer.emptyLine();
@@ -82,6 +84,7 @@ public class MakeQuote {
 
     private void printTextGenerateQuote(){
         String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien", "optie weghalen"};
+        String [] input = {"terug", "voeg klant toe", "wijzig klant", "laat klant zien", "beschikbare opties", "gekozen opties", "voeg optie toe", "offerte printen", "basis gegevens wijzigen", "basisgegevens laten zien", "Voeg arbeidsuren toe"};
         Printer.print("Commands: ");
         for(int i = 0; i < input.length; i++){
             if(i == input.length-1){
