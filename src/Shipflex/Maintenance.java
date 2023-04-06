@@ -7,17 +7,18 @@ import DataInOut.ScanInput;
 import java.util.ArrayList;
 
 public class Maintenance {
-
+    private ArrayList<String> boatList = new ArrayList<>();
 
     public ArrayList<String> readBoatList(String question) {
-        ArrayList boatList = new ArrayList();
-        String userinput = ScanInput.inputQuestion(question);
-        if(!userinput.equalsIgnoreCase("stop")) {
+        String userInput = ScanInput.inputQuestion(question);
+
+        if(!userInput.equalsIgnoreCase("stop")) {
             if (!boatList.equals("")) {
-                boatList.add(userinput);
+                boatList.add(userInput);
                 readBoatList(question);
             }
         }
+
         return boatList;
     }
     public void start(){
@@ -26,11 +27,11 @@ public class Maintenance {
 
         if(input.equalsIgnoreCase("optie toevoegen")) {
             Info.addOption(new Option(ScanInput.inputQuestion("de naam van het onderdeel"),
-            ScanInput.inputNumberD("de prijs(bijv. 1.00) van het onderdeel"),
+            ScanInput.inputNumberD("de prijs (bijv. 2.99) van het onderdeel"),
             ScanInput.inputQuestion("categorie van onderdeel"),
             0,
-            readBoatList("voor welke soort boten het onderdeel essentieel is (stop om te stoppen)"),
-            readBoatList("voor welke soort boten het onderdeel optioneel is (stop om te stoppen)")));
+            readBoatList("de boot in waarvoor de onderdeel essentieel is (stop om door te gaan)"),
+            readBoatList("de boot in waarvoor de onderdeel optioneel is (stop om door te gaan)")));
         }
     }
 }
