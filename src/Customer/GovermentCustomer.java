@@ -9,12 +9,12 @@ public class GovermentCustomer extends Customer{
         this.ministry = ministry;
     }
 
-    public String getMinisty() {
+    public String getMinistry() {
         return ministry;
     }
 
-    public void setMinisty(String ministy) {
-        this.ministry = ministy;
+    public void setMinistry(String ministry) {
+        this.ministry = ministry;
     }
 
     @Override
