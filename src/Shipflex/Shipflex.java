@@ -11,7 +11,6 @@ public class Shipflex {
     public static void main(String[] args) {
         Info.readOptionsFromFile("src/data/options.csv");
         welcomeText();
-
         while (true) {
             startText();
             int inputIndex = inputNumber("een command");
