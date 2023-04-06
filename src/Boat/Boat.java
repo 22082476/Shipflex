@@ -1,5 +1,7 @@
 package Boat;
 
+import DataInOut.Printer;
+
 import java.util.ArrayList;
 
 public class Boat {
@@ -53,6 +55,13 @@ public class Boat {
 
     public ArrayList<Option> getOptions() {
         return this.options;
+    }
+
+    public void printBoat(){
+        Printer.printLine("Bootnaam: " + getName());
+        Printer.printLine("Bootsoort: " + getType());
+        Printer.printLine("Basisprijs: " + getBasePrice());
+
     }
 
 
