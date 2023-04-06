@@ -21,23 +21,21 @@ public class MakeQuoteCustomer {
         while(true) {
             printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-
+            Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
                 case 1:
-                    Printer.emptyLine();
                     quote.printCustomer();
                     break;
                 case 2, 3:
-                    Printer.emptyLine();
                     askCustomer();
                     break;
                 default:
-                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
+            Printer.emptyLine();
 
         }
     }

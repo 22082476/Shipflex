@@ -29,7 +29,7 @@ public static void printSpaces(int number){
                 Printer.print("[" +i+ "] " + input[i] + ", ");
             }
 
-            if (i == input.length / 2 && input.length > 4)
+            if (i == input.length / 2 && input.length >= 4)
                 Printer.emptyLine();
         }
         Printer.print("Voer een command in: ");

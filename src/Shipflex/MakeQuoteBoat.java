@@ -19,31 +19,27 @@ public class MakeQuoteBoat {
         while(true) {
             printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-
+            Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
                 case 1:
-                    Printer.emptyLine();
                     Info.printOptionsForBoatType(quote.getBoat().getType());
                     break;
                 case 2:
-                    Printer.emptyLine();
                     quote.printOptions(false);
                     break;
                 case 3:
-                    Printer.emptyLine();
                     selectOption();
                     break;
                 case 4:
-                    Printer.emptyLine();
                     removeOptionFromBoat();
                     break;
                 default:
-                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
+            Printer.emptyLine();
 
         }
     }

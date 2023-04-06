@@ -1,6 +1,5 @@
 package Shipflex;
 
-import DataInOut.Info;
 import DataInOut.Printer;
 import DataInOut.ScanInput;
 
@@ -19,7 +18,7 @@ public class MakeQuoteGeneral {
         while(true) {
             printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-
+            Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
@@ -27,7 +26,6 @@ public class MakeQuoteGeneral {
                     askBasicInfo();
                     break;
                 case 2:
-                    Printer.emptyLine();
                     quote.printBasicInformation();
                     break;
 
@@ -35,11 +33,10 @@ public class MakeQuoteGeneral {
                     askWorkHours();
                     break;
                 default:
-                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
-
+            Printer.emptyLine();
         }
     }
 
@@ -56,6 +53,6 @@ public class MakeQuoteGeneral {
     public void askWorkHours(){
         int hour = ScanInput.inputNumber("de arbeidsuren");
         double workHours = hour * ScanInput.inputNumberD("voer uurtarief");
-        quote.setWorkhours(workHours);
+        quote.setWorkHoursCost(workHours);
     }
 }

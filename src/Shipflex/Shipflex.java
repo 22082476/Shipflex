@@ -15,23 +15,22 @@ public class Shipflex {
         while (true) {
             startText();
             int inputIndex = inputNumber("een command");
-
+            Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
-                    Printer.emptyLine();
+
                     System.exit(0);
                     break;
                 case 1:
-                    Printer.emptyLine();
                     startMakeQuote();
                     break;
                 case 2:
-                    Printer.emptyLine();
                     startMaintenance();
                     break;
                 default:
                     Printer.printLine("Incorrecte invoer!");
             }
+            Printer.emptyLine();
         }
     }
 

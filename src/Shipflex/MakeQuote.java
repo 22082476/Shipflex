@@ -18,38 +18,34 @@ public class MakeQuote {
 
 
     public void start(){
+        Printer.emptyLine();
          while(true) {
             printTextGenerateQuote(commands);
             int inputIndex = ScanInput.scanInt();
-
+             Printer.emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
                 case 1:
-                    Printer.emptyLine();
                     MakeQuoteGeneral makeQuoteGeneral = new MakeQuoteGeneral();
                     makeQuoteGeneral.start();
                     break;
                 case 2:
-                    Printer.emptyLine();
                     MakeQuoteCustomer makeQuoteCustomer = new MakeQuoteCustomer();
                     makeQuoteCustomer.start();
                     break;
                 case 3:
-                    Printer.emptyLine();
                     MakeQuoteBoat makeQuoteBoat = new MakeQuoteBoat();
                     makeQuoteBoat.start();
                     break;
                 case 4:
-                    Printer.emptyLine();
                     quote.printQuote();
                     break;
                 default:
-                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
-
+             Printer.emptyLine();
         }
     }
 
