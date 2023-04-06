@@ -1,3 +1,5 @@
+package Shipflex;
+
 public class Quote {
     private Company companyShipbuild;
 
