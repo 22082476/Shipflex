@@ -26,13 +26,16 @@ public class ScanInput {
 
     public static int inputNumber(String question){
         String input = inputQuestion(question);
-        if(ableToParse(input)){
-            return Integer.parseInt(input);
-        }else {
+        int number;
+
+        if (ableToParse(input)){
+            number = Integer.parseInt(input);
+        } else {
             Printer.printLine("Geen nummer!");
-            inputNumber(question);
+            number = inputNumber(question);
         }
-        return 0;
+
+        return number;
     }
     public static double inputNumberD(String question){
         String input = inputQuestion(question);
