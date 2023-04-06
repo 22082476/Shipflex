@@ -59,8 +59,8 @@ class Company {
 
     public void printCompany(){
         Printer.printLine(getName());
-        Printer.print(getStreet());
-        Printer.print("" + getHousenumber());
+        Printer.printLine(getStreet());
+        Printer.printLine("" + getHousenumber());
         Printer.printLine(""+ getPostcode());
         Printer.printLine(getCity());
     }
