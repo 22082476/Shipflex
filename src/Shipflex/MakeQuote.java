@@ -7,13 +7,12 @@ import DataInOut.*;
 import java.util.List;
 
 public class MakeQuote {
-    private Boat boat;
+
     private Quote quote;
 
 
     public MakeQuote(String boatType, Company company){
-        this.boat = getFromTypeBoat(boatType);
-        this.quote = new Quote(company, this.boat);
+        this.quote = new Quote(company, getFromTypeBoat(boatType));
     }
 
 
@@ -32,7 +31,7 @@ public class MakeQuote {
                     quote.printCustomer();
                     break;
                case 4:
-                    Info.printOptionsForBoatType(boat.getType());
+                    Info.printOptionsForBoatType(quote.getBoat().getType());
                     break;
                case 5:
                     quote.printOptions();
@@ -94,7 +93,7 @@ public class MakeQuote {
     }
 
     public void selectOption() {
-        List<Integer> validIndexes = Info.printOptionsForBoatType(boat.getType());
+        List<Integer> validIndexes = Info.printOptionsForBoatType(quote.getBoat().getType());
 
         String inputString = ScanInput.inputQuestion("de nummer van de optie (stop om te stoppen)");
 
