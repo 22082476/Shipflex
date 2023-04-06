@@ -20,6 +20,21 @@ public static void printSpaces(int number){
     }
 }
 
+    public static void printTextGenerateQuote(String [] input){
+        Printer.printLine("Commands: ");
+        for(int i = 0; i < input.length; i++){
+            if(i == input.length-1){
+                Printer.printLine("[" +i+ "] " + input[i]);
+            }else {
+                Printer.print("[" +i+ "] " + input[i] + ", ");
+            }
+
+            if (i == input.length / 2 && input.length > 4)
+                Printer.emptyLine();
+        }
+        Printer.print("Voer een command in: ");
+    }
+
 
     
 }

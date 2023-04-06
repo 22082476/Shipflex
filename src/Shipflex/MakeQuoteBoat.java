@@ -7,9 +7,45 @@ import DataInOut.ScanInput;
 
 import java.util.List;
 
-public class MakeQuoteBoat extends MakeQuote{
-    public MakeQuoteBoat(String boatType, Company company) {
-        super(boatType, company);
+import static DataInOut.Printer.printTextGenerateQuote;
+import static Shipflex.MakeQuote.quote;
+
+public class MakeQuoteBoat {
+
+    private String [] commands = {"terug", "beschikbare opties", "gekozen opties", "optie toevoegen", "optie verwijderen"};
+
+
+    public void start(){
+        while(true) {
+            printTextGenerateQuote(this.commands);
+            int inputIndex = ScanInput.scanInt();
+
+            switch (inputIndex) {
+                case 0:
+                    return;
+                case 1:
+                    Printer.emptyLine();
+                    Info.printOptionsForBoatType(quote.getBoat().getType());
+                    break;
+                case 2:
+                    Printer.emptyLine();
+                    quote.printOptions(false);
+                    break;
+                case 3:
+                    Printer.emptyLine();
+                    selectOption();
+                    break;
+                case 4:
+                    Printer.emptyLine();
+                    removeOptionFromBoat();
+                    break;
+                default:
+                    Printer.emptyLine();
+                    Printer.printLine("Incorrecte invoer!");
+                    Printer.printLine("probeer opniew");
+            }
+
+        }
     }
 
     public void selectOption() {
