@@ -18,15 +18,15 @@ public class Shipflex {
 
             switch (inputIndex) {
                 case 0:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     System.exit(0);
                     break;
                 case 1:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     startMakeQuote();
                     break;
                 case 2:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     startMaintenance();
                     break;
                 default:

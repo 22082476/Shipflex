@@ -128,13 +128,13 @@ public class Quote {
 
     public void printBasicInformation() {
        companyShipbuild.printCompany();
-       Printer.empytLine();
+       Printer.emptyLine();
        printCustomer();
-        Printer.empytLine();
+        Printer.emptyLine();
        printDate();
-        Printer.empytLine();
+        Printer.emptyLine();
        Printer.printLine("Betreft: " + this.about);
-        Printer.empytLine();
+        Printer.emptyLine();
 
 
 

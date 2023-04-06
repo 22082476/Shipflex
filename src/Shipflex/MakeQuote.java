@@ -29,38 +29,38 @@ public class MakeQuote {
                 case 0:
                     return;
                 case 1, 2:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     askCustomer();
                     break;
                 case 3:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     quote.printCustomer();
                     break;
                case 4:
-                   Printer.empytLine();
+                   Printer.emptyLine();
                     Info.printOptionsForBoatType(quote.getBoat().getType());
                     break;
                case 5:
-                   Printer.empytLine();
+                   Printer.emptyLine();
                     quote.printOptions();
                     break;
                 case 6:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     selectOption();
                     break;
                 case 7:
                     quote.printQuote();
                     break;
                 case 8:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     askBasicInfo();
                     break;
                 case 9:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     quote.printBasicInformation();
                     break;
                 default:
-                    Printer.empytLine();
+                    Printer.emptyLine();
                     Printer.printLine("Incorrecte invoer!");
                     Printer.printLine("probeer opniew");
             }
@@ -74,7 +74,7 @@ public class MakeQuote {
         quote.setDate(sdf.format(date));
         quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte(dd-mm-yyyy)"));
         quote.setAbout(ScanInput.inputQuestion("de betreft"));
-        Printer.empytLine();
+        Printer.emptyLine();
     }
 
     private void printTextGenerateQuote(){

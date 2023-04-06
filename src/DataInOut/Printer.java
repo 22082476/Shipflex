@@ -10,7 +10,7 @@ public static void printLine(String text){
     print(String.format(text+"%n"));
 }
 
-public static void empytLine(){
+public static void emptyLine(){
     printLine("");
 }
 
