@@ -1,5 +1,6 @@
 package Boat;
 
+import DataInOut.Info;
 import DataInOut.Printer;
 
 import java.util.ArrayList;
@@ -32,7 +33,21 @@ public class Boat {
         this.basePrice = basePrice;
     }
 
+    public void addOptionsFromNames(String[] names) {
+        Option option;
 
+        for(String name: names) {
+
+            option = Info.getOptionFromName(name);
+
+            if(option == null) {
+                Printer.printLine("Kon optie '" + name + "' niet toevoegen aan deze boot, want hij is niet gevonden.");
+                continue;
+            }
+
+            addOption(option);
+        }
+    }
     public void addOption(Option Option) {
         this.options.add(Option);
     }
