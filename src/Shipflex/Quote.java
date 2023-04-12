@@ -215,6 +215,9 @@ public class Quote {
         Printer.getInstance().printCharacters(15, '﹏');
         Printer.getInstance().emptyLine();
         this.printTotal();
+        Printer.getInstance().printSpaces(37);
+        Printer.getInstance().printCharacters(1,'+');
+        Printer.getInstance().emptyLine();
         Printer.getInstance().printCharacters(75, '━');
     }
 
