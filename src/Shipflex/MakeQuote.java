@@ -15,7 +15,7 @@ public class   MakeQuote {
     public MakeQuote(String boatType, Company company){
         Boat boat = getFromTypeBoat(boatType);
         while (boat == null) {
-            Printer.printLine("Incorrecte invoer!");
+            Printer.getInstance().printLine("Incorrecte invoer!");
             boat = getFromTypeBoat(ScanInput.inputQuestion("het boottype (rubberboot, zeilboot, speedboot, plezierjacht)"));
         }
         this.quote = new Quote(company, boat);
