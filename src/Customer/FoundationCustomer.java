@@ -5,8 +5,8 @@ import DataInOut.*;
 public class FoundationCustomer extends  Customer{
     private String foundation;
 
-    public FoundationCustomer (String name, String street, String postcode, String city, String country, int houseNumber, int discount, String foundation){
-        super(name, street, postcode, city, country, houseNumber,discount);
+    public FoundationCustomer(String name, String street, int houseNumber, String postcode, String city, String country, int discount, String foundation) {
+        super(name, street, houseNumber, postcode, city, country, discount);
         this.foundation = foundation;
     }
 

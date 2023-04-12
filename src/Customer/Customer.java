@@ -8,21 +8,22 @@ import java.util.Map;
 public class Customer {
     protected String name;
     protected String street;
+    protected int houseNumber;
     protected String postcode;
     protected String city;
 
     protected String country;
-    protected int houseNumber;
+
     protected int discount;
     protected HashMap<String, String> extraGegevens;
 
-    public Customer(String name, String street, String postcode, String city, String country, int houseNumber, int discount) {
+    public Customer(String name, String street, int houseNumber, String postcode, String city, String country, int discount) {
         this.name = name;
         this.street = street;
+        this.houseNumber = houseNumber;
         this.postcode = postcode;
         this.city = city;
         this.country = country;
-        this.houseNumber = houseNumber;
         this.discount = discount;
         this.extraGegevens = new HashMap<>();
     }
@@ -82,10 +83,10 @@ public class Customer {
     public void printCustomer(){
         Printer.getInstance().printLine("Naam: " + this.name);
         Printer.getInstance().printLine("Straat: " + this.street);
+        Printer.getInstance().printLine("Huisnummer: " + this.houseNumber);
         Printer.getInstance().printLine("Postcode: " + this.postcode);
         Printer.getInstance().printLine("Stad: " + this.street);
         Printer.getInstance().printLine("Land: " + this.country);
-        Printer.getInstance().printLine("Huisnummer: " + this.houseNumber);
         Printer.getInstance().printLine("Kortingpercentage: " + this.discount);
 
         if(!this.extraGegevens.isEmpty()){
