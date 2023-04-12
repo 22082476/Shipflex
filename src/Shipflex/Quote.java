@@ -176,8 +176,16 @@ public class Quote {
     public void printQuote() {
         printBasicInformation();
         boat.printBoat();
-        printOptions(false);
+        Printer.emptyLine();
+        printOptions();
+        Printer.emptyLine();
         printTotal();
+    }
+
+    public void printOptions() {
+        for (Option option : boat.getOptions()) {
+            option.printAllInfoForOption();
+        }
     }
 
     public void printTotal() {
@@ -187,10 +195,10 @@ public class Quote {
             totalPrice += option.getPrice();
         }
 
-        Printer.printLine("Totaal arbeidsUren : " + workHoursCost);
-        Printer.printLine("Totaal arbeidsUren inclusief BTW: " + workHoursCost * 1.09);
-        Printer.printLine("Totaal prijs:" + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice * 1.21);
+        Printer.printLine("Totaal arbeids uren : " + workHoursCost);
+        Printer.printLine("Totaal arbeids uren inclusief BTW: " + workHoursCost * 1.09);
+        Printer.printLine("Totaal prijs: " + totalPrice);
+        Printer.printLine("Totaal prijs inclusief BTW: " + totalPrice * 1.21);
 
     }
 }

@@ -1,5 +1,7 @@
 package Boat;
 
+import DataInOut.Printer;
+
 import java.util.List;
 
 public class Option {
@@ -89,5 +91,28 @@ public class Option {
             return this.getPrice();
 
         return this.getPrice() - (this.getPrice() / 100 * this.getEnvironmentDiscount());
+    }
+
+    public void printAllInfoForOption() {
+        printFormatInfo(this.name);
+        printFormatInfo(this.type);
+        Printer.print(String.valueOf(this.price));
+        Printer.emptyLine();
+
+        if (this.environmentDiscount > 0) {
+            printFormatInfo(String.valueOf(this.environmentDiscount));
+            Printer.print(String.valueOf(this.calculateEnvironmentDiscount()));
+        }
+    }
+
+    private void printFormatInfo(String property) {
+        int amountOfSpaces = 20;
+
+        if(property.length() > amountOfSpaces) {
+            amountOfSpaces = property.length() + 5;
+        }
+
+        Printer.print(property);
+        Printer.printSpaces(amountOfSpaces - property.length());
     }
 }
