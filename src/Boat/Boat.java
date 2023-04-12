@@ -7,14 +7,14 @@ import DataInOut.ScanInput;
 import java.util.ArrayList;
 
 
-public abstract class Boat {
+public class Boat {
 
    private String name;
    private String type;
    private double basePrice;
    private ArrayList<Option> options;
 
-    Boat(String name, String type, double basePrice){
+    public Boat(String name, String type, double basePrice){
         this.name = name;
         this.type = type;
         this.basePrice = basePrice;

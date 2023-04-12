@@ -2,7 +2,7 @@ package Shipflex;
 
 import DataInOut.Printer;
 
-class Company {
+public class Company {
     private String name;
     private String street;
     private String postcode;
@@ -11,7 +11,7 @@ class Company {
     private String country;
     private int housenumber;
 
-    Company(String name, String street, String postcode, String city, String country, int housenumber){
+    public Company(String name, String street, String postcode, String city, String country, int housenumber){
         this.name = name;
         this.street = street;
         this.postcode = postcode;
