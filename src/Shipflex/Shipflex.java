@@ -36,7 +36,7 @@ public class Shipflex {
     public static void welcomeText(){
         //standaard welcome tekst
         Printer.getInstance().printLine("Welcome by shipflex");
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
 
     }
 

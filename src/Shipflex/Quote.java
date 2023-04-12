@@ -127,7 +127,7 @@ public class Quote {
                 customer.printCustomer();
                 break;
             default:
-                Printer.printLine("Nog geen klant toegevoegd");
+                Printer.getInstance().printLine("Nog geen klant toegevoegd");
                 break;
         }
     }
@@ -202,19 +202,19 @@ public class Quote {
     }
 
     public void printQuote() {
-        Printer.printCharacters(75, '━');
-        Printer.emptyLine();
+        Printer.getInstance().printCharacters(75, '━');
+        Printer.getInstance().emptyLine();
         this.printBasicInformation();
-        Printer.printCharacters(15, '﹏');
-        Printer.emptyLine();
+        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().emptyLine();
         boat.printBoat();
-        Printer.printCharacters(15, '﹏');
-        Printer.emptyLine();
+        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().emptyLine();
         this.printOptions();
-        Printer.printCharacters(15, '﹏');
-        Printer.emptyLine();
+        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().emptyLine();
         this.printTotal();
-        Printer.printCharacters(75, '━');
+        Printer.getInstance().printCharacters(75, '━');
     }
 
     public void printOptions() {
@@ -269,27 +269,23 @@ public class Quote {
         for (Option option : boat.getOptions()) {
             price += option.getPrice();
         }
-
-        Printer.getInstance().printLine("Totaal prijs:" + totalPrice);
-        Printer.getInstance().printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
-
         return price;
     }
 
     public void printTotal() {
         double workCost = workHoursCost;
-        Printer.printLine(String.format("Prijs arbeids uren: %.2f", workCost));
+        Printer.getInstance().printLine(String.format("Prijs arbeids uren: %.2f", workCost));
         workCost = calculatePercentage(109, workCost);
-        Printer.printLine(String.format("Prijs arbeids uren incl. Btw: %.2f", workCost));
+        Printer.getInstance().printLine(String.format("Prijs arbeids uren incl. Btw: %.2f", workCost));
 
         double totalPriceBoat = calculateBoatPrice();
-        Printer.printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
+        Printer.getInstance().printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
         if (getDiscount() < 100 && getDiscount() > 0) {
             totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
-            Printer.printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
+            Printer.getInstance().printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
         }
 
         totalPriceBoat = calculatePercentage(121, totalPriceBoat);
-        Printer.printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
+        Printer.getInstance().printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
     }
 }
