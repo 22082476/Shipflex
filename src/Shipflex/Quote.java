@@ -199,16 +199,16 @@ public class Quote {
     public void printQuote() {
         Printer.printCharacters(40, '━');
         Printer.emptyLine();
-        printBasicInformation();
+        this.printBasicInformation();
         Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
         boat.printBoat();
-        printOptions(false);
         Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
-        printOptions();
+        this.printOptions();
+        Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
-        printTotal();
+        this.printTotal();
         Printer.printCharacters(40, '━');
     }
 
