@@ -6,7 +6,7 @@ import static DataInOut.ScanInput.inputNumber;
 
 
 public class Shipflex {
-    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000 EA", "Den haag", 14);
+    private static Company company = new Company("Scheeps werf den haag", "boatstraat", "2000 EA", "Den haag","Nederland", 14);
 
     public static void main(String[] args) {
         Info.readOptionsFromFile("src/data/options.csv");
