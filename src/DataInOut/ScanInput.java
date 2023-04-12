@@ -18,10 +18,19 @@ public class ScanInput {
         in.nextLine();
         return integer;
     }
-    public static String inputQuestion(String soort){
-        Printer.getInstance().print("Voer " + soort + " in: ");
 
-        return ScanInput.scanInH();
+    public static String inputQuestion(String soort) {
+        String input = "";
+
+        while (input.equals("")){
+            Printer.getInstance().print("Voer " + soort + " in: ");
+            input = ScanInput.scanInH();
+
+            if(input.equals("")){
+                Printer.getInstance().printLine("Niks ingevuld!");
+            }
+        }
+        return input;
     }
 
     public static int inputNumber(String question){

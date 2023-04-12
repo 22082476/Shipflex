@@ -4,6 +4,10 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Quote {
     private Company companyShipbuild;
 
@@ -109,22 +113,43 @@ public class Quote {
     }
 
     public void printCustomer() {
+        switch (checkCustomerType()) {
+            case "goverment":
+                govermentCustomer.printCustomer();
+                break;
+            case "business":
+                businessCustomer.printCustomer();
+                break;
+            case "foundation":
+                foundationCustomer.printCustomer();
+                break;
+            case "customer":
+                customer.printCustomer();
+                break;
+            default:
+                Printer.printLine("Nog geen klant toegevoegd");
+                break;
+        }
+    }
+
+
+    private String checkCustomerType() {
         if (govermentCustomer != null) {
-            govermentCustomer.printCustomer();
+            return "goverment";
         } else if (businessCustomer != null) {
-            businessCustomer.printCustomer();
+            return "business";
         } else if (customer != null) {
-            customer.printCustomer();
+            return "customer";
         } else if (foundationCustomer != null) {
-            foundationCustomer.printCustomer();
+            return "foundation";
         } else {
-            Printer.getInstance().printLine("Nog geen klant toegevoegd");
+            return "";
         }
     }
 
     public void printOptions(boolean showIndex) {
         for (Option option : this.boat.getOptions()) {
-            if(showIndex)
+            if (showIndex)
                 Info.printOptionInfo(option, Info.getOptions().indexOf(option));
             else
                 Info.printOptionInfo(option, -1);
@@ -149,12 +174,14 @@ public class Quote {
     }
         if(this.quoteDate != null && !this.quoteDate.equals("")){
             Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
+            Printer.getInstance().printLine("Datum nog niet ingevuld");
+        }
+        if (this.quoteDate != null && !this.quoteDate.equals("")) {
+            Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
             Printer.getInstance().printLine("Geldigsheid datum nog niet ingevuld");
         }
-
     }
-
 
     public void printBasicInformation() {
         companyShipbuild.printCompany();
@@ -164,29 +191,105 @@ public class Quote {
         printDate();
         Printer.getInstance().emptyLine();
 
+
         if(this.about != null && !this.about.equals("")) {
             Printer.getInstance().printLine("Betreft: " + this.about);
         }else {
             Printer.getInstance().printLine("Betreft is nog niet ingevuld");
+
         }
         Printer.getInstance().emptyLine();
     }
 
-    public void printQuote(){
-        printBasicInformation();
+    public void printQuote() {
+        Printer.printCharacters(75, '━');
+        Printer.emptyLine();
+        this.printBasicInformation();
+        Printer.printCharacters(15, '﹏');
+        Printer.emptyLine();
         boat.printBoat();
-        printOptions(false);
-        printTotal();
+        Printer.printCharacters(15, '﹏');
+        Printer.emptyLine();
+        this.printOptions();
+        Printer.printCharacters(15, '﹏');
+        Printer.emptyLine();
+        this.printTotal();
+        Printer.printCharacters(75, '━');
+    }
+
+    public void printOptions() {
+        List<Option> essentialOptions = new ArrayList<>();
+        List<Option> extraOptions = new ArrayList<>();
+
+        for (Option option : boat.getOptions()) {
+            if (option.getEssentialForBoatType().contains(boat.getType().toLowerCase()))
+                essentialOptions.add(option);
+            else
+                extraOptions.add(option);
+        }
+
+        printOptionsListFormatted(essentialOptions);
+        printOptionsListFormatted(extraOptions);
+    }
+
+    private void printOptionsListFormatted(List<Option> options) {
+        for (Option option : options) {
+            option.printOptionInfoForBoat(boat.getType());
+        }
+    }
+
+    public int getDiscount() {
+        int discount = 0;
+        switch (checkCustomerType()) {
+            case "goverment":
+                discount = govermentCustomer.getDiscount();
+                break;
+            case "business":
+                discount = businessCustomer.getDiscount();
+                break;
+            case "foundation":
+                discount = foundationCustomer.getDiscount();
+                break;
+            case "customer":
+                discount = customer.getDiscount();
+                break;
+        }
+        return 100 - discount;
     }
 
 
-    public void printTotal() {
-        double totalPrice = 0;
+    public double calculatePercentage(int percentage, double price) {
+        return (price / 100) * percentage;
+    }
+
+    public double calculateBoatPrice() {
+        double price = 0;
+        price += boat.getBasePrice();
 
         for (Option option : boat.getOptions()) {
-            totalPrice += option.getPrice();
+            price += option.getPrice();
         }
+
         Printer.getInstance().printLine("Totaal prijs:" + totalPrice);
         Printer.getInstance().printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
+
+        return price;
+    }
+
+    public void printTotal() {
+        double workCost = workHoursCost;
+        Printer.printLine(String.format("Prijs arbeids uren: %.2f", workCost));
+        workCost = calculatePercentage(109, workCost);
+        Printer.printLine(String.format("Prijs arbeids uren incl. Btw: %.2f", workCost));
+
+        double totalPriceBoat = calculateBoatPrice();
+        Printer.printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
+        if (getDiscount() < 100 && getDiscount() > 0) {
+            totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
+            Printer.printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
+        }
+
+        totalPriceBoat = calculatePercentage(121, totalPriceBoat);
+        Printer.printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
     }
 }

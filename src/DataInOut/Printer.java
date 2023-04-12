@@ -24,8 +24,12 @@ public void emptyLine(){
 }
 
 public void printSpaces(int number){
+    printCharacters(number, ' ');
+}
+
+public void printCharacters(int number, char character){
     for(int i = 1; i <= number; i++){
-        print(" ");
+        print("" + character);
     }
 }
 

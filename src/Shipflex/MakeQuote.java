@@ -13,7 +13,12 @@ public class   MakeQuote {
 
 
     public MakeQuote(String boatType, Company company){
-        this.quote = new Quote(company, getFromTypeBoat(boatType));
+        Boat boat = getFromTypeBoat(boatType);
+        while (boat == null) {
+            Printer.printLine("Incorrecte invoer!");
+            boat = getFromTypeBoat(ScanInput.inputQuestion("het boottype (rubberboot, zeilboot, speedboot, plezierjacht)"));
+        }
+        this.quote = new Quote(company, boat);
     }
 
 

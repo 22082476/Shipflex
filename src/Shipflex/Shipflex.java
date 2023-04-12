@@ -36,6 +36,8 @@ public class Shipflex {
     public static void welcomeText(){
         //standaard welcome tekst
         Printer.getInstance().printLine("Welcome by shipflex");
+        Printer.emptyLine();
+
     }
 
     public static void startText(){
@@ -43,8 +45,7 @@ public class Shipflex {
     }
 
     public static void startMakeQuote(){
-        Printer.getInstance().print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
-        MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
+        MakeQuote makeQuote = new MakeQuote(ScanInput.inputQuestion("het boottype (rubberboot, zeilboot, speedboot, plezierjacht)"), company);
         makeQuote.start();
     }
 
