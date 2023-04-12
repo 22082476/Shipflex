@@ -1,24 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="optie toevoegen bij onderhoud">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Printer.emptyLine() toegevoegd">
+      <change afterPath="$PROJECT_DIR$/src/DataInOut/Print.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Maintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maintenance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataInOut/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Shipflex.java" root0="FORCE_HIGHLIGHTING" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2O3MXKdaG4mYGsrmxl5ONsPDkkC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Interface Print aangemaakt">
+      <created>1680781547511</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680781547511</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Interface Print aangemaakt">
+      <created>1680782171811</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680782171812</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BTW bezig met aanmaken">
+      <created>1680782829641</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680782829641</updated>
+    </task>
+    <task id="LOCAL-00004" summary="BTW bezig met aanmaken">
+      <created>1680784356721</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680784356721</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="BTW bezig met aanmaken" />
+      <created>1680784852673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680784852673</updated>
+    </task>
+    <task id="LOCAL-00005" summary="MakeQuoteCustomer.java gemaakt">
+      <created>1680785690725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680785690726</updated>
+    </task>
+    <task id="LOCAL-00006" summary="MakeQuoteBoat.java gemaakt">
+      <created>1680785858006</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680785858006</updated>
+    </task>
+    <task id="LOCAL-00007" summary="MakeQuoteBoat.java, MakeQuoteCustomer.java, MakeQuoteGeneral.java aangepast">
+      <created>1680788270547</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680788270547</updated>
+    </task>
+    <task id="LOCAL-00008" summary="MakeQuoteBoat.java, MakeQuoteCustomer.java, MakeQuoteGeneral.java aangepast">
+      <created>1680788605882</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680788605882</updated>
+    </task>
+    <task id="LOCAL-00009" summary="MakeQuote.java aangepast">
+      <created>1680789586660</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680789586660</updated>
+    </task>
+    <task id="LOCAL-00010" summary="MakeQuote.java aangepast">
+      <created>1680789762203</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680789762203</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Printer.emptyLine() toegevoegd">
+      <created>1680791258356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680791258356</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -26,7 +142,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Btw" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -34,6 +162,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="optie toevoegen bij onderhoud" />
-    <option name="LAST_COMMIT_MESSAGE" value="optie toevoegen bij onderhoud" />
+    <MESSAGE value="Interface Print aangemaakt" />
+    <MESSAGE value="BTW bezig met aanmaken" />
+    <MESSAGE value="MakeQuoteCustomer.java gemaakt" />
+    <MESSAGE value="MakeQuoteBoat.java gemaakt" />
+    <MESSAGE value="MakeQuoteBoat.java, MakeQuoteCustomer.java, MakeQuoteGeneral.java aangepast" />
+    <MESSAGE value="MakeQuote.java aangepast" />
+    <MESSAGE value="Printer.emptyLine() toegevoegd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Printer.emptyLine() toegevoegd" />
   </component>
 </project>
