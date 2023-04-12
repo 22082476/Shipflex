@@ -201,8 +201,10 @@ public class Quote {
 
     public void printQuote() {
         Printer.printCharacters(40, '━');
+        Printer.emptyLine();
         printBasicInformation();
         Printer.printCharacters(15, '﹏');
+        Printer.emptyLine();
         boat.printBoat();
         printOptions(false);
         Printer.printCharacters(15, '﹏');
