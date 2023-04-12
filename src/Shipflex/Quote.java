@@ -167,9 +167,6 @@ public class Quote {
     }
 
     public void printDate() {
-        Printer.printLine("Datum: " + this.date);
-        Printer.printLine("Geldigsheid datum: " + this.quoteDate);
-
         if (this.date != null && !this.date.equals("")) {
             Printer.printLine("Datum: " + this.date);
         } else {
