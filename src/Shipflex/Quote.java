@@ -200,15 +200,18 @@ public class Quote {
         Printer.printCharacters(40, '━');
         Printer.emptyLine();
         printBasicInformation();
-        Printer.printCharacters(15, '﹏');
+        Printer.printCharacters(40, '﹏');
         Printer.emptyLine();
         boat.printBoat();
         printOptions(false);
-        Printer.printCharacters(15, '﹏');
+        Printer.printCharacters(40, '﹏');
         Printer.emptyLine();
         printOptions();
         Printer.emptyLine();
         printTotal();
+        Printer.printSpaces(37);
+        Printer.printCharacters(1,'+');
+        Printer.emptyLine();
         Printer.printCharacters(40, '━');
     }
 
