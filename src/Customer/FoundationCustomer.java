@@ -20,7 +20,7 @@ public class FoundationCustomer extends  Customer{
 
     @Override
     public void printCustomer(){
-        Printer.printLine("Stichting: " + this.foundation);
+        Printer.getInstance().printLine("Stichting: " + this.foundation);
         super.printCustomer();
     }
 }

@@ -3,7 +3,7 @@ package Shipflex;
 import Boat.*;
 
 import DataInOut.*;
-import static DataInOut.Printer.printTextGenerateQuote;
+
 
 public class   MakeQuote {
 
@@ -23,11 +23,11 @@ public class   MakeQuote {
 
 
     public void start(){
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
          while(true) {
-            printTextGenerateQuote(commands);
+            Printer.getInstance().printTextGenerateQuote(commands);
             int inputIndex = ScanInput.scanInt();
-             Printer.emptyLine();
+             Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
@@ -47,10 +47,10 @@ public class   MakeQuote {
                     quote.printQuote();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
-                    Printer.printLine("probeer opniew");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("probeer opniew");
             }
-             Printer.emptyLine();
+             Printer.getInstance().emptyLine();
         }
     }
 

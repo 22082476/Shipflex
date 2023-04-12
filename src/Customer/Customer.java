@@ -80,16 +80,16 @@ public class Customer {
     }
 
     public void printCustomer(){
-        Printer.printLine("Naam: " + this.name);
-        Printer.printLine("Straat: " + this.street);
-        Printer.printLine("Postcode: " + this.postcode);
-        Printer.printLine("Stad: " + this.street);
-        Printer.printLine("Land: " + this.country);
-        Printer.printLine("Huisnummer: " + this.houseNumber);
-        Printer.printLine("Kortingpercentage: " + this.discount);
+        Printer.getInstance().printLine("Naam: " + this.name);
+        Printer.getInstance().printLine("Straat: " + this.street);
+        Printer.getInstance().printLine("Postcode: " + this.postcode);
+        Printer.getInstance().printLine("Stad: " + this.street);
+        Printer.getInstance().printLine("Land: " + this.country);
+        Printer.getInstance().printLine("Huisnummer: " + this.houseNumber);
+        Printer.getInstance().printLine("Kortingpercentage: " + this.discount);
 
         if(!this.extraGegevens.isEmpty()){
-            Printer.printLine("Extra gegevens:");
+            Printer.getInstance().printLine("Extra gegevens:");
             for (Map.Entry<String, String> entry : extraGegevens.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }

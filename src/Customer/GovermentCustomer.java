@@ -19,7 +19,7 @@ public class GovermentCustomer extends Customer{
 
     @Override
     public void printCustomer(){
-        Printer.printLine("Ministerie: " + this.ministry);
+        Printer.getInstance().printLine("Ministerie: " + this.ministry);
         super.printCustomer();
     }
 }

@@ -7,7 +7,7 @@ import Customer.GovermentCustomer;
 import DataInOut.Printer;
 import DataInOut.ScanInput;
 
-import static DataInOut.Printer.printTextGenerateQuote;
+
 import static Shipflex.MakeQuote.quote;
 
 public class MakeQuoteCustomer {
@@ -19,9 +19,9 @@ public class MakeQuoteCustomer {
 
     public void start(){
         while(true) {
-            printTextGenerateQuote(this.commands);
+            Printer.getInstance().printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
@@ -32,10 +32,10 @@ public class MakeQuoteCustomer {
                     askCustomer();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
-                    Printer.printLine("probeer opniew");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("probeer opniew");
             }
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
 
         }
     }
@@ -64,7 +64,7 @@ public class MakeQuoteCustomer {
     }
 
     private void askForExtraGegevens() {
-        Printer.printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
+        Printer.getInstance().printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
         String input = ScanInput.inputQuestion("ja of nee in voor extra gegevens");
         String[] gegevens;
 

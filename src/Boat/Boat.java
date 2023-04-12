@@ -43,7 +43,7 @@ public abstract class Boat {
             option = Info.getOptionFromName(name);
 
             if(option == null) {
-                Printer.printLine("Kon optie '" + name + "' niet toevoegen aan deze boot, want hij is niet gevonden.");
+                Printer.getInstance().printLine("Kon optie '" + name + "' niet toevoegen aan deze boot, want hij is niet gevonden.");
                 continue;
             }
 
@@ -75,9 +75,9 @@ public abstract class Boat {
     }
 
     public void printBoat(){
-        Printer.printLine("Bootnaam: " + getName());
-        Printer.printLine("Bootsoort: " + getType());
-        Printer.printLine("Basisprijs: " + getBasePrice());
+        Printer.getInstance().printLine("Bootnaam: " + getName());
+        Printer.getInstance().printLine("Bootsoort: " + getType());
+        Printer.getInstance().printLine("Basisprijs: " + getBasePrice());
 
     }
 

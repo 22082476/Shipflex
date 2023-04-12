@@ -6,7 +6,6 @@ import DataInOut.ScanInput;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static DataInOut.Printer.printTextGenerateQuote;
 import static Shipflex.MakeQuote.quote;
 
 public class MakeQuoteGeneral {
@@ -16,9 +15,9 @@ public class MakeQuoteGeneral {
 
     public void start(){
         while(true) {
-            printTextGenerateQuote(this.commands);
+            Printer.getInstance().printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
@@ -33,10 +32,10 @@ public class MakeQuoteGeneral {
                     askWorkHours();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
-                    Printer.printLine("probeer opniew");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("probeer opniew");
             }
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
         }
     }
 
@@ -47,7 +46,7 @@ public class MakeQuoteGeneral {
         quote.setDate(sdf.format(date));
         quote.setQuoteDate(ScanInput.inputQuestion("de geldigheids datum voor de offerte(dd-mm-yyyy)"));
         quote.setAbout(ScanInput.inputQuestion("de betreft"));
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
     }
 
     public void askWorkHours(){
