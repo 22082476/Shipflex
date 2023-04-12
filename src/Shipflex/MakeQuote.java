@@ -5,7 +5,7 @@ import Boat.*;
 import DataInOut.*;
 import static DataInOut.Printer.printTextGenerateQuote;
 
-public class MakeQuote {
+public class   MakeQuote {
 
     protected static Quote quote;
     private String [] commands = {"terug", "algemeen", "klant", "boot", "offerte printen"};

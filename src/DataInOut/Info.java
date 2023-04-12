@@ -48,9 +48,19 @@ public class Info {
         options.add(option);
     }
 
-    public static List<Integer> printOptionsForBoatType(String boatType) {
-        System.out.println();
+    public static Option getOptionFromName(String name) {
+        for(Option option : options) {
+            if(!option.getName().equalsIgnoreCase(name))
+                continue;
 
+            return option;
+        }
+
+        return null;
+    }
+
+    public static List<Integer> printOptionsForBoatType(String boatType) {
+        Printer.print("test");
         List<Integer> validOptionsIndexes = new ArrayList<>();
         List<Option> essentialOptions = new ArrayList<>();
         List<Option> extraOptions = new ArrayList<>();
@@ -99,6 +109,4 @@ public class Info {
         if(option.getDescription() != null)
             Printer.printLine("Beschrijving: " + option.getDescription());
     }
-
-
 }
