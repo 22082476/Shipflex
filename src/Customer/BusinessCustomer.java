@@ -7,11 +7,9 @@ public class BusinessCustomer extends Customer {
     private String companyname;
 
 
-
-    public BusinessCustomer(String name, String street, String postcode, String city, String country, int houseNumber, int discount, String companyname){
-        super( name, street, postcode, city, country, houseNumber, discount);
+    public BusinessCustomer(String name, String street, int houseNumber, String postcode, String city, String country, int discount, String companyname) {
+        super(name, street, houseNumber, postcode, city, country, discount);
         this.companyname = companyname;
-
     }
 
     public String getCompany() {
@@ -24,7 +22,7 @@ public class BusinessCustomer extends Customer {
 
     @Override
     public void printCustomer(){
-        Printer.printLine("Bedrijfsnaam: " + this.companyname);
+        Printer.getInstance().printLine("Bedrijfsnaam: " + this.companyname);
         super.printCustomer();
     }
 }

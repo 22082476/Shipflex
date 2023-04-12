@@ -94,16 +94,18 @@ public class Option {
     }
 
     public void printOptionInfoForBoat(String boatType) {
-        Printer.printFormatInfo(this.name);
-        Printer.printFormatInfo(this.type);
-        Printer.printFormatInfo(this.essentialForBoatType.contains(boatType.toLowerCase()) ? "Essentieel" : "Extra");
-        Printer.printLine(String.valueOf(this.price));
+
+        Printer.getInstance().printFormatInfo(this.name);
+        Printer.getInstance().printFormatInfo(this.type);
+        Printer.getInstance().printFormatInfo(this.essentialForBoatType.contains(boatType.toLowerCase()) ? "Essentieel" : "Extra");
+        Printer.getInstance().printLine(String.valueOf(this.price));
 
         if (this.environmentDiscount > 0) {
-            Printer.emptyLine();
-            Printer.printFormatInfo("");
-            Printer.printFormatInfo(String.valueOf(this.environmentDiscount));
-            Printer.print(String.valueOf(this.calculateEnvironmentDiscount()));
+            Printer.getInstance().emptyLine();
+            Printer.getInstance().printFormatInfo("");
+            Printer.getInstance().printFormatInfo(String.valueOf(this.environmentDiscount));
+            Printer.getInstance().print(String.valueOf(this.calculateEnvironmentDiscount()));
         }
     }
+
 }

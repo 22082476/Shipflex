@@ -7,7 +7,7 @@ import DataInOut.ScanInput;
 
 import java.util.List;
 
-import static DataInOut.Printer.printTextGenerateQuote;
+
 import static Shipflex.MakeQuote.quote;
 
 public class MakeQuoteBoat {
@@ -17,9 +17,9 @@ public class MakeQuoteBoat {
 
     public void start(){
         while(true) {
-            printTextGenerateQuote(this.commands);
+            Printer.getInstance().printTextGenerateQuote(this.commands);
             int inputIndex = ScanInput.scanInt();
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
                     return;
@@ -28,6 +28,7 @@ public class MakeQuoteBoat {
                     break;
                 case 2:
                     quote.printOptions(false);
+                    Printer.getInstance().printLine(String.format("Prijs van alles excl BTW: %.2f", calculateTotalOptionsPrice()));
                     break;
                 case 3:
                     selectOption();
@@ -42,10 +43,10 @@ public class MakeQuoteBoat {
                     quote.getBoat().printBoat();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
-                    Printer.printLine("probeer opniew");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("probeer opniew");
             }
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
 
         }
     }
@@ -59,7 +60,7 @@ public class MakeQuoteBoat {
             if(inputString.equalsIgnoreCase("stop")) {
                 return;
             }
-            Printer.printLine("Geen nummer ingevuld!");
+            Printer.getInstance().printLine("Geen nummer ingevuld!");
             delaySelectOption();
             return;
         }
@@ -67,19 +68,19 @@ public class MakeQuoteBoat {
         int optionIndex = Integer.parseInt(inputString);
 
         if(!validIndexes.contains(optionIndex)) {
-            Printer.printLine("Verkeerde nummer ingevuld!");
+            Printer.getInstance().printLine("Verkeerde nummer ingevuld!");
             delaySelectOption();
         } else if(quote.getBoat().getOptions().contains(Info.getOptions().get(optionIndex))) {
-            Printer.printLine("Deze optie is al toegevoegd!");
+            Printer.getInstance().printLine("Deze optie is al toegevoegd!");
             delaySelectOption();
         } else {
             quote.getBoat().addOption(Info.getOptions().get(optionIndex));
-            Printer.printLine("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
+            Printer.getInstance().printLine("Je hebt optie " + Info.getOptions().get(optionIndex).getName() + " toegevoegd aan de huidige boot!");
 
             String answer = ScanInput.inputQuestion("ja of nee voor milieukorting");
 
             if(!answer.equalsIgnoreCase("ja")) {
-                Printer.printLine("Geen milieukorting toegepast voor optie " + Info.getOptions().get(optionIndex).getName());
+                Printer.getInstance().printLine("Geen milieukorting toegepast voor optie " + Info.getOptions().get(optionIndex).getName());
                 delaySelectOption();
             } else {
                 askEnvironmentDiscountForOption(Info.getOptions().get(optionIndex));
@@ -91,7 +92,7 @@ public class MakeQuoteBoat {
         String inputString = ScanInput.inputQuestion("de milieukorting percentage");
 
         if(!ScanInput.ableToParse(inputString)) {
-            Printer.printLine("Geen nummer ingevuld!");
+            Printer.getInstance().printLine("Geen nummer ingevuld!");
             delaySelectOption();
             return;
         }
@@ -99,13 +100,13 @@ public class MakeQuoteBoat {
         int discount = Integer.parseInt(inputString);
 
         if(discount < 1 || discount > 100) {
-            Printer.printLine("Vul een getal in boven 0 en onder de 100!");
+            Printer.getInstance().printLine("Vul een getal in boven 0 en onder de 100!");
             askEnvironmentDiscountForOption(option);
             return;
         }
 
         option.setEnvironmentDiscount(discount);
-        Printer.printLine("Je hebt " + discount + "%% milieukorting toegevoegd aan optie " + option.getName());
+        Printer.getInstance().printLine("Je hebt " + discount + "%% milieukorting toegevoegd aan optie " + option.getName());
 
         delaySelectOption();
     }
@@ -127,11 +128,21 @@ public class MakeQuoteBoat {
         Option option = Info.getOptions().get(indexInput);
 
         if(!quote.getBoat().getOptions().contains(option)) {
-            Printer.printLine("Die nummer zit niet in de lijst, probeer opnieuw.");
+            Printer.getInstance().printLine("Die nummer zit niet in de lijst, probeer opnieuw.");
         } else {
             quote.getBoat().removeOption(option);
         }
 
-        Printer.printLine("Je hebt optie " + option.getName() + " weggehaald.");
+        Printer.getInstance().printLine("Je hebt optie " + option.getName() + " weggehaald.");
+    }
+
+    private double calculateTotalOptionsPrice() {
+        double totalPrice = 0;
+
+        for(Option option : quote.getBoat().getOptions()) {
+            totalPrice += option.getPrice();
+        }
+
+        return totalPrice;
     }
 }

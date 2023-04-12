@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="descriptions aangepast">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Fixjes voor offerte">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boat/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boat/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataInOut/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shipflex/MakeQuoteBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex/MakeQuoteBoat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shipflex/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +83,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Shipflex" />
+      <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
+      <item itemvalue="JUnit.Test_InfoReadFile" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Shipflex" />
@@ -185,19 +189,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681297051367</updated>
     </task>
-    <task id="LOCAL-00013" summary="descriptions aangepast">
-      <created>1681307116084</created>
+
+    <task id="LOCAL-00013" summary="Fixjes voor offerte">
+      <created>1681311485111</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1681307116084</updated>
+      <updated>1681311485111</updated>
     </task>
-    <task id="LOCAL-00014" summary="descriptions aangepast">
-      <created>1681307158274</created>
+    <task id="LOCAL-00014" summary="Fixjes voor offerte">
+      <created>1681311668162</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1681307158274</updated>
+      <updated>1681311668162</updated>
+s
     </task>
     <option name="localTasksCounter" value="15" />
     <servers />
@@ -240,7 +246,9 @@
     <MESSAGE value="MakeQuote.java aangepast" />
     <MESSAGE value="Printer.emptyLine() toegevoegd" />
     <MESSAGE value="options format" />
-    <MESSAGE value="descriptions aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="descriptions aangepast" />
+
+    <MESSAGE value="Fixjes voor offerte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixjes voor offerte" />
+
   </component>
 </project>
