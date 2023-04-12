@@ -22,7 +22,7 @@ Navigatie,500.00,Navigatie,0,null,Speedboot;RubberBoot,navigatie op de boot
 JerryCan,42.00,Accessoires,0,null,Speedboot;RubberBoot,jerry can voor extra brandstof
 DryBag,20.00,Accessoires,0,null,Speedboot;ZeilBoot;RubberBoot,een zak voor spullen
 EHBO-kit,13.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,1e hulp box
-ReddingsVest,74.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,een zwemvest
+ReddingsVest,74.00,Accessoires,0,Speedboot;RubberBoot;ZeilBoot,null,een zwemvest
 Peddel,22.00,Accessoires,0,RubberBoot,null, hiermee kunt u roeien
 Dodemanskoord,9.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot;Rubberboot,om de boot te stoppen als de boot omslaat
 Snelheidsmeter,119.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,om de snelheid van de boot te zien

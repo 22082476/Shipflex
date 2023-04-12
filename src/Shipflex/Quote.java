@@ -215,9 +215,6 @@ public class Quote {
         Printer.getInstance().printCharacters(15, '﹏');
         Printer.getInstance().emptyLine();
         this.printTotal();
-        Printer.getInstance().printSpaces(37);
-        Printer.getInstance().printCharacters(1,'+');
-        Printer.getInstance().emptyLine();
         Printer.getInstance().printCharacters(75, '━');
     }
 
@@ -303,7 +300,9 @@ public class Quote {
             Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
             Printer.getInstance().emptyLine();
         }
-
+        Printer.getInstance().printFormatInfo("");Printer.getInstance().printSpaces(38);
+        Printer.getInstance().printCharacters(1,'+');
+        Printer.getInstance().emptyLine();
         totalPriceBoat = calculatePercentage(121, totalPriceBoat);
         Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot incl. Btw:"));
         Printer.getInstance().printFormatInfo("");

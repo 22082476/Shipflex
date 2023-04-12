@@ -55,7 +55,7 @@ public void printCharacters(int number, char character){
             amountOfSpaces = property.length() + 5;
         }
 
-        Printer.print(property);
-        Printer.printSpaces(amountOfSpaces - property.length());
+        Printer.getInstance().print(property);
+        Printer.getInstance().printSpaces(amountOfSpaces - property.length());
     }
 }
