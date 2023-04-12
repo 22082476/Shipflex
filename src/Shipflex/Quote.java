@@ -4,6 +4,7 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
+
 public class Quote {
     private Company companyShipbuild;
 
@@ -124,7 +125,7 @@ public class Quote {
 
     public void printOptions(boolean showIndex) {
         for (Option option : this.boat.getOptions()) {
-            if(showIndex)
+            if (showIndex)
                 Info.printOptionInfo(option, Info.getOptions().indexOf(option));
             else
                 Info.printOptionInfo(option, -1);
@@ -133,7 +134,7 @@ public class Quote {
         }
     }
 
-    public void printCompany(){
+    public void printCompany() {
         Printer.printLine(companyShipbuild.getName());
         Printer.print(companyShipbuild.getStreet());
         Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
@@ -172,13 +173,12 @@ public class Quote {
         Printer.emptyLine();
     }
 
-    public void printQuote(){
+    public void printQuote() {
         printBasicInformation();
         boat.printBoat();
         printOptions(false);
         printTotal();
     }
-
 
     public void printTotal() {
         double totalPrice = 0;
@@ -186,7 +186,11 @@ public class Quote {
         for (Option option : boat.getOptions()) {
             totalPrice += option.getPrice();
         }
+
+        Printer.printLine("Totaal arbeidsUren : " + workHoursCost);
+        Printer.printLine("Totaal arbeidsUren inclusief BTW: " + workHoursCost * 1.09);
         Printer.printLine("Totaal prijs:" + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
+        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice * 1.21);
+
     }
 }
