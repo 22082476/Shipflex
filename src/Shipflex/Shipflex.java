@@ -14,7 +14,7 @@ public class Shipflex {
         while (true) {
             startText();
             int inputIndex = inputNumber("een command");
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
 
@@ -27,23 +27,23 @@ public class Shipflex {
                     startMaintenance();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
             }
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
         }
     }
 
     public static void welcomeText(){
         //standaard welcome tekst
-        Printer.printLine("Welcome by shipflex");
+        Printer.getInstance().printLine("Welcome by shipflex");
     }
 
     public static void startText(){
-        Printer.printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
+        Printer.getInstance().printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
     }
 
     public static void startMakeQuote(){
-        Printer.print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
+        Printer.getInstance().print("Voer het boot type in (rubberboot, zeilboot, speedboot, plezierjacht): ");
         MakeQuote makeQuote = new MakeQuote(ScanInput.scanInL(), company);
         makeQuote.start();
     }

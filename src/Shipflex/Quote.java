@@ -118,7 +118,7 @@ public class Quote {
         } else if (foundationCustomer != null) {
             foundationCustomer.printCustomer();
         } else {
-            Printer.printLine("Nog geen klant toegevoegd");
+            Printer.getInstance().printLine("Nog geen klant toegevoegd");
         }
     }
 
@@ -129,28 +129,28 @@ public class Quote {
             else
                 Info.printOptionInfo(option, -1);
 
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
         }
     }
 
     public void printCompany(){
-        Printer.printLine(companyShipbuild.getName());
-        Printer.print(companyShipbuild.getStreet());
-        Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
-        Printer.printLine(String.valueOf(companyShipbuild.getPostcode()));
-        Printer.printLine(companyShipbuild.getCity());
+        Printer.getInstance().printLine(companyShipbuild.getName());
+        Printer.getInstance().print(companyShipbuild.getStreet());
+        Printer.getInstance().print(String.valueOf(companyShipbuild.getHousenumber()));
+        Printer.getInstance().printLine(String.valueOf(companyShipbuild.getPostcode()));
+        Printer.getInstance().printLine(companyShipbuild.getCity());
     }
 
     public void printDate() {
         if (this.date != null && !this.date.equals("")) {
-            Printer.printLine("Datum: " + this.date);
+            Printer.getInstance().printLine("Datum: " + this.date);
         } else {
-            Printer.printLine("Datum nog niet ingevuld");
+            Printer.getInstance().printLine("Datum nog niet ingevuld");
     }
         if(this.quoteDate != null && !this.quoteDate.equals("")){
-            Printer.printLine("Geldigsheid datum: " + this.quoteDate);
+            Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
-            Printer.printLine("Geldigsheid datum nog niet ingevuld");
+            Printer.getInstance().printLine("Geldigsheid datum nog niet ingevuld");
         }
 
     }
@@ -158,18 +158,18 @@ public class Quote {
 
     public void printBasicInformation() {
         companyShipbuild.printCompany();
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
         printCustomer();
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
         printDate();
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
 
         if(this.about != null && !this.about.equals("")) {
-            Printer.printLine("Betreft: " + this.about);
+            Printer.getInstance().printLine("Betreft: " + this.about);
         }else {
-            Printer.printLine("Betreft is nog niet ingevuld");
+            Printer.getInstance().printLine("Betreft is nog niet ingevuld");
         }
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
     }
 
     public void printQuote(){
@@ -186,7 +186,7 @@ public class Quote {
         for (Option option : boat.getOptions()) {
             totalPrice += option.getPrice();
         }
-        Printer.printLine("Totaal prijs:" + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
+        Printer.getInstance().printLine("Totaal prijs:" + totalPrice);
+        Printer.getInstance().printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
     }
 }

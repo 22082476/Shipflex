@@ -60,7 +60,7 @@ public class Info {
     }
 
     public static List<Integer> printOptionsForBoatType(String boatType) {
-        Printer.emptyLine();
+        Printer.getInstance().emptyLine();
         List<Integer> validOptionsIndexes = new ArrayList<>();
         List<Option> essentialOptions = new ArrayList<>();
         List<Option> extraOptions = new ArrayList<>();
@@ -78,12 +78,12 @@ public class Info {
             index++;
         }
 
-        Printer.printLine("ESSENTIËLE OPTIES");
-        Printer.emptyLine();
+        Printer.getInstance().printLine("ESSENTIËLE OPTIES");
+        Printer.getInstance().emptyLine();
         printOptionsInList(essentialOptions);
 
-        Printer.printLine("EXTRA OPTIES");
-        Printer.emptyLine();
+        Printer.getInstance().printLine("EXTRA OPTIES");
+        Printer.getInstance().emptyLine();
         printOptionsInList(extraOptions);
 
         return validOptionsIndexes;
@@ -92,7 +92,7 @@ public class Info {
     private static void printOptionsInList(List<Option> options) {
         for(int i = 0; i < options.size(); i++) {
             printOptionInfo(options.get(i), getOptions().indexOf(options.get(i)));
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
         }
     }
 
@@ -100,13 +100,13 @@ public class Info {
     public static void printOptionInfo(Option option, int index) {
         String stringIndex = (index == -1 ? "X" : String.valueOf(index));
 
-        Printer.printLine("[" + stringIndex + "] Optie: " + option.getName());
-        Printer.printLine("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
+        Printer.getInstance().printLine("[" + stringIndex + "] Optie: " + option.getName());
+        Printer.getInstance().printLine("Categorie: " + option.getType() + " Prijs: " + option.getPrice() + " Milieuvriendelijke kortingspercentage: " + option.getEnvironmentDiscount());
 
         if(option.calculateEnvironmentDiscount() != option.getPrice())
-            Printer.printLine(String.format("Prijs incl. korting: %.2f", option.calculateEnvironmentDiscount()));
+            Printer.getInstance().printLine(String.format("Prijs incl. korting: %.2f", option.calculateEnvironmentDiscount()));
 
         if(option.getDescription() != null)
-            Printer.printLine("Beschrijving: " + option.getDescription());
+            Printer.getInstance().printLine("Beschrijving: " + option.getDescription());
     }
 }
