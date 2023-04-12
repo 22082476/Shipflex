@@ -183,6 +183,7 @@ public class Quote {
         }
     }
 
+
     public void printBasicInformation() {
         companyShipbuild.printCompany();
         Printer.getInstance().emptyLine();
@@ -214,6 +215,9 @@ public class Quote {
         Printer.getInstance().printCharacters(15, '﹏');
         Printer.getInstance().emptyLine();
         this.printTotal();
+        Printer.getInstance().printSpaces(37);
+        Printer.getInstance().printCharacters(1,'+');
+        Printer.getInstance().emptyLine();
         Printer.getInstance().printCharacters(75, '━');
     }
 
@@ -269,6 +273,7 @@ public class Quote {
         for (Option option : boat.getOptions()) {
             price += option.getPrice();
         }
+
         return price;
     }
 
