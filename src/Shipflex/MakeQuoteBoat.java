@@ -28,7 +28,7 @@ public class MakeQuoteBoat {
                     break;
                 case 2:
                     quote.printOptions(false);
-                    Printer.printLine(String.format("Prijs van alles excl BTW: %.2f", calculateTotalOptionsPrice()));
+                    Printer.getInstance().printLine(String.format("Prijs van alles excl BTW: %.2f", calculateTotalOptionsPrice()));
                     break;
                 case 3:
                     selectOption();
