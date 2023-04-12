@@ -4,6 +4,11 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 
 public class Quote {
     private Company companyShipbuild;
@@ -204,7 +209,7 @@ public class Quote {
 
     public void printOptions() {
         for (Option option : boat.getOptions()) {
-            option.printAllInfoForOption();
+            option.printOptionInfoForBoat(this.boat.getType());
         }
     }
 
