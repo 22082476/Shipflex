@@ -125,14 +125,14 @@ public class Quote {
 
     public void printOptions(boolean showIndex) {
         for (Option option : this.boat.getOptions()) {
-            if(showIndex)
+            if (showIndex)
                 Info.printOptionInfo(option, Info.getOptions().indexOf(option));
             else
                 Info.printOptionInfo(option, -1);
         }
     }
 
-    public void printCompany(){
+    public void printCompany() {
         Printer.printLine(companyShipbuild.getName());
         Printer.print(companyShipbuild.getStreet());
         Printer.print(String.valueOf(companyShipbuild.getHousenumber()));
@@ -140,7 +140,7 @@ public class Quote {
         Printer.printLine(companyShipbuild.getCity());
     }
 
-    public void printDate(){
+    public void printDate() {
         Printer.printLine("Datum: " + this.date);
         Printer.printLine("Geldigsheid datum: " + this.quoteDate);
     }
@@ -157,11 +157,15 @@ public class Quote {
         Printer.emptyLine();
     }
 
-    public void printQuote(){
+    public void printQuote() {
+        lijntjes1();
         printBasicInformation();
+        lijntjes2();
         boat.printBoat();
         printOptions(false);
+        lijntjes2();
         printTotal();
+        lijntjes1();
     }
 
     public void printTotal() {
@@ -170,7 +174,19 @@ public class Quote {
         for (Option option : boat.getOptions()) {
             totalPrice += option.getPrice();
         }
+
+        Printer.printLine("Totaal arbeidsUren : " + workHoursCost);
+        Printer.printLine("Totaal arbeidsUren inclusief BTW: " + workHoursCost * 1.09);
         Printer.printLine("Totaal prijs:" + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice *1.21);
+        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice * 1.21);
+
+    }
+
+    public void lijntjes1(){
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    }
+
+    public void lijntjes2(){
+        System.out.println("﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
     }
 }
