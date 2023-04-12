@@ -10,15 +10,18 @@ public class Customer {
     protected String street;
     protected String postcode;
     protected String city;
+
+    protected String country;
     protected int houseNumber;
     protected int discount;
     protected HashMap<String, String> extraGegevens;
 
-    public Customer(String name, String street, String postcode, String city, int houseNumber, int discount) {
+    public Customer(String name, String street, String postcode, String city, String country, int houseNumber, int discount) {
         this.name = name;
         this.street = street;
         this.postcode = postcode;
         this.city = city;
+        this.country = country;
         this.houseNumber = houseNumber;
         this.discount = discount;
         this.extraGegevens = new HashMap<>();
@@ -81,6 +84,7 @@ public class Customer {
         Printer.printLine("Straat: " + this.street);
         Printer.printLine("Postcode: " + this.postcode);
         Printer.printLine("Stad: " + this.street);
+        Printer.printLine("Land: " + this.country);
         Printer.printLine("Huisnummer: " + this.houseNumber);
         Printer.printLine("Kortingpercentage: " + this.discount);
 

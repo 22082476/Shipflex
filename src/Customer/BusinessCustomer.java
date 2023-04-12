@@ -8,8 +8,8 @@ public class BusinessCustomer extends Customer {
 
 
 
-    public BusinessCustomer(String name, String street, String postcode, String city, int houseNumber, int discount, String companyname){
-        super(name,street,postcode,city,houseNumber,discount);
+    public BusinessCustomer(String name, String street, String postcode, String city, String country, int houseNumber, int discount, String companyname){
+        super( name, street, postcode, city, country, houseNumber, discount);
         this.companyname = companyname;
 
     }
