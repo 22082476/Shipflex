@@ -278,19 +278,37 @@ public class Quote {
     }
 
     public void printTotal() {
+
         double workCost = workHoursCost;
-        Printer.getInstance().printLine(String.format("Prijs arbeids uren: %.2f", workCost));
+
+        Printer.getInstance().printFormatInfo("Prijs arbeids uren:");
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
+        Printer.getInstance().emptyLine();
         workCost = calculatePercentage(109, workCost);
-        Printer.getInstance().printLine(String.format("Prijs arbeids uren incl. Btw: %.2f", workCost));
+        Printer.getInstance().printFormatInfo(String.format("Prijs arbeids uren incl. Btw:"));
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
+        Printer.getInstance().emptyLine();
 
         double totalPriceBoat = calculateBoatPrice();
-        Printer.getInstance().printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot:"));
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
+        Printer.getInstance().emptyLine();
         if (getDiscount() < 100 && getDiscount() > 0) {
             totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
-            Printer.getInstance().printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
+            Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot met korting:"));
+            Printer.getInstance().printFormatInfo("");
+            Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
+            Printer.getInstance().emptyLine();
         }
 
         totalPriceBoat = calculatePercentage(121, totalPriceBoat);
-        Printer.getInstance().printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot incl. Btw:"));
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
+        Printer.getInstance().emptyLine();
+
     }
 }
