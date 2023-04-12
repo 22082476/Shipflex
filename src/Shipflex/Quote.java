@@ -110,16 +110,36 @@ public class Quote {
     }
 
     public void printCustomer() {
+        switch (checkCustomerType()){
+            case "goverment":
+                govermentCustomer.printCustomer();
+                break;
+            case "business":
+                businessCustomer.printCustomer();
+                break;
+            case "foundation":
+                foundationCustomer.printCustomer();
+                break;
+            case "customer":
+                customer.printCustomer();
+                break;
+            default:
+                Printer.printLine("Nog geen klant toegevoegd");
+                break;
+        }
+    }
+
+    private String checkCustomerType(){
         if (govermentCustomer != null) {
-            govermentCustomer.printCustomer();
+            return "goverment";
         } else if (businessCustomer != null) {
-            businessCustomer.printCustomer();
+            return "business";
         } else if (customer != null) {
-            customer.printCustomer();
+            return "customer";
         } else if (foundationCustomer != null) {
-            foundationCustomer.printCustomer();
-        } else {
-            Printer.printLine("Nog geen klant toegevoegd");
+           return  "foundation";
+        }else {
+            return null;
         }
     }
 
@@ -188,17 +208,56 @@ public class Quote {
         }
     }
 
-    public void printTotal() {
-        double totalPrice = 0;
+    public int getDiscount() {
+        int discount = 0;
+        switch (checkCustomerType()) {
+            case "goverment":
+                discount = govermentCustomer.getDiscount();
+                break;
+            case "business":
+                discount = businessCustomer.getDiscount();
+                break;
+            case "foundation":
+                discount = foundationCustomer.getDiscount();
+                break;
+            case "customer":
+                discount = customer.getDiscount();
+                break;
+        }
+        return 100 - discount;
+    }
+
+
+    public double calculatePercentage(int percentage, double price) {
+        return (price/100) * percentage;
+    }
+
+    public double calculateBoatPrice(){
+        double price = 0;
+        price += boat.getBasePrice();
 
         for (Option option : boat.getOptions()) {
-            totalPrice += option.getPrice();
+            price += option.getPrice();
         }
 
-        Printer.printLine("Totaal arbeids uren : " + workHoursCost);
-        Printer.printLine("Totaal arbeids uren inclusief BTW: " + workHoursCost * 1.09);
-        Printer.printLine("Totaal prijs: " + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW: " + totalPrice * 1.21);
+        return price;
+    }
+
+    public void printTotal() {
+        double workCost = workHoursCost;
+        Printer.printLine(String.format("Prijs arbeids uren: %.2f", workCost));
+        workCost = calculatePercentage(109, workCost);
+        Printer.printLine(String.format("Prijs arbeids uren incl. Btw: %.2f", workCost));
+
+        double totalPriceBoat = calculateBoatPrice();
+        Printer.printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
+        if(getDiscount() < 100 && getDiscount() > 0) {
+            totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
+            Printer.printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
+        }
+
+        totalPriceBoat = calculatePercentage(121, totalPriceBoat);
+        Printer.printLine(String.format("Totaal prijs boot incl. Btw: %.2f", totalPriceBoat));
 
     }
 }
