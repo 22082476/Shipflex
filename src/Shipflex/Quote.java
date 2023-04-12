@@ -4,7 +4,6 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
-
 public class Quote {
     private Company companyShipbuild;
 
@@ -140,9 +139,18 @@ public class Quote {
         Printer.printLine(companyShipbuild.getCity());
     }
 
-    public void printDate(){
-        Printer.printLine("Datum: " + this.date);
-        Printer.printLine("Geldigsheid datum: " + this.quoteDate);
+    public void printDate() {
+        if (this.date != null && !this.date.equals("")) {
+            Printer.printLine("Datum: " + this.date);
+        } else {
+            Printer.printLine("Datum nog niet ingevuld");
+    }
+        if(this.quoteDate != null && !this.quoteDate.equals("")){
+            Printer.printLine("Geldigsheid datum: " + this.quoteDate);
+        } else {
+            Printer.printLine("Geldigsheid datum nog niet ingevuld");
+        }
+
     }
 
 
@@ -153,7 +161,12 @@ public class Quote {
         Printer.emptyLine();
         printDate();
         Printer.emptyLine();
-        Printer.printLine("Betreft: " + this.about);
+
+        if(this.about != null && !this.about.equals("")) {
+            Printer.printLine("Betreft: " + this.about);
+        }else {
+            Printer.printLine("Betreft is nog niet ingevuld");
+        }
         Printer.emptyLine();
     }
 
@@ -163,6 +176,7 @@ public class Quote {
         printOptions(false);
         printTotal();
     }
+
 
     public void printTotal() {
         double totalPrice = 0;
