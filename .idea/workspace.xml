@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="options format">
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="descriptions aangepast">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/options.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/options.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boat/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boat/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataInOut/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shipflex/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex/Quote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="formatOptions" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,12 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Shipflex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Shipflex" />
@@ -75,9 +86,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Shipflex" />
         <item itemvalue="JUnit.Test_InfoReadFile" />
         <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
-        <item itemvalue="Application.Shipflex" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +185,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681297051367</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="descriptions aangepast">
+      <created>1681307116084</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681307116084</updated>
+    </task>
+    <task id="LOCAL-00014" summary="descriptions aangepast">
+      <created>1681307158274</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681307158274</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,6 +240,7 @@
     <MESSAGE value="MakeQuote.java aangepast" />
     <MESSAGE value="Printer.emptyLine() toegevoegd" />
     <MESSAGE value="options format" />
-    <option name="LAST_COMMIT_MESSAGE" value="options format" />
+    <MESSAGE value="descriptions aangepast" />
+    <option name="LAST_COMMIT_MESSAGE" value="descriptions aangepast" />
   </component>
 </project>
