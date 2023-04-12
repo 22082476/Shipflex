@@ -2,7 +2,6 @@ package Boat;
 
 import DataInOut.Printer;
 
-import java.io.Console;
 import java.util.List;
 
 public class Option {
