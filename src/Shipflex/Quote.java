@@ -140,12 +140,12 @@ public class Quote {
     }
 
     public void printDate() {
-        if (this.date != null) {
+        if (this.date != null && !this.date.equals("")) {
             Printer.printLine("Datum: " + this.date);
         } else {
             Printer.printLine("Datum nog niet ingevuld");
     }
-        if(this.quoteDate != null){
+        if(this.quoteDate != null && !this.quoteDate.equals("")){
             Printer.printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
             Printer.printLine("Geldigsheid datum nog niet ingevuld");
@@ -162,7 +162,7 @@ public class Quote {
         printDate();
         Printer.emptyLine();
 
-        if(this.about != null) {
+        if(this.about != null && !this.about.equals("")) {
             Printer.printLine("Betreft: " + this.about);
         }else {
             Printer.printLine("Betreft is nog niet ingevuld");
