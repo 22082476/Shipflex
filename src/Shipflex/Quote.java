@@ -263,11 +263,9 @@ public class Quote {
             Printer.printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
         }
 
+        totalPriceBoat = calculatePercentage(121, totalPriceBoat);
+        Printer.printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
 
-        Printer.printLine("Totaal arbeidsUren : " + workHoursCost);
-        Printer.printLine("Totaal arbeidsUren inclusief BTW: " + workHoursCost * 1.09);
-        Printer.printLine("Totaal prijs:" + totalPrice);
-        Printer.printLine("Totaal prijs inclusief BTW " + totalPrice * 1.21);
 
     }
 
