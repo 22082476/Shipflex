@@ -4,6 +4,9 @@ import Boat.*;
 import Customer.*;
 import DataInOut.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Quote {
     private Company companyShipbuild;
@@ -211,8 +214,23 @@ public class Quote {
     }
 
     public void printOptions() {
+        List<Option> essentialOptions = new ArrayList<>();
+        List<Option> extraOptions = new ArrayList<>();
+
         for (Option option : boat.getOptions()) {
-            option.printAllInfoForOption();
+            if(option.getEssentialForBoatType().contains(boat.getType().toLowerCase()))
+                essentialOptions.add(option);
+            else
+                extraOptions.add(option);
+        }
+
+        printOptionsListFormatted(essentialOptions);
+        printOptionsListFormatted(extraOptions);
+    }
+
+    private void printOptionsListFormatted(List<Option> options) {
+        for(Option option : options) {
+            option.printOptionInfoForBoat(boat.getType());
         }
     }
 

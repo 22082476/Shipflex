@@ -93,10 +93,12 @@ public class Option {
         return this.getPrice() - (this.getPrice() / 100 * this.getEnvironmentDiscount());
     }
 
-    public void printAllInfoForOption() {
+    public void printOptionInfoForBoat(String boatType) {
         printFormatInfo(this.name);
         printFormatInfo(this.type);
-        Printer.print(String.valueOf(this.price));
+        printFormatInfo(this.essentialForBoatType.contains(boatType.toLowerCase()) ? "Essentieel" : "Extra");
+        Printer.printLine(String.valueOf(this.price));
+
         Printer.emptyLine();
 
         if (this.environmentDiscount > 0) {

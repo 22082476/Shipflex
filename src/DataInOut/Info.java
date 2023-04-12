@@ -96,7 +96,6 @@ public class Info {
         }
     }
 
-
     public static void printOptionInfo(Option option, int index) {
         String stringIndex = (index == -1 ? "X" : String.valueOf(index));
 
