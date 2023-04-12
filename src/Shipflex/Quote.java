@@ -175,11 +175,18 @@ public class Quote {
     public void printQuote(){
         printBasicInformation();
         boat.printBoat();
-        printOptions(false);
+        Printer.emptyLine();
+        printOptions();
+        Printer.emptyLine();
         printTotal();
     }
 
 
+    public void printOptions() {
+        for (Option option : boat.getOptions()) {
+            option.printAllInfoForOption();
+        }
+    }
     public void printTotal() {
         double totalPrice = 0;
 
