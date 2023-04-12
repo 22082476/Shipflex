@@ -163,17 +163,19 @@ public class Quote {
     }
 
     public void printDate() {
+        Printer.printLine("Datum: " + this.date);
+        Printer.printLine("Geldigsheid datum: " + this.quoteDate);
+        
         if (this.date != null && !this.date.equals("")) {
             Printer.printLine("Datum: " + this.date);
         } else {
             Printer.printLine("Datum nog niet ingevuld");
-    }
+        }
         if(this.quoteDate != null && !this.quoteDate.equals("")){
             Printer.printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
             Printer.printLine("Geldigsheid datum nog niet ingevuld");
         }
-
     }
 
 
@@ -194,12 +196,17 @@ public class Quote {
     }
 
     public void printQuote() {
+        lijntjes1();
         printBasicInformation();
+        lijntjes2();
         boat.printBoat();
+        printOptions(false);
+        lijntjes2();
         Printer.emptyLine();
         printOptions();
         Printer.emptyLine();
         printTotal();
+        lijntjes1();
     }
 
     public void printOptions() {
@@ -257,7 +264,16 @@ public class Quote {
         }
 
         totalPriceBoat = calculatePercentage(121, totalPriceBoat);
-        Printer.printLine(String.format("Totaal prijs boot incl. Btw: %.2f", totalPriceBoat));
+        Printer.printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
 
+
+    }
+
+    public void lijntjes1(){
+        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    }
+
+    public void lijntjes2(){
+        System.out.println("﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
     }
 }
