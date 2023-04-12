@@ -14,7 +14,7 @@ public class Shipflex {
         while (true) {
             startText();
             int inputIndex = inputNumber("een command");
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
 
@@ -27,20 +27,21 @@ public class Shipflex {
                     startMaintenance();
                     break;
                 default:
-                    Printer.printLine("Incorrecte invoer!");
+                    Printer.getInstance().printLine("Incorrecte invoer!");
             }
-            Printer.emptyLine();
+            Printer.getInstance().emptyLine();
         }
     }
 
     public static void welcomeText(){
         //standaard welcome tekst
-        Printer.printLine("Welcome by shipflex");
-        Printer.emptyLine();
+        Printer.getInstance().printLine("Welcome by shipflex");
+        Printer.getInstance().emptyLine();
+
     }
 
     public static void startText(){
-        Printer.printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
+        Printer.getInstance().printLine("Commands: [0] stop, [1] maak offerte, [2] onderhoud");
     }
 
     public static void startMakeQuote(){

@@ -97,13 +97,13 @@ public class Option {
         printFormatInfo(this.name);
         printFormatInfo(this.type);
         printFormatInfo(this.essentialForBoatType.contains(boatType.toLowerCase()) ? "Essentieel" : "Extra");
-        Printer.printLine(String.valueOf(this.price));
-
-        Printer.emptyLine();
+        Printer.getInstance().printLine(String.valueOf(this.price));
 
         if (this.environmentDiscount > 0) {
+            Printer.getInstance().emptyLine();
+            printFormatInfo("");
             printFormatInfo(String.valueOf(this.environmentDiscount));
-            Printer.print(String.valueOf(this.calculateEnvironmentDiscount()));
+            Printer.getInstance().print(String.valueOf(this.calculateEnvironmentDiscount()));
         }
     }
 
@@ -114,7 +114,7 @@ public class Option {
             amountOfSpaces = property.length() + 5;
         }
 
-        Printer.print(property);
-        Printer.printSpaces(amountOfSpaces - property.length());
+        Printer.getInstance().print(property);
+        Printer.getInstance().printSpaces(amountOfSpaces - property.length());
     }
 }

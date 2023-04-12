@@ -1,14 +1,14 @@
 package DataInOut;
 
 public interface Print {
-    static void print(String text) { }
+    void print(String text);
 
-    static void printLine(String text) { }
+    void printLine(String text);
 
-    static void emptyLine() { }
+    void emptyLine();
 
-    static void printSpaces(int number){ }
+    void printSpaces(int number);
 
-    static void printTextGenerateQuote(String[] input){ }
+    void printTextGenerateQuote(String[] input);
 }
 

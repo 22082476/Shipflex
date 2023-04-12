@@ -1,42 +1,51 @@
 package DataInOut;
 
 public class Printer implements Print{
+    private static Printer instance = null;
+    public static Printer getInstance(){
+        if(instance == null){
+            instance = new Printer();
+        }
+        return instance;
+    }
 
-public static void print(String text){
+
+
+public void print(String text){
     System.out.print(text);
 }
 
-public static void printLine(String text){
+public void printLine(String text){
     print(String.format(text+"%n"));
 }
 
-public static void emptyLine(){
+public void emptyLine(){
     printLine("");
 }
 
-public static void printSpaces(int number){
+public void printSpaces(int number){
     printCharacters(number, ' ');
 }
 
-public static void printCharacters(int number, char character){
+public void printCharacters(int number, char character){
     for(int i = 1; i <= number; i++){
         print("" + character);
     }
 }
 
-    public static void printTextGenerateQuote(String [] input){
-        Printer.printLine("Commands: ");
+    public void printTextGenerateQuote(String [] input){
+        printLine("Commands: ");
         for(int i = 0; i < input.length; i++){
             if(i == input.length-1){
-                Printer.printLine("[" +i+ "] " + input[i]);
+                printLine("[" +i+ "] " + input[i]);
             }else {
-                Printer.print("[" +i+ "] " + input[i] + ", ");
+                print("[" +i+ "] " + input[i] + ", ");
             }
 
             if (i == input.length / 2 && input.length >= 4)
-                Printer.emptyLine();
+                emptyLine();
         }
-        Printer.print("Voer een command in: ");
+        print("Voer een command in: ");
     }
 
 

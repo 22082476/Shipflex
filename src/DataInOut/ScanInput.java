@@ -18,17 +18,17 @@ public class ScanInput {
         in.nextLine();
         return integer;
     }
+
     public static String inputQuestion(String soort) {
         String input = "";
 
         while (input.equals("")){
-            Printer.print("Voer " + soort + " in: ");
+            Printer.getInstance().print("Voer " + soort + " in: ");
             input = ScanInput.scanInH();
 
             if(input.equals("")){
-                Printer.printLine("Niks ingevuld!");
+                Printer.getInstance().printLine("Niks ingevuld!");
             }
-
         }
         return input;
     }
@@ -40,7 +40,7 @@ public class ScanInput {
         if (ableToParse(input)){
             number = Integer.parseInt(input);
         } else {
-            Printer.printLine("Geen nummer!");
+            Printer.getInstance().printLine("Geen nummer!");
             number = inputNumber(question);
         }
 
@@ -51,7 +51,7 @@ public class ScanInput {
         try {
             return Double.parseDouble(input);
         }catch (NumberFormatException e){
-            Printer.printLine("Geen nummer!");
+            Printer.getInstance().printLine("Geen nummer!");
             inputNumberD(question);
         }
         return 0.0;
