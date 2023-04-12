@@ -28,6 +28,7 @@ public class MakeQuoteBoat {
                     break;
                 case 2:
                     quote.printOptions(false);
+                    Printer.printLine(String.format("Prijs van alles excl BTW: %.2f", calculateTotalOptionsPrice()));
                     break;
                 case 3:
                     selectOption();
@@ -133,5 +134,15 @@ public class MakeQuoteBoat {
         }
 
         Printer.getInstance().printLine("Je hebt optie " + option.getName() + " weggehaald.");
+    }
+
+    private double calculateTotalOptionsPrice() {
+        double totalPrice = 0;
+
+        for(Option option : quote.getBoat().getOptions()) {
+            totalPrice += option.getPrice();
+        }
+
+        return totalPrice;
     }
 }
