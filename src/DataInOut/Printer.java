@@ -15,8 +15,12 @@ public static void emptyLine(){
 }
 
 public static void printSpaces(int number){
+    printCharacters(number, ' ');
+}
+
+public static void printCharacters(int number, char character){
     for(int i = 1; i <= number; i++){
-        print(" ");
+        print("" + character);
     }
 }
 
