@@ -113,27 +113,27 @@ public class Quote {
     }
 
     public void printCustomer() {
-            switch (checkCustomerType()) {
-                case "goverment":
-                    govermentCustomer.printCustomer();
-                    break;
-                case "business":
-                    businessCustomer.printCustomer();
-                    break;
-                case "foundation":
-                    foundationCustomer.printCustomer();
-                    break;
-                case "customer":
-                    customer.printCustomer();
-                    break;
-                default:
-                    Printer.printLine("Nog geen klant toegevoegd");
-                    break;
-            }
+        switch (checkCustomerType()) {
+            case "goverment":
+                govermentCustomer.printCustomer();
+                break;
+            case "business":
+                businessCustomer.printCustomer();
+                break;
+            case "foundation":
+                foundationCustomer.printCustomer();
+                break;
+            case "customer":
+                customer.printCustomer();
+                break;
+            default:
+                Printer.printLine("Nog geen klant toegevoegd");
+                break;
         }
+    }
 
 
-    private String checkCustomerType(){
+    private String checkCustomerType() {
         if (govermentCustomer != null) {
             return "goverment";
         } else if (businessCustomer != null) {
@@ -141,8 +141,8 @@ public class Quote {
         } else if (customer != null) {
             return "customer";
         } else if (foundationCustomer != null) {
-           return  "foundation";
-        }else {
+            return "foundation";
+        } else {
             return "";
         }
     }
@@ -169,13 +169,13 @@ public class Quote {
     public void printDate() {
         Printer.printLine("Datum: " + this.date);
         Printer.printLine("Geldigsheid datum: " + this.quoteDate);
-        
+
         if (this.date != null && !this.date.equals("")) {
             Printer.printLine("Datum: " + this.date);
         } else {
             Printer.printLine("Datum nog niet ingevuld");
         }
-        if(this.quoteDate != null && !this.quoteDate.equals("")){
+        if (this.quoteDate != null && !this.quoteDate.equals("")) {
             Printer.printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
             Printer.printLine("Geldigsheid datum nog niet ingevuld");
@@ -191,26 +191,26 @@ public class Quote {
         printDate();
         Printer.emptyLine();
 
-        if(this.about != null && !this.about.equals("")) {
+        if (this.about != null && !this.about.equals("")) {
             Printer.printLine("Betreft: " + this.about);
-        }else {
+        } else {
             Printer.printLine("Betreft is nog niet ingevuld");
         }
         Printer.emptyLine();
     }
 
     public void printQuote() {
-        lijntjes1();
+        Printer.printCharacters(40, '━');
         printBasicInformation();
-        lijntjes2();
+        Printer.printCharacters(15, '﹏');
         boat.printBoat();
         printOptions(false);
-        lijntjes2();
+        Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
         printOptions();
         Printer.emptyLine();
         printTotal();
-        lijntjes1();
+        Printer.printCharacters(40, '━');
     }
 
     public void printOptions() {
@@ -218,7 +218,7 @@ public class Quote {
         List<Option> extraOptions = new ArrayList<>();
 
         for (Option option : boat.getOptions()) {
-            if(option.getEssentialForBoatType().contains(boat.getType().toLowerCase()))
+            if (option.getEssentialForBoatType().contains(boat.getType().toLowerCase()))
                 essentialOptions.add(option);
             else
                 extraOptions.add(option);
@@ -229,7 +229,7 @@ public class Quote {
     }
 
     private void printOptionsListFormatted(List<Option> options) {
-        for(Option option : options) {
+        for (Option option : options) {
             option.printOptionInfoForBoat(boat.getType());
         }
     }
@@ -255,10 +255,10 @@ public class Quote {
 
 
     public double calculatePercentage(int percentage, double price) {
-        return (price/100) * percentage;
+        return (price / 100) * percentage;
     }
 
-    public double calculateBoatPrice(){
+    public double calculateBoatPrice() {
         double price = 0;
         price += boat.getBasePrice();
 
@@ -277,7 +277,7 @@ public class Quote {
 
         double totalPriceBoat = calculateBoatPrice();
         Printer.printLine(String.format("Totaal prijs boot: %.2f", totalPriceBoat));
-        if(getDiscount() < 100 && getDiscount() > 0) {
+        if (getDiscount() < 100 && getDiscount() > 0) {
             totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
             Printer.printLine(String.format("Totaal prijs boot met korting: %.2f", totalPriceBoat));
         }
@@ -286,13 +286,5 @@ public class Quote {
         Printer.printLine(String.format("Totaal prijs boot incl. Btw %.2f", totalPriceBoat));
 
 
-    }
-
-    public void lijntjes1(){
-        System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    }
-
-    public void lijntjes2(){
-        System.out.println("﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
     }
 }
