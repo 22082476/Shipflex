@@ -60,7 +60,7 @@ public class Info {
     }
 
     public static List<Integer> printOptionsForBoatType(String boatType) {
-        Printer.print("test");
+        Printer.emptyLine();
         List<Integer> validOptionsIndexes = new ArrayList<>();
         List<Option> essentialOptions = new ArrayList<>();
         List<Option> extraOptions = new ArrayList<>();
