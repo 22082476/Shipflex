@@ -201,19 +201,18 @@ public class Quote {
 
     public void printQuote() {
         Printer.printCharacters(40, '━');
-        printBasicInformation();
+        this.printBasicInformation();
         Printer.printCharacters(15, '﹏');
         boat.printBoat();
-        printOptions(false);
         Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
-        printOptions();
+        this.printOptions();
         Printer.emptyLine();
-        printTotal();
+        this.printTotal();
         Printer.printCharacters(40, '━');
     }
 
-    public void printOptions() {
+    private void printOptions() {
         List<Option> essentialOptions = new ArrayList<>();
         List<Option> extraOptions = new ArrayList<>();
 
