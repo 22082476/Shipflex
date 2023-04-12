@@ -7,13 +7,16 @@ class Company {
     private String street;
     private String postcode;
     private String city;
+
+    private String country;
     private int housenumber;
 
-    Company(String name, String street, String postcode, String city, int housenumber){
+    Company(String name, String street, String postcode, String city, String country, int housenumber){
         this.name = name;
         this.street = street;
         this.postcode = postcode;
         this.city = city;
+        this.country = country;
         this.housenumber = housenumber;
     }
 
@@ -56,6 +59,14 @@ class Company {
      public int getHousenumber() {
          return this.housenumber;
      }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public void printCompany(){
         Printer.printLine(getName());
