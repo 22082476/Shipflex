@@ -2,10 +2,12 @@ package Boat;
 
 import DataInOut.Info;
 import DataInOut.Printer;
+import DataInOut.ScanInput;
 
 import java.util.ArrayList;
 
-public class Boat {
+
+public abstract class Boat {
 
    private String name;
    private String type;
@@ -77,6 +79,12 @@ public class Boat {
         Printer.printLine("Bootsoort: " + getType());
         Printer.printLine("Basisprijs: " + getBasePrice());
 
+    }
+
+    public void changeBoat(){
+        setName(ScanInput.inputQuestion("bootnaam"));
+        setType(ScanInput.inputQuestion("boottype(" + getType() + ")"));
+        setBasePrice(ScanInput.inputNumberD("basisprijs (" + getBasePrice()+ ")"));
     }
 
 

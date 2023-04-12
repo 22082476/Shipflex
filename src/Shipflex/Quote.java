@@ -110,24 +110,25 @@ public class Quote {
     }
 
     public void printCustomer() {
-        switch (checkCustomerType()){
-            case "goverment":
-                govermentCustomer.printCustomer();
-                break;
-            case "business":
-                businessCustomer.printCustomer();
-                break;
-            case "foundation":
-                foundationCustomer.printCustomer();
-                break;
-            case "customer":
-                customer.printCustomer();
-                break;
-            default:
-                Printer.printLine("Nog geen klant toegevoegd");
-                break;
+            switch (checkCustomerType()) {
+                case "goverment":
+                    govermentCustomer.printCustomer();
+                    break;
+                case "business":
+                    businessCustomer.printCustomer();
+                    break;
+                case "foundation":
+                    foundationCustomer.printCustomer();
+                    break;
+                case "customer":
+                    customer.printCustomer();
+                    break;
+                default:
+                    Printer.printLine("Nog geen klant toegevoegd");
+                    break;
+            }
         }
-    }
+
 
     private String checkCustomerType(){
         if (govermentCustomer != null) {
@@ -139,7 +140,7 @@ public class Quote {
         } else if (foundationCustomer != null) {
            return  "foundation";
         }else {
-            return null;
+            return "";
         }
     }
 

@@ -12,7 +12,7 @@ import static Shipflex.MakeQuote.quote;
 
 public class MakeQuoteBoat {
 
-    private String [] commands = {"terug", "beschikbare opties", "gekozen opties", "optie toevoegen", "optie verwijderen"};
+    private String [] commands = {"terug", "beschikbare opties", "gekozen opties", "optie toevoegen", "optie verwijderen", "boot wijzigen", "boot laten zien"};
 
 
     public void start(){
@@ -34,6 +34,12 @@ public class MakeQuoteBoat {
                     break;
                 case 4:
                     removeOptionFromBoat();
+                    break;
+                case 5:
+                    quote.getBoat().changeBoat();
+                    break;
+                case 6:
+                    quote.getBoat().printBoat();
                     break;
                 default:
                     Printer.printLine("Incorrecte invoer!");
