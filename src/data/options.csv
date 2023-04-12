@@ -11,8 +11,8 @@ Touw,25.00,Touw,00,null,Speedboot;ZeilBoot,touw voor aanmeren
 TalamexAnker,500.00,Anker,00,Speedboot,RubberBoot,anker
 Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,null,trailer
 TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,null,trailer
-Universeel,90.00,Afdekzeil,00,null,Speedboot,afdekzeil
-Universeel,229.00,Afdekzeil,00,null,Speedboot,afdekzeil
+Universeel-Klein,90.00,Afdekzeil,00,null,Speedboot,afdekzeil
+Universeel-Groot,229.00,Afdekzeil,00,null,Speedboot,afdekzeil
 Binnenverlichting,95.00,Verlichting,00,Speedboot;ZeilBoot;PLezierJacht,RubberBoot,binnenverlichting bij boten
 Stuurwiel,110.00,Roer,00,Speedboot;RubberBoot,null,roer voor de boten
 RoerArm,960.00,Roer,00,Speedboot;RubberBoot,null,roer van buiten de boot
@@ -24,3 +24,6 @@ DryBag,20.00,Accessoires,0,null,Speedboot;ZeilBoot;RubberBoot,een zak voor spull
 EHBO-kit,13.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,1e hulp box
 ReddingsVest,74.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,zwemvest
 Peddel,22.00,Accessoires,0,RubberBoot,null,peddels
+Dodemanskoord,9.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot;Rubberboot,om te boot te stoppen als bestuurder dood gaat
+Snelheidsmeter,119.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,om de snelheid te zien
+Marifoon,179.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,gebruiken om te communiceren

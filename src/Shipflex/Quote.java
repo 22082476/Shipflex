@@ -129,6 +129,8 @@ public class Quote {
                 Info.printOptionInfo(option, Info.getOptions().indexOf(option));
             else
                 Info.printOptionInfo(option, -1);
+
+            Printer.emptyLine();
         }
     }
 
