@@ -1,29 +1,29 @@
 NAME,PRICE,TYPE,DISCOUNT,ESSENTIAL FOR BOATS,extra,DESCRIPTION
-Yamaha,1900.00,BuitenboordMotor,0,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,milieuvriendelijke motor
-ParapluAnker,250.00,Anker,0,Speedboot,RubberBoot,milieuvriendelijke anker
-Pentex,100.00,Zeil,0,Speedboot,RubberBoot,milieuvriendelijk zeil
+Yamaha,1900.00,BuitenboordMotor,0,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,dit is een milieuvriendelijke motor
+ParapluAnker,250.00,Anker,0,Speedboot,RubberBoot,deze anker is milieuvriendelijk
+Pentex,100.00,Zeil,0,Speedboot,RubberBoot,milieuvriendelijke zeil
 Ledlamp,153.00,LedVerlichting,0,Speedboot;PlezierJacht;ZeilBoot,RubberBoot,milieuvriendelijke lampen
 Kunststof,65.00,Mast,0,Zeilboot,null,milieuvriendelijke mast
-Mercury,25400.00,KrachtigeBuitenBoordMotor,00,Speedboot;PlezierJacht,RubberBoot,normale motor
-SeilFlechter,965.00,OpblaasbareRubberBoot,00,null,Speedboot,rubberbootje
-Kolibri,640.00,OpblaasbareRubberboot,00,null,Speedboot,rubberbootje
-Touw,25.00,Touw,00,null,Speedboot;ZeilBoot,touw voor aanmeren
-TalamexAnker,500.00,Anker,00,Speedboot,RubberBoot,anker
-Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,null,trailer
-TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,null,trailer
-Universeel-Klein,90.00,Afdekzeil,00,null,Speedboot,afdekzeil
-Universeel-Groot,229.00,Afdekzeil,00,null,Speedboot,afdekzeil
+Mercury,25400.00,KrachtigeBuitenBoordMotor,00,Speedboot;PlezierJacht,RubberBoot,krachtige buitenboordmotor
+SeilFlechter,965.00,OpblaasbareRubberBoot,00,null,Speedboot,een wat groter rubberbootje
+Kolibri,640.00,OpblaasbareRubberboot,00,null,Speedboot,een klein rubberbootje
+Touw,25.00,Touw,00,null,Speedboot;ZeilBoot,touw dat u kunt geburiken voor het aanmeren van de boot
+TalamexAnker,500.00,Anker,00,Speedboot,RubberBoot,een grote sterke anker
+Marlin,1495.00,Trailer,00,Speedboot;RubberBoot,null,trailer voor uw boot
+TTHtrailer,1360.00,Trailer,00,Speedboot;RubberBoot,null,trailer voor de boot
+Universeel-Klein,90.00,Afdekzeil,00,null,Speedboot,een afdekzeil dat de boot droog houdt
+Universeel-Groot,229.00,Afdekzeil,00,null,Speedboot,een afdekzeil dat de boot droog houdt
 Binnenverlichting,95.00,Verlichting,00,Speedboot;ZeilBoot;PLezierJacht,RubberBoot,binnenverlichting bij boten
 Stuurwiel,110.00,Roer,00,Speedboot;RubberBoot,null,roer voor de boten
-RoerArm,960.00,Roer,00,Speedboot;RubberBoot,null,roer van buiten de boot
-Kevlar,125.00,Zeil,00,ZeilBoot,null,zeil voor zeilboot
+RoerArm,960.00,Roer,00,Speedboot;RubberBoot,null,krachtige roer onder de boot
+Kevlar,125.00,Zeil,00,ZeilBoot,null,een zeil voor de zeilboot
 Hout,75.00,Mast,00,ZeilBoot,null,masten voor de zeilboot
-Navigatie,500.00,Navigatie,0,null,Speedboot;RubberBoot,navigatie
+Navigatie,500.00,Navigatie,0,null,Speedboot;RubberBoot,navigatie op de boot
 JerryCan,42.00,Accessoires,0,null,Speedboot;RubberBoot,jerry can voor extra brandstof
 DryBag,20.00,Accessoires,0,null,Speedboot;ZeilBoot;RubberBoot,een zak voor spullen
 EHBO-kit,13.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,1e hulp box
-ReddingsVest,74.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,zwemvest
-Peddel,22.00,Accessoires,0,RubberBoot,null, hiermee kan je sturen
-Dodemanskoord,9.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot;Rubberboot,om te boot te stoppen als bestuurder dood gaat
-Snelheidsmeter,119.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,om de snelheid te zien
-Marifoon,179.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,gebruiken om te communiceren
+ReddingsVest,74.00,Accessoires,0,Speedboot;ZeilBoot,RubberBoot,een zwemvest
+Peddel,22.00,Accessoires,0,RubberBoot,null, hiermee kunt u roeien
+Dodemanskoord,9.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot;Rubberboot,om de boot te stoppen als de boot omslaat
+Snelheidsmeter,119.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,om de snelheid van de boot te zien
+Marifoon,179.99,Accessoires,0,null,Speedboot;Plezierjacht;Zeilboot,hiermee kan worden gecommuniceerd met andere boten en de kustwacht
