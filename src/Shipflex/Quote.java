@@ -171,18 +171,10 @@ public class Quote {
             totalPrice += option.getPrice();
         }
 
-        Printer.printLine("Totaal arbeidsUren : " + workHoursCost );
+        Printer.printLine("Totaal arbeidsUren : " + workHoursCost);
         Printer.printLine("Totaal arbeidsUren inclusief BTW: " + workHoursCost * 1.09);
         Printer.printLine("Totaal prijs:" + totalPrice);
         Printer.printLine("Totaal prijs inclusief BTW " + totalPrice * 1.21);
 
-    }
-
-
-
-
-    public double calculateWorkhourcost () {
-    workHoursCost = workHoursCost / 100 * 9;
-    return workHoursCost;
     }
 }
