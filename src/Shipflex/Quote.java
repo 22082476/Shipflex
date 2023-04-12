@@ -167,9 +167,6 @@ public class Quote {
     }
 
     public void printDate() {
-        Printer.printLine("Datum: " + this.date);
-        Printer.printLine("Geldigsheid datum: " + this.quoteDate);
-
         if (this.date != null && !this.date.equals("")) {
             Printer.printLine("Datum: " + this.date);
         } else {
@@ -201,18 +198,21 @@ public class Quote {
 
     public void printQuote() {
         Printer.printCharacters(40, '━');
-        this.printBasicInformation();
+        Printer.emptyLine();
+        printBasicInformation();
         Printer.printCharacters(15, '﹏');
+        Printer.emptyLine();
         boat.printBoat();
+        printOptions(false);
         Printer.printCharacters(15, '﹏');
         Printer.emptyLine();
-        this.printOptions();
+        printOptions();
         Printer.emptyLine();
-        this.printTotal();
+        printTotal();
         Printer.printCharacters(40, '━');
     }
 
-    private void printOptions() {
+    public void printOptions() {
         List<Option> essentialOptions = new ArrayList<>();
         List<Option> extraOptions = new ArrayList<>();
 
