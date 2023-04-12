@@ -74,5 +74,6 @@ class Company {
         Printer.printLine("" + getHousenumber());
         Printer.printLine(""+ getPostcode());
         Printer.printLine(getCity());
+        Printer.printLine(getCountry());
     }
  }
