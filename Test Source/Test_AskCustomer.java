@@ -13,7 +13,7 @@ import java.io.ByteArrayInputStream;
 public class Test_AskCustomer {
 
     @Test //
-    public void Test_AskCustomerZakelijk() {
+    public void Test_AskCustomerBussiness() {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
@@ -34,7 +34,7 @@ public class Test_AskCustomer {
 
 
     @Test
-    public void Test_AskCustomerStichting() {
+    public void Test_AskCustomerFoundation() {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
@@ -54,7 +54,7 @@ public class Test_AskCustomer {
 
 
     @Test
-    public void Test_AskCustomerOverheid() {
+    public void Test_AskCustomerGoverment() {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
@@ -73,7 +73,7 @@ public class Test_AskCustomer {
 
 
     @Test
-    public void Test_AskCustomerKlant() {
+    public void Test_AskCustomerCustomer() {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
