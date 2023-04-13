@@ -56,8 +56,21 @@ protected static String outCome = null;
     }
 
 
+    @Override
+    public void printFormatInfo(String property) {
+        int amountOfSpaces = 30;
+
+        String output = property;
+
+        for (int i = 1; i <= amountOfSpaces; i++) {
+            output += " ";
+        }
+        this.outCome = output;
+    }
 
 }
+
+
 
 class Test_PrinterInterface_Print {
     @ParameterizedTest
@@ -121,6 +134,22 @@ class Test_PrinterInterface_Print {
 
         //Assert
         assertEquals("Commands: [0] een, [1] twee, [2] drie, [3] vier Voer een command in: ", TestClassPrinterInterface.outCome);
+    }
+
+
+    //test of de output wel goed word geformat, dus dat er na de String 30 spaces bijkomen
+    @Test
+    @ParameterizedTest
+    @CsvSource({"test12, test12                              "})
+    public void testPrintFormatInfo() {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.printFormatInfo("test12");
+
+        //Assert
+        assertEquals("test12                              ", TestClassPrinterInterface.outCome);
     }
 
 }
