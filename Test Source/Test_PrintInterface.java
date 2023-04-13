@@ -1,75 +1,14 @@
 import DataInOut.Print;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class TestClassPrinterInterface implements Print {
 protected static String outCome = null;
-
-@Test
-public void testPrint(){
-    //Arrange
-    Print printer = new TestClassPrinterInterface();
-    String text = "testen";
-    //Act
-    printer.print(text);
-    //Assert
-    Assertions.assertEquals(text,outCome);
-}
-
-    @Test
-    public void testPrintLine() {
-        //Arrange
-        Print printer = new TestClassPrinterInterface();
-        String text = "testers";
-        //Act
-        printer.printLine(text);
-        //Assert
-        Assertions.assertEquals(text, outCome);
-    }
-
-    @Test
-    public void testEmptyLine() {
-        //Arrange
-        Print printer = new TestClassPrinterInterface();
-        //Act
-        printer.emptyLine();
-        //Assert
-        Assertions.assertEquals(" <<lege regel>> ", outCome);
-    }
-
-    @Test
-    public void testPrintSpaces() {
-        //Arrange
-        Print printer = new TestClassPrinterInterface();
-        int number = 5;
-        //Act
-        printer.printSpaces(number);
-        //Assert
-        Assertions.assertEquals("     ", outCome);
-    }
-
-    @Test
-    public void testPrintTextGenerateQuote() {
-        //Arrange
-        Print printer = new TestClassPrinterInterface();
-        String[] input = {"Optie 1", "Optie 2", "Optie 3"};
-        //Act
-        printer.printTextGenerateQuote(input);
-        String expectedOutput = "Commands: [0] Optie 1, [1] Optie 2, [2] Optie 3 Voer een command in: ";
-        //Assert
-        Assertions.assertEquals(expectedOutput, outCome);
-
-        //Arrange
-        input = new String[]{"Boot 1", "Boot 2", "Boot 3", "Boot 4", "Boot 5"};
-        //Act
-        printer.printTextGenerateQuote(input);
-        expectedOutput = "Commands: [0] Boot 1, [1] Boot 2, [2] Boot 3, [3] Boot 4, [4] Boot 5 Voer een command in: ";
-        //Assert
-        Assertions.assertEquals(expectedOutput, outCome);
-    }
-
-
     @Override
     public void print(String text) {
         this.outCome = text;
@@ -110,6 +49,72 @@ public void testPrint(){
                 emptyLine();
         }
         outCome = output + " Voer een command in: ";
+    }
+
+}
+
+class Test_PrinterInterface{
+    @ParameterizedTest
+    @CsvSource({"testen, "})
+    public void testPrint(String text, String expected){
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.print(text);
+
+        //Assert
+        assertEquals(expected, TestClassPrinterInterface.outCome);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"testers, "})
+    public void testPrintLine(String text, String expected) {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.printLine(text);
+
+        //Assert
+        assertEquals(text, TestClassPrinterInterface.outCome);
+    }
+
+    @Test
+    public void testEmptyLine() {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.emptyLine();
+
+        //Assert
+        assertEquals(" <<lege regel>> ", printer.outCome);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"5, '     '"})
+    public void testPrintSpaces(int number, String expected) {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.printSpaces(number);
+
+        //Assert
+        assertEquals(expected, printer.outCome);
+    }
+
+    @Test
+    public void testPrintTextGenerateQuote() {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.printTextGenerateQuote(new String[]{"een", "twee", "drie", "vier"});
+
+        //Assert
+        assertEquals("Commands: [0] een, [1] twee, [2] drie, [3] vier Voer een command in: ", TestClassPrinterInterface.outCome);
     }
 
 }
