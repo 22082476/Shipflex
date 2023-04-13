@@ -7,11 +7,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Test_InfoReadFile {
+public class Test_readOptionsFromFile_Info {
 
     @ParameterizedTest
     @CsvSource ({"src/data/options.csv, 25", "src/data/options2.csv, 50", "src/data/test2.csv, 56"})
-    public void Correcte_aatalRegelsMetInlezenInfo(String source, int expectedRowNumbers){
+    public void testReadOptionsFromFile(String source, int expectedRowNumbers){
         //Arrange
         Info.readOptionsFromFile(source);
         List<Option> temp = null;
