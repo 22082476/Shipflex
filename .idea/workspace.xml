@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Fixjes voor offerte">
-      <change afterPath="$PROJECT_DIR$/Test Source/Test_AskCustomer.java" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Test Askcustomer moet nog aangepast worden">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Source/Test_AskCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_AskCustomer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Shipflex">
+  <component name="RunManager" selected="JUnit.Test_CalculatePercentage.testCalculatePercentage">
     <configuration name="Shipflex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Shipflex" />
       <module name="untitled" />
@@ -62,11 +62,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_BerekeningMileuKorting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_CalculatePercentage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test_BerekeningMileuKorting" />
+      <option name="MAIN_CLASS_NAME" value="Test_CalculatePercentage" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_CalculatePercentage.testCalculatePercentage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test_CalculatePercentage" />
+      <option name="METHOD_NAME" value="testCalculatePercentage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,16 +90,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test_calculateBoatPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test_calculateBoatPrice" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Shipflex" />
-      <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
+      <item itemvalue="JUnit.Test_CalculatePercentage" />
+      <item itemvalue="JUnit.Test_CalculatePercentage.testCalculatePercentage" />
+      <item itemvalue="JUnit.Test_calculateBoatPrice" />
       <item itemvalue="JUnit.Test_InfoReadFile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test_CalculatePercentage.testCalculatePercentage" />
+        <item itemvalue="JUnit.Test_calculateBoatPrice" />
+        <item itemvalue="JUnit.Test_CalculatePercentage" />
         <item itemvalue="Application.Shipflex" />
         <item itemvalue="JUnit.Test_InfoReadFile" />
-        <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681311668162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Test Askcustomer moet nog aangepast worden">
+      <created>1681331613529</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681331613529</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +272,7 @@
     <MESSAGE value="Printer.emptyLine() toegevoegd" />
     <MESSAGE value="options format" />
     <MESSAGE value="Fixjes voor offerte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixjes voor offerte" />
+    <MESSAGE value="Test Askcustomer moet nog aangepast worden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Askcustomer moet nog aangepast worden" />
   </component>
 </project>
