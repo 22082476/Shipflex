@@ -9,6 +9,10 @@ public interface Print {
 
     void printSpaces(int number);
 
+    void printCharacters(int number, char character);
+
     void printTextGenerateQuote(String[] input);
+
+    void printFormatInfo(String property);
 }
 

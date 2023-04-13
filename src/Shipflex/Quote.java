@@ -158,13 +158,6 @@ public class Quote {
         }
     }
 
-    public void printCompany(){
-        Printer.getInstance().printLine(companyShipbuild.getName());
-        Printer.getInstance().print(companyShipbuild.getStreet());
-        Printer.getInstance().print(String.valueOf(companyShipbuild.getHousenumber()));
-        Printer.getInstance().printLine(String.valueOf(companyShipbuild.getPostcode()));
-        Printer.getInstance().printLine(companyShipbuild.getCity());
-    }
 
     public void printDate() {
         if (this.date != null && !this.date.equals("")) {
