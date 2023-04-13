@@ -44,6 +44,18 @@ public class Customer {
         return street;
     }
 
+    public int getHouseNumber() {
+        return houseNumber;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
     public int getDiscount() {
         return discount;
     }
