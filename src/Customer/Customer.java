@@ -5,7 +5,7 @@ import DataInOut.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Customer {
+public abstract class Customer {
     protected String name;
     protected String street;
     protected int houseNumber;

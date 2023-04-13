@@ -21,8 +21,6 @@ public abstract class Boat {
         this.options = new ArrayList<>();
     }
 
-
-
     public void setName(String name) {
         this.name = name;
     }
@@ -35,28 +33,15 @@ public abstract class Boat {
         this.basePrice = basePrice;
     }
 
-    public void addOptionsFromNames(String[] names) {
-        Option option;
 
-        for(String name: names) {
-
-            option = Info.getOptionFromName(name);
-
-            if(option == null) {
-                Printer.getInstance().printLine("Kon optie '" + name + "' niet toevoegen aan deze boot, want hij is niet gevonden.");
-                continue;
-            }
-
-            addOption(option);
-        }
-    }
     public void addOption(Option Option) {
         this.options.add(Option);
     }
 
     public void removeOption(Option option) {
-       this.options.remove(option);
+        this.options.remove(option);
     }
+
 
     public String getName() {
         return this.name;
@@ -74,6 +59,21 @@ public abstract class Boat {
         return this.options;
     }
 
+    public void addOptionsFromNames(String[] names) {
+        Option option;
+
+        for (String name : names) {
+
+            option = Info.getOptionFromName(name);
+
+            if (option == null) {
+                Printer.getInstance().printLine("Kon optie '" + name + "' niet toevoegen aan deze boot, want hij is niet gevonden.");
+                continue;
+            }
+
+            addOption(option);
+        }
+    }
     public void printBoat(){
         Printer.getInstance().printLine("Bootnaam: " + getName());
         Printer.getInstance().printLine("Bootsoort: " + getType());

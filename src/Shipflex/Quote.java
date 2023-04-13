@@ -11,7 +11,7 @@ import java.util.List;
 public class Quote {
     private Company companyShipbuild;
 
-    private Customer customer;
+    private CustomCustomer customCustomer;
     private BusinessCustomer businessCustomer;
     private GovermentCustomer govermentCustomer;
     private FoundationCustomer foundationCustomer;
@@ -26,7 +26,7 @@ public class Quote {
     public Quote(Company companyShipbuild, Boat boat) {
         this.companyShipbuild = companyShipbuild;
         this.businessCustomer = null;
-        this.customer = null;
+        this.customCustomer = null;
         this.govermentCustomer = null;
         this.foundationCustomer = null;
         this.boat = boat;
@@ -39,7 +39,7 @@ public class Quote {
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customCustomer = customCustomer;
     }
 
     public void setBusinessCustomer(BusinessCustomer businessCustomer) {
@@ -66,8 +66,8 @@ public class Quote {
         this.boat = boat;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomCustomer() {
+        return customCustomer;
     }
 
 
@@ -103,7 +103,7 @@ public class Quote {
                 foundationCustomer.printCustomer();
                 break;
             case "customer":
-                customer.printCustomer();
+                customCustomer.printCustomer();
                 break;
             default:
                 Printer.getInstance().printLine("Nog geen klant toegevoegd");
@@ -117,7 +117,7 @@ public class Quote {
             return "goverment";
         } else if (businessCustomer != null) {
             return "business";
-        } else if (customer != null) {
+        } else if (customCustomer != null) {
             return "customer";
         } else if (foundationCustomer != null) {
             return "foundation";
@@ -220,7 +220,7 @@ public class Quote {
                 discount = foundationCustomer.getDiscount();
                 break;
             case "customer":
-                discount = customer.getDiscount();
+                discount = customCustomer.getDiscount();
                 break;
         }
         return 100 - discount;

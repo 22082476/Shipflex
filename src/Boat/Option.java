@@ -38,6 +38,7 @@ public class Option {
         this.environmentDiscount = environmentDiscount;
     }
 
+
     public List<String> getEssentialForBoatType() {
         return essentialForBoatType;
     }

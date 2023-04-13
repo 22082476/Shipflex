@@ -1,9 +1,6 @@
 package Shipflex;
 
-import Customer.BusinessCustomer;
-import Customer.Customer;
-import Customer.FoundationCustomer;
-import Customer.GovermentCustomer;
+import Customer.*;
 import DataInOut.Printer;
 import DataInOut.ScanInput;
 
@@ -56,7 +53,7 @@ public class MakeQuoteCustomer {
                 quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
                 break;
             default:
-                quote.setCustomer(new Customer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage")));
+                quote.setCustomer(new CostumCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage")));
                 break;
         }
 
