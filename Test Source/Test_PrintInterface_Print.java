@@ -65,7 +65,6 @@ protected static String outCome = null;
         for (int i = 1; i <= amountOfSpaces; i++) {
             output += " ";
         }
-        this.outCome = output;
     }
 
 }

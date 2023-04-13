@@ -13,7 +13,7 @@ public class Test_calculateBoatPrice {
         Company myCompany = new Company("Mijn Scheepswerf", "Hoofdstraat", "123AB", "Amsterdam", "Nederland", 12);
         //Boat myBoat = new Boat("rubberboot", "rubberboot", 2499.99);
         Boat myBoat = new InflatableBoat();
-        myBoat.addOption();
+//        myBoat.addOption();
         Quote myQuote = new Quote(myCompany, myBoat);
         //ParapluAnker,250.00,Anker,0,Speedboot,RubberBoot,deze anker is milieuvriendelijk
         double optie1Prijs = 250.00;
