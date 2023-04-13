@@ -2,6 +2,7 @@ package Shipflex;
 
 import Boat.*;
 import DataInOut.Info;
+import DataInOut.Printer;
 import DataInOut.ScanInput;
 
 import java.util.ArrayList;
@@ -9,29 +10,46 @@ import java.util.ArrayList;
 public class Maintenance {
     private ArrayList<String> boatList = new ArrayList<>();
 
-    public ArrayList<String> readBoatList(String question) {
+    private String [] commands = {"terug", "optie toevoegen"};
+
+    public void start() {
+        while (true) {
+            Printer.getInstance().printTextGenerateQuote(commands);
+            int inputIndex = ScanInput.scanInt();
+            Printer.getInstance().emptyLine();
+            switch (inputIndex) {
+                case 0:
+                    return;
+                case 1:
+                    addOptionMaintenance();
+                    break;
+
+                default:
+                    Printer.getInstance().printLine("Incorrecte invoer!");
+            }
+        }
+    }
+
+    public ArrayList<String> readTypeBoatList(String question) {
         String userInput = ScanInput.inputQuestion(question);
 
         if(!userInput.equalsIgnoreCase("stop")) {
             if (!boatList.equals("")) {
                 boatList.add(userInput);
-                readBoatList(question);
+                readTypeBoatList(question);
             }
         }
 
         return boatList;
     }
-    public void start(){
-        String input;
-        input = ScanInput.inputQuestion("optie toevoegen of customer type toevoegen");
 
-        if(input.equalsIgnoreCase("optie toevoegen")) {
+        public void addOptionMaintenance(){
             Info.addOption(new Option(ScanInput.inputQuestion("de naam van het onderdeel"),
             ScanInput.inputNumberD("de prijs (bijv. 2.99) van het onderdeel"),
             ScanInput.inputQuestion("categorie van onderdeel"),
             0,
-            readBoatList("de boot in waarvoor de onderdeel essentieel is (stop om door te gaan)"),
-            readBoatList("de boot in waarvoor de onderdeel optioneel is (stop om door te gaan)")));
-        }
-    }
+            readTypeBoatList("de boot in waarvoor de onderdeel essentieel is (stop om door te gaan)"),
+            readTypeBoatList("de boot in waarvoor de onderdeel optioneel is (stop om door te gaan)")));
+            }
 }
+

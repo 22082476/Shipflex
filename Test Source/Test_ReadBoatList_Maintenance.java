@@ -18,7 +18,7 @@ public class Test_ReadBoatList_Maintenance {
         //Act
         String inputData = "yes\nnest\nstop";
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
-        ArrayList<String> result = maintenance.readBoatList("de testje");
+        ArrayList<String> result = maintenance.readTypeBoatList("de testje");
 
         assertEquals(expected, result);
     }

@@ -34,7 +34,7 @@ public void printCharacters(int number, char character){
 }
 
     public void printTextGenerateQuote(String [] input){
-        printLine("Commands: ");
+        print("Commands: ");
         for(int i = 0; i < input.length; i++){
             if(i == input.length-1){
                 printLine("[" +i+ "] " + input[i]);
