@@ -1,11 +1,9 @@
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import Boat.Boat;
 import Shipflex.Company;
 import Shipflex.MakeQuote;
 import Shipflex.MakeQuoteCustomer;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -13,7 +11,7 @@ import java.io.ByteArrayInputStream;
 
 
 // deze test test of de waardes van de 4 verschillende customertypes wel goed worden aangeroepen.
-public class Test_AskCustomer {
+public class Test_AskCustomer_MakeQuoteCustome {
 
     @ParameterizedTest
     @CsvSource({"naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex, naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex,"})
@@ -30,7 +28,8 @@ public class Test_AskCustomer {
 
 
         //Assert
-        assertEquals("naam", MakeQuote.getQuote().getBusinessCustomer().getName());
+        assertEquals(expectedName, MakeQuote.getQuote().getBusinessCustomer().getName());
+        assertEquals(expectedStreet, MakeQuote.getQuote().getBusinessCustomer().getStreet());
 
     }
 
