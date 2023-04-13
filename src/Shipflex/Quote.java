@@ -165,10 +165,6 @@ public class Quote {
         } else {
             Printer.getInstance().printLine("Datum nog niet ingevuld");
     }
-        if(this.quoteDate != null && !this.quoteDate.equals("")){
-            Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
-            Printer.getInstance().printLine("Datum nog niet ingevuld");
-        }
         if (this.quoteDate != null && !this.quoteDate.equals("")) {
             Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
@@ -196,19 +192,18 @@ public class Quote {
     }
 
     public void printQuote() {
-        Printer.getInstance().printCharacters(75, '━');
+        Printer.getInstance().printCharacters(100, '━');
         Printer.getInstance().emptyLine();
         this.printBasicInformation();
-        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().printCharacters(59, '﹏');
         Printer.getInstance().emptyLine();
         boat.printBoat();
-        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().printCharacters(59, '﹏');
         Printer.getInstance().emptyLine();
         this.printOptions();
-        Printer.getInstance().printCharacters(15, '﹏');
         Printer.getInstance().emptyLine();
         this.printTotal();
-        Printer.getInstance().printCharacters(75, '━');
+        Printer.getInstance().printCharacters(100, '━');
     }
 
     public void printOptions() {

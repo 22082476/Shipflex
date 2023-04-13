@@ -45,7 +45,6 @@ public void printCharacters(int number, char character){
             if (i == input.length / 2 && input.length >= 4)
                 emptyLine();
         }
-        print("Voer een command in: ");
     }
 
     public void printFormatInfo(String property) {

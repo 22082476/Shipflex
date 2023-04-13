@@ -12,13 +12,13 @@ import static Shipflex.MakeQuote.quote;
 
 public class MakeQuoteBoat {
 
-    private String [] commands = {"terug", "beschikbare opties", "gekozen opties", "optie toevoegen", "optie verwijderen", "boot wijzigen", "boot laten zien"};
+    private String [] commands = {"terug", "beschikbare opties", "gekozen opties", "optie toevoegen", "optie verwijderen", "bootgegevens wijzigen", "bootgegevens laten zien"};
 
 
     public void start(){
         while(true) {
             Printer.getInstance().printTextGenerateQuote(this.commands);
-            int inputIndex = ScanInput.scanInt();
+            int inputIndex = ScanInput.inputNumber("command");
             Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:
@@ -28,7 +28,7 @@ public class MakeQuoteBoat {
                     break;
                 case 2:
                     quote.printOptions(false);
-                    Printer.getInstance().printLine(String.format("Prijs van alles excl BTW: %.2f", calculateTotalOptionsPrice()));
+                    Printer.getInstance().printLine(String.format("Prijs van geselecteerde opties excl BTW: %.2f", calculateTotalOptionsPrice()));
                     break;
                 case 3:
                     selectOption();

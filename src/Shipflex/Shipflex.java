@@ -15,7 +15,7 @@ public class Shipflex {
         welcomeText();
         while (true) {
             Printer.getInstance().printTextGenerateQuote(commands);
-            int inputIndex = inputNumber("een command");
+            int inputIndex = inputNumber("command");
             Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:

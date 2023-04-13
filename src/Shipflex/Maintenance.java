@@ -15,7 +15,7 @@ public class Maintenance {
     public void start() {
         while (true) {
             Printer.getInstance().printTextGenerateQuote(commands);
-            int inputIndex = ScanInput.scanInt();
+            int inputIndex = ScanInput.inputNumber("command");
             Printer.getInstance().emptyLine();
             switch (inputIndex) {
                 case 0:

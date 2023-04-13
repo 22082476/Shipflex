@@ -5,15 +5,10 @@ import java.util.Scanner;
 public class ScanInput {
     private static Scanner in = new Scanner(System.in);
 
-    public static String scanInH(){
+    private static String scanInH(){
         return in.nextLine();
     }
 
-    public static int scanInt(){
-        int integer = in.nextInt();
-        in.nextLine();
-        return integer;
-    }
 
     public static String inputQuestion(String soort) {
         String input = "";
