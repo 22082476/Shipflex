@@ -1,5 +1,6 @@
-/*import Boat.Boat;
+import Boat.Boat;
 import Boat.*;
+import DataInOut.Info;
 import Shipflex.Company;
 import Shipflex.Quote;
 import org.junit.jupiter.api.Test;
@@ -7,31 +8,124 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test_calculateBoatPrice {
+
     @Test
-    public void testCalculateBoatPrice() {
+    public void testCalculateBoatPriceInflatableBoat() {
         // Arrange
-        Company myCompany = new Company("Mijn Scheepswerf", "Hoofdstraat", "123AB", "Amsterdam", "Nederland", 12);
-        //Boat myBoat = new Boat("rubberboot", "rubberboot", 2499.99);
+        Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new InflatableBoat();
-//        myBoat.addOption();
-        Quote myQuote = new Quote(myCompany, myBoat);
-        //ParapluAnker,250.00,Anker,0,Speedboot,RubberBoot,deze anker is milieuvriendelijk
-        double optie1Prijs = 250.00;
-
-        //Yamaha,1900.00,BuitenboordMotor,10,Speedboot;PlezierJacht;RubberBoot,ZeilBoot,milieuvriendelijke motor
-        double optie2Prijs = 1900.00;
-
-        double expectedPrice = 0;
-        expectedPrice += myBoat.getBasePrice() + optie1Prijs +optie2Prijs; // Base price + option1 price + option2 price
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
 
         // Act
-        double actualPrice = myQuote.calculateBoatPrice();
+        double resultPrice = quote.calculateBoatPrice();
 
         // Assert
-        assertEquals(expectedPrice, actualPrice, 0.001); // Accept a difference up to 0.001 due to double precision
+        assertEquals(2595.99, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatPriceInflatableBoat_WithOptions() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new InflatableBoat();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        quote.getBoat().addOptionsFromNames(new String[]{"Touw", });
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(2620.99, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatSpeedBoat() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new SpeedBoat();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(28084.97, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatSpeedBoat_WithOptions() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new SpeedBoat();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        quote.getBoat().addOptionsFromNames(new String[]{"Touw", });
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(28109.97, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatPriceSailBoat() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new SailBoat();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(6104.99, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatPriceSailBoat_WithOptions() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new SailBoat();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        quote.getBoat().addOptionsFromNames(new String[]{"Touw", "anker"});
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(6129.99, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatPricePleasureYacht() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new PleasureYacht();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(16324.98, resultPrice, 0.01);
+    }
+
+    @Test
+    public void testCalculateBoatPricePleasureYacht_WithOptions() {
+        // Arrange
+        Info.readOptionsFromFile("src/data/options.csv");
+        Boat myBoat = new PleasureYacht();
+        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+
+        // Act
+        quote.getBoat().addOptionsFromNames(new String[]{"ReddingsVest", "lamp"});
+        double resultPrice = quote.calculateBoatPrice();
+
+        // Assert
+        assertEquals(16398.98, resultPrice, 0.01);
     }
 }
-*/
+
 
 
 
