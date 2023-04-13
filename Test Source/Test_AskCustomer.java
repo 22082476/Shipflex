@@ -16,7 +16,7 @@ import java.io.ByteArrayInputStream;
 public class Test_AskCustomer {
 
     @ParameterizedTest
-    @CsvSource({})
+    @CsvSource({"naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex, naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex,"})
     public void Test_AskCustomerBussiness(String Name, String Street, int Housenumber, int Postcode, String Plaats, String Country, int Percentage, String Company, String expectedName, String expectedStreet, int expectedHousenumber, int expectedPostcode, String expectedPlaats, String expectedCountry, int expectedPercentage, String expectedCompany) {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
@@ -38,7 +38,7 @@ public class Test_AskCustomer {
 
 
     @ParameterizedTest
-    @CsvSource({})
+    @CsvSource({"naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex, naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex,"})
     public void Test_AskCustomerFoundation(String Name, String Street, int Housenumber, int Postcode, String Plaats, String Country, int Percentage, String Company, String expectedName, String expectedStreet, int expectedHousenumber, int expectedPostcode, String expectedPlaats, String expectedCountry, int expectedPercentage, String expectedCompany) {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
@@ -59,7 +59,7 @@ public class Test_AskCustomer {
 
 
     @ParameterizedTest
-    @CsvSource({})
+    @CsvSource({"naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex, naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex,"})
     public void Test_AskCustomerGoverment(String Name, String Street, int Housenumber, int Postcode, String Plaats, String Country, int Percentage, String Company, String expectedName, String expectedStreet, int expectedHousenumber, int expectedPostcode, String expectedPlaats, String expectedCountry, int expectedPercentage, String expectedCompany) {
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
@@ -79,7 +79,7 @@ public class Test_AskCustomer {
 
 
     @ParameterizedTest
-    @CsvSource({})
+    @CsvSource({"naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex, naam, straat, 1, 2589 EJ, Den Haag, Nederland, 0, Shipflex,"})
     public void Test_AskCustomerCustomer(String Name, String Street, int Housenumber, int Postcode, String Plaats, String Country, int Percentage, String Company, String expectedName, String expectedStreet, int expectedHousenumber, int expectedPostcode, String expectedPlaats, String expectedCountry, int expectedPercentage, String expectedCompany){
         //Arange
         MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
