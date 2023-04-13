@@ -98,7 +98,7 @@ public class Option {
         Printer.getInstance().printFormatInfo(this.name);
         Printer.getInstance().printFormatInfo(this.type);
         Printer.getInstance().printFormatInfo(this.essentialForBoatType.contains(boatType.toLowerCase()) ? "Essentieel" : "Extra");
-        Printer.getInstance().printLine(String.valueOf(this.price));
+        Printer.getInstance().printLine(String.valueOf(String.format("%.2f", this.price)));
 
         if (this.environmentDiscount > 0) {
             Printer.getInstance().emptyLine();
