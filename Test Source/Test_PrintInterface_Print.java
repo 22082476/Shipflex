@@ -114,7 +114,7 @@ class Test_PrinterInterface_Print{
         //Arrange
         TestClassPrinterInterface printer = new TestClassPrinterInterface();
 
-        //Act
+        //Actt
         printer.printSpaces(number);
 
         //Assert
