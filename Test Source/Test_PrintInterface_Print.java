@@ -35,6 +35,11 @@ protected static String outCome = null;
     }
 
     @Override
+    public void printCharacters(int number, char character) {
+
+    }
+
+    @Override
     public void printTextGenerateQuote(String[] input) {
         String output = "Commands: ";
         for(int i = 0; i < input.length; i++){
@@ -49,6 +54,8 @@ protected static String outCome = null;
         }
         outCome = output + " Voer een command in: ";
     }
+
+
 
 }
 
@@ -92,7 +99,7 @@ class Test_PrinterInterface_Print {
     }
 
     @ParameterizedTest
-    @CsvSource({"5, '     '"})
+    @CsvSource({"5, '     '", "0, ''", "7, '       '"})
     public void testPrintSpaces(int number, String expected) {
         //Arrange
         TestClassPrinterInterface printer = new TestClassPrinterInterface();
