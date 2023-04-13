@@ -15,6 +15,6 @@ public class Test_PrintTextGenerateQuote_Print {
         printer.printTextGenerateQuote(new String[]{"een", "twee", "drie", "vier"});
 
         //Assert
-        assertEquals("Commands: [0] een, [1] twee, [2] drie, [3] vier Voer een command in: ", TestClassPrinterInterface.outCome);
+        assertEquals("Commands: [0] een, [1] twee, [2] drie, [3] vier Voer een command in: ", printer.outCome);
     }
 }

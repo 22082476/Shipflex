@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test_Print_Print {
     @ParameterizedTest
-    @CsvSource({"testen, "})
+    @CsvSource({"testen, testen"})
     public void testPrint(String text, String expected){
         //Arrange
         TestClassPrinterInterface printer = new TestClassPrinterInterface();
@@ -16,6 +16,6 @@ public class Test_Print_Print {
         printer.print(text);
 
         //Assert
-        assertEquals(expected, TestClassPrinterInterface.outCome);
+        assertEquals(expected, printer.outCome);
     }
 }

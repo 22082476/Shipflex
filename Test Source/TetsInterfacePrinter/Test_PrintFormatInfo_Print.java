@@ -19,6 +19,6 @@ public class Test_PrintFormatInfo_Print {
         printer.printFormatInfo("test12");
 
         //Assert
-        assertEquals("test12                              ", TestClassPrinterInterface.outCome);
+        assertEquals("test12                              ", printer.outCome);
     }
 }

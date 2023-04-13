@@ -16,6 +16,6 @@ public class Test_PrintLine_Test {
         printer.printLine(text);
 
         //Assert
-        assertEquals(text, TestClassPrinterInterface.outCome);
+        assertEquals(text, printer.outCome);
     }
 }

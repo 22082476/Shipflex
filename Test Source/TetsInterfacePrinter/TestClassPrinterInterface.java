@@ -5,7 +5,7 @@ import DataInOut.Print;
 
 
 class TestClassPrinterInterface implements Print {
-protected static String outCome = null;
+protected String outCome = null;
     @Override
     public void print(String text) {
         this.outCome = text;
@@ -63,6 +63,7 @@ protected static String outCome = null;
         for (int i = 1; i <= amountOfSpaces; i++) {
             output += " ";
         }
+        outCome = output;
     }
 
 }
