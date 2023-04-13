@@ -48,7 +48,7 @@ public void printCharacters(int number, char character){
         print("Voer een command in: ");
     }
 
-    public static void printFormatInfo(String property) {
+    public void printFormatInfo(String property) {
         int amountOfSpaces = 30;
 
         if(property.length() > amountOfSpaces) {

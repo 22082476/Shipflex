@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="Fixjes voor offerte">
-      <change afterPath="$PROJECT_DIR$/Test Source/Test_AskCustomer.java" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="final bug fixing">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataInOut/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataInOut/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataInOut/ScanInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataInOut/ScanInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shipflex/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipflex/Quote.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -27,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Nieuwe_Test_AskCustomer" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,10 +59,23 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Shipflex">
+  <component name="RunManager" selected="Application.Shipflex.Shipflex">
     <configuration name="Shipflex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Shipflex" />
       <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Shipflex.Shipflex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Shipflex.Shipflex" />
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Shipflex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,12 +99,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Shipflex.Shipflex" />
       <item itemvalue="Application.Shipflex" />
       <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
       <item itemvalue="JUnit.Test_InfoReadFile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Shipflex.Shipflex" />
         <item itemvalue="Application.Shipflex" />
         <item itemvalue="JUnit.Test_InfoReadFile" />
         <item itemvalue="JUnit.Test_BerekeningMileuKorting" />
@@ -200,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681311668162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="final bug fixing">
+      <created>1681315866643</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681315866643</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +269,12 @@
     <MESSAGE value="Printer.emptyLine() toegevoegd" />
     <MESSAGE value="options format" />
     <MESSAGE value="Fixjes voor offerte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixjes voor offerte" />
+    <MESSAGE value="final bug fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="final bug fixing" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PROJ1$Shipflex.ic" NAME="Shipflex Coverage Results" MODIFIED="1680716507241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Shipflex.*</FILTER>
+    </SUITE>
   </component>
 </project>

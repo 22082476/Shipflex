@@ -15,7 +15,7 @@ public class Customer {
     protected String country;
 
     protected int discount;
-    protected HashMap<String, String> extraGegevens;
+    protected HashMap<String, String> extraData;
 
     public Customer(String name, String street, int houseNumber, String postcode, String city, String country, int discount) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Customer {
         this.city = city;
         this.country = country;
         this.discount = discount;
-        this.extraGegevens = new HashMap<>();
+        this.extraData = new HashMap<>();
     }
 
     public void setName(String name) {
@@ -53,7 +53,7 @@ public class Customer {
     }
 
     public void addExtraGegeven(String type, String value) {
-        this.extraGegevens.put(type, value);
+        this.extraData.put(type, value);
     }
 
     public String getName() {
@@ -89,9 +89,9 @@ public class Customer {
         Printer.getInstance().printLine("Land: " + this.country);
         Printer.getInstance().printLine("Kortingpercentage: " + this.discount);
 
-        if(!this.extraGegevens.isEmpty()){
+        if(!this.extraData.isEmpty()){
             Printer.getInstance().printLine("Extra gegevens:");
-            for (Map.Entry<String, String> entry : extraGegevens.entrySet()) {
+            for (Map.Entry<String, String> entry : extraData.entrySet()) {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }
         }
