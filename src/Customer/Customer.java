@@ -48,6 +48,10 @@ public class Customer {
         return discount;
     }
 
+    public String getCountry(){
+        return country;
+    }
+
     public void printCustomer(){
         Printer.getInstance().printLine("Naam: " + this.name);
         Printer.getInstance().printLine("Straat: " + this.street);
