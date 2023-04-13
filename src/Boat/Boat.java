@@ -7,7 +7,7 @@ import DataInOut.ScanInput;
 import java.util.ArrayList;
 
 
-public class Boat {
+public abstract class Boat {
 
    private String name;
    private String type;
