@@ -2,14 +2,11 @@ import Shipflex.Maintenance;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Test_ReadBoatList {
+public class Test_ReadBoatList_Maintenance {
     @Test
     public void testReadBoatList() {
         Maintenance maintenance = new Maintenance();
