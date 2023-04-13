@@ -1,5 +1,4 @@
 import DataInOut.Print;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -53,7 +52,7 @@ protected static String outCome = null;
 
 }
 
-class Test_PrinterInterface{
+class Test_PrinterInterface_Print {
     @ParameterizedTest
     @CsvSource({"testen, "})
     public void testPrint(String text, String expected){
