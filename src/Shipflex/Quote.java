@@ -30,21 +30,18 @@ public class Quote {
         this.boat = boat;
     }
 
-    public void setCustomCustomer(Customer customer) {
+    public void setCustomCustomer(CustomCustomer customCustomer) {
         this.customCustomer = customCustomer;
     }
-
     public void setBusinessCustomer(BusinessCustomer businessCustomer) {
         this.businessCustomer = businessCustomer;
     }
-
     public void setGovermentCustomer(GovermentCustomer govermentCustomer) {
         this.govermentCustomer = govermentCustomer;
     }
     public void setFoundationCustomer(FoundationCustomer foundationCustomer) {
         this.foundationCustomer = foundationCustomer;
     }
-
     public void setAbout(String about) {
         this.about = about;
     }

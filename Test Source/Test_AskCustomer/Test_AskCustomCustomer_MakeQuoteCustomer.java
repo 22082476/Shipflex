@@ -23,7 +23,7 @@ public class Test_AskCustomCustomer_MakeQuoteCustomer {
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
 
         //Act
-        String inputData = "klant\n" + name + "\n" + street + "\n" + houseNumber + "\n" + postcode + "\n" + city + "\n" + country + "\n" + percentage + "\nnee";
+        String inputData = "anders\n" + name + "\n" + street + "\n" + houseNumber + "\n" + postcode + "\n" + city + "\n" + country + "\n" + percentage + "\nnee";
         ByteArrayInputStream in = new ByteArrayInputStream(inputData.getBytes());
         System.setIn(in);
 
