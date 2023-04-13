@@ -19,15 +19,19 @@ public class Test_AskCustomer {
     @Test //
     public void Test_AskcustomerZakelijk() {
         //Arange
+        MakeQuote makequote = new MakeQuote();
+        MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
+
 
 
         //Act
-        String inputData = "yes\nnest\nstop";
+        String inputData = "zakelijk\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam";
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
-
+        makequotecustomer.askCustomer();
 
 
         //Assert
+        assertEquals(makequotecustomer.);
 
 
     }
