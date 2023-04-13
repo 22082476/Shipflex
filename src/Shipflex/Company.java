@@ -20,26 +20,6 @@ public class Company {
         this.housenumber = housenumber;
     }
 
-     public void setName(String name) {
-         this.name = name;
-     }
-
-     public void setStreet(String street) {
-         this.street = street;
-     }
-
-     public void setPostcode(String postcode) {
-         this.postcode = postcode;
-     }
-
-     public void setCity(String city) {
-         this.city = city;
-     }
-
-     public void setHousenumber(int housenumber) {
-         this.housenumber = housenumber;
-     }
-
      public String getName() {
          return this.name;
      }
@@ -62,10 +42,6 @@ public class Company {
 
     public String getCountry() {
         return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public void printCompany(){

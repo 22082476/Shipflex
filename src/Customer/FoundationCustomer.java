@@ -10,14 +10,6 @@ public class FoundationCustomer extends  Customer{
         this.foundation = foundation;
     }
 
-    public String getFoundation() {
-        return foundation;
-    }
-
-    public void setFoundation(String foundation) {
-        this.foundation = foundation;
-    }
-
     @Override
     public void printCustomer(){
         Printer.getInstance().printLine("Stichting: " + this.foundation);

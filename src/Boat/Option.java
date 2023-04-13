@@ -34,18 +34,6 @@ public class Option {
         this.name = name;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setEnvironmentDiscount(int environmentDiscount) {
         this.environmentDiscount = environmentDiscount;
     }
@@ -58,13 +46,6 @@ public class Option {
         return extraForBoatType;
     }
 
-    public void addExtraForBoatType(String extraForBoatType) {
-        this.extraForBoatType.add(extraForBoatType);
-    }
-
-    public void addEssentialForBoatType(String essentialForBoatType) {
-        this.essentialForBoatType.add(essentialForBoatType);
-    }
     public String getName() {
         return this.name;
     }

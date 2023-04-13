@@ -32,16 +32,10 @@ public class Quote {
         this.boat = boat;
     }
 
-    public String getAbout() {
-        return about;
-    }
+
 
     public void setAbout(String about) {
         this.about = about;
-    }
-
-    public void setCompanyShipbuild(Company companyShipbuild) {
-        this.companyShipbuild = companyShipbuild;
     }
 
     public void setCustomer(Customer customer) {
@@ -72,21 +66,10 @@ public class Quote {
         this.boat = boat;
     }
 
-    public Company getCompanyShipbuild() {
-        return companyShipbuild;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
 
-    public String getQuoteDate() {
-        return quoteDate;
-    }
 
     public Boat getBoat() {
         return boat;
@@ -102,10 +85,6 @@ public class Quote {
 
     public FoundationCustomer getFoundationCustomer() {
         return foundationCustomer;
-    }
-
-    public double getWorkHoursCost() {
-        return workHoursCost;
     }
 
     public void setWorkHoursCost(double workHoursCost) {

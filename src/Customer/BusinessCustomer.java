@@ -12,14 +12,6 @@ public class BusinessCustomer extends Customer {
         this.companyname = companyname;
     }
 
-    public String getCompany() {
-        return companyname;
-    }
-
-    public void setCompany(String companyname) {
-        this.companyname = companyname;
-    }
-
     @Override
     public void printCustomer(){
         Printer.getInstance().printLine("Bedrijfsnaam: " + this.companyname);
