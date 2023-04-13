@@ -22,6 +22,9 @@ public class Test_AskCustomer {
 
 
         //Act
+        String inputData = "yes\nnest\nstop";
+        System.setIn(new ByteArrayInputStream(inputData.getBytes()));
+
 
 
         //Assert
