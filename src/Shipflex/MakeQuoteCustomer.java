@@ -11,9 +11,6 @@ public class MakeQuoteCustomer {
 
     private String [] commands = {"terug", "klant laten zien", "klant toevoegen", "klant wijzigen"};
 
-
-
-
     public void start(){
         while(true) {
             Printer.getInstance().printTextGenerateQuote(this.commands);
@@ -37,8 +34,6 @@ public class MakeQuoteCustomer {
         }
     }
 
-
-
     public void askCustomer(){
         String customerType = ScanInput.inputQuestion("soort klant (zakelijk, overheid, stichting, anders)");
 
@@ -53,7 +48,7 @@ public class MakeQuoteCustomer {
                 quote.setFoundationCustomer(new FoundationCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage"), ScanInput.inputQuestion("de naam van de stiching")));
                 break;
             default:
-                quote.setCustomer(new CostumCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage")));
+                quote.setCustomCustomer(new CustomCustomer(ScanInput.inputQuestion("de naam"), ScanInput.inputQuestion("de straat"), ScanInput.inputNumber("het huisnummer"), ScanInput.inputQuestion("de postcode(0000 AA)"), ScanInput.inputQuestion("de plaats"), ScanInput.inputQuestion("het land"), ScanInput.inputNumber("het korting percentage")));
                 break;
         }
 
@@ -67,8 +62,8 @@ public class MakeQuoteCustomer {
 
         if(input.equalsIgnoreCase("ja")) {
             gegevens = getExtraGegevensFromInput();
-            if(quote.getCustomer() != null)
-                quote.getCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
+            if(quote.getCustomCustomer() != null)
+                quote.getCustomCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
             else if (quote.getBusinessCustomer() != null)
                 quote.getBusinessCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
             else if (quote.getFoundationCustomer() != null)

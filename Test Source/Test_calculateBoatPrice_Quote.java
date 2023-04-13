@@ -14,7 +14,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new InflatableBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         double resultPrice = quote.calculateBoatPrice();
@@ -28,7 +28,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new InflatableBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         quote.getBoat().addOptionsFromNames(new String[]{"Touw", });
@@ -43,7 +43,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new SpeedBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         double resultPrice = quote.calculateBoatPrice();
@@ -57,7 +57,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new SpeedBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         quote.getBoat().addOptionsFromNames(new String[]{"Touw", });
@@ -72,7 +72,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new SailBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         double resultPrice = quote.calculateBoatPrice();
@@ -86,7 +86,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new SailBoat();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         quote.getBoat().addOptionsFromNames(new String[]{"Touw", "anker"});
@@ -101,7 +101,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new PleasureYacht();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         double resultPrice = quote.calculateBoatPrice();
@@ -115,7 +115,7 @@ public class Test_calculateBoatPrice_Quote {
         // Arrange
         Info.readOptionsFromFile("src/data/options.csv");
         Boat myBoat = new PleasureYacht();
-        Quote quote = new Quote(new Company("", "","","","",0), myBoat);
+        Quote quote = new Quote(new Company("", "",0,"","",""), myBoat);
 
         // Act
         quote.getBoat().addOptionsFromNames(new String[]{"ReddingsVest", "lamp"});

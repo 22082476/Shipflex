@@ -10,7 +10,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
-
 // deze test test of de waardes van de 4 verschillende customertypes wel goed worden aangeroepen.
 
 public class Test_AskCustomCustomer_MakeQuoteCustomer {
@@ -20,9 +19,8 @@ public class Test_AskCustomCustomer_MakeQuoteCustomer {
     public void Test_AskCustomerCustomCustomer(String name, String street, int houseNumber, String postcode, String city, String country, int percentage, String expectedName, String expectedStreet, int expectedHouseNumber, String expectedPostcode, String expectedCity, String expectedCountry, int expectedDiscount) throws IOException {
         //Arange
         Info.readOptionsFromFile("src/data/options.csv");
-        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", -1));
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", 0, "", "", ""));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
-
 
         //Act
         String inputData = "klant\n" + name + "\n" + street + "\n" + houseNumber + "\n" + postcode + "\n" + city + "\n" + country + "\n" + percentage + "\nnee";

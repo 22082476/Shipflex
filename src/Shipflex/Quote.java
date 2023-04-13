@@ -10,7 +10,6 @@ import java.util.List;
 
 public class Quote {
     private Company companyShipbuild;
-
     private CustomCustomer customCustomer;
     private BusinessCustomer businessCustomer;
     private GovermentCustomer govermentCustomer;
@@ -18,7 +17,6 @@ public class Quote {
     private String date;
     private String quoteDate;
     private String about;
-
     private double workHoursCost;
     private Boat boat;
 
@@ -32,13 +30,7 @@ public class Quote {
         this.boat = boat;
     }
 
-
-
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public void setCustomer(Customer customer) {
+    public void setCustomCustomer(Customer customer) {
         this.customCustomer = customCustomer;
     }
 
@@ -49,32 +41,29 @@ public class Quote {
     public void setGovermentCustomer(GovermentCustomer govermentCustomer) {
         this.govermentCustomer = govermentCustomer;
     }
-
     public void setFoundationCustomer(FoundationCustomer foundationCustomer) {
         this.foundationCustomer = foundationCustomer;
     }
 
+    public void setAbout(String about) {
+        this.about = about;
+    }
     public void setDate(String date) {
         this.date = date;
     }
-
     public void setQuoteDate(String quoteDate) {
         this.quoteDate = quoteDate;
     }
-
     public void setBoat(Boat boat) {
         this.boat = boat;
+    }
+    public Boat getBoat() {
+        return boat;
     }
 
     public Customer getCustomCustomer() {
         return customCustomer;
     }
-
-
-    public Boat getBoat() {
-        return boat;
-    }
-
     public BusinessCustomer getBusinessCustomer() {
         return businessCustomer;
     }

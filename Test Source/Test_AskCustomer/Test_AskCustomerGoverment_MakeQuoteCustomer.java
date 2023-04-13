@@ -18,7 +18,7 @@ public class Test_AskCustomerGoverment_MakeQuoteCustomer {
     public void Test_AskCustomerGoverment(String name, String street, int houseNumber, String postcode, String city, String country, int percentage, String ministry, String expectedName, String expectedStreet, int expectedHouseNumber, String expectedPostcode, String expectedCity, String expectedCountry, int expectedDiscount, String expectedMinistryName) throws IOException {
         //Arange
         Info.readOptionsFromFile("src/data/options.csv");
-        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", -1));
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", 0, "", "", ""));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
 
         //Act

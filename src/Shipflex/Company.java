@@ -5,19 +5,21 @@ import DataInOut.Printer;
 public class Company {
     private String name;
     private String street;
+
+    private int housenumber;
     private String postcode;
     private String city;
 
     private String country;
-    private int housenumber;
 
-    public Company(String name, String street, String postcode, String city, String country, int housenumber){
+
+    public Company(String name, String street, int housenumber, String postcode, String city, String country){
         this.name = name;
         this.street = street;
+        this.housenumber = housenumber;
         this.postcode = postcode;
         this.city = city;
         this.country = country;
-        this.housenumber = housenumber;
     }
 
      public String getName() {

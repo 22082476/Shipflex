@@ -1,9 +1,7 @@
 package Shipflex;
 
 import Boat.*;
-
 import DataInOut.*;
-
 
 public class   MakeQuote {
 
@@ -23,7 +21,6 @@ public class   MakeQuote {
     public static Quote getQuote() {
         return quote;
     }
-
 
     public void start(){
         Printer.getInstance().emptyLine();
@@ -56,8 +53,6 @@ public class   MakeQuote {
              Printer.getInstance().emptyLine();
         }
     }
-
-
 
     private Boat getFromTypeBoat(String boatType){
         switch (boatType){
