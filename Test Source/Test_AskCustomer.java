@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 
 
-
+// deze test test of de waardes van de customers wel goed worden aangeroepen.
 public class Test_AskCustomer {
 
     @Test //
