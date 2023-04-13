@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="format totalPrice gefixt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Source/Test_PrintInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_PrintInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test Source/Test_calculateBoatPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_calculateBoatPrice.java" afterDir="false" />
+    <list default="true" id="e0075ad1-9ea5-4a2e-8928-beb9499cb248" name="Changes" comment="final bug fixing">
+      <change beforePath="$PROJECT_DIR$/Test Source/Test_PrintInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test Source/Test_PrintInterface_Print.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,9 +111,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Test_PrinterInterface.testPrintFormatInfo" />
         <item itemvalue="JUnit.Test_InfoReadFile" />
         <item itemvalue="JUnit.Test_calculateBoatPrice" />
+        <item itemvalue="JUnit.Test_PrinterInterface.testPrintFormatInfo" />
         <item itemvalue="Application.Shipflex" />
         <item itemvalue="Application.Shipflex.Shipflex" />
       </list>
@@ -235,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681315866643</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="testPrintFormatInfo gemaakt">
+      <created>1681383743601</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681383743601</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,7 +283,8 @@
     <MESSAGE value="options format" />
     <MESSAGE value="Fixjes voor offerte" />
     <MESSAGE value="final bug fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="final bug fixing" />
+    <MESSAGE value="testPrintFormatInfo gemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="testPrintFormatInfo gemaakt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PROJ1$Shipflex.ic" NAME="Shipflex Coverage Results" MODIFIED="1680716507241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
