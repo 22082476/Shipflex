@@ -20,6 +20,9 @@ public class   MakeQuote {
         }
         this.quote = new Quote(company, boat);
     }
+    public static Quote getQuote() {
+        return quote;
+    }
 
 
     public void start(){
@@ -54,6 +57,8 @@ public class   MakeQuote {
         }
     }
 
+
+
     private Boat getFromTypeBoat(String boatType){
         switch (boatType){
             case "plezierjacht":
@@ -67,5 +72,6 @@ public class   MakeQuote {
             default:
                 return null;
         }
+
 }
 }
