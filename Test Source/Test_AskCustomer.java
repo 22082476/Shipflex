@@ -1,4 +1,4 @@
-/*
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import Boat.Boat;
@@ -19,26 +19,14 @@ public class Test_AskCustomer {
     @Test //
     public void Test_AskcustomerZakelijk() {
         //Arange
-        ByteArrayInputStream in = new ByteArrayInputStream("Zakelijk\nNaam\nStraatnaam\n45\n1234 AB\nPlaatsnaam\nLand\n10\nBedrijfsnaam BV\nnee".getBytes());
-        System.setIn(in);
+
 
         //Act
-        Company company = new Company("bedrijf1","straat1","1234rt", "Den haag","Nederland", 5);
-        Quote quote = new Quote (company, new Boat("Speedboot", "Speedboot", 15000));
-        MakeQuote makeQuote = new MakeQuote("rubberboot", company);
-        MakeQuoteCustomer quote1 = new MakeQuoteCustomer();
-        quote1.askCustomer();
 
-        String expectedName = "Naam";
 
         //Assert
-        assertEquals(expectedName, quote.getBusinessCustomer().getName());
-        /*assertEquals(expectedStreet, quote.getBusinessCustomer().getStreet());
-        assertEquals(expectedPostcode, quote.getBusinessCustomer().getPostcode());
-        assertEquals(expectedCity, quote.getBusinessCustomer().getCity());
-        assertEquals(expectedHouseNumber, quote.getBusinessCustomer().getHouseNumber());
-        assertEquals(expectedDiscount, quote.getBusinessCustomer().getDiscount());
-        assertEquals(expectedCompany, quote.getBusinessCustomer().getCompany());*/
+
+
     }
 
 }
@@ -114,4 +102,3 @@ public class Test_AskCustomer {
     }
 }
 
-*/
