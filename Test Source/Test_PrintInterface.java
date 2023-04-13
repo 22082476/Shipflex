@@ -1,4 +1,5 @@
 import DataInOut.Print;
+import DataInOut.Printer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,6 +37,11 @@ protected static String outCome = null;
     }
 
     @Override
+    public void printCharacters(int number, char character) {
+
+    }
+
+    @Override
     public void printTextGenerateQuote(String[] input) {
         String output = "Commands: ";
         for(int i = 0; i < input.length; i++){
@@ -49,6 +55,18 @@ protected static String outCome = null;
                 emptyLine();
         }
         outCome = output + " Voer een command in: ";
+    }
+
+    @Override
+    public void printFormatInfo(String property) {
+        int amountOfSpaces = 30;
+
+        String output = property;
+
+        for (int i = 1; i <= amountOfSpaces; i++) {
+            output += " ";
+        }
+        this.outCome = output;
     }
 
 }
@@ -117,4 +135,18 @@ class Test_PrinterInterface{
         assertEquals("Commands: [0] een, [1] twee, [2] drie, [3] vier Voer een command in: ", TestClassPrinterInterface.outCome);
     }
 
+    //test of de output wel goed word geformat, dus dat er na de String 30 spaces bijkomen
+    @Test
+    @ParameterizedTest
+    @CsvSource({"test12, test12                              "})
+    public void testPrintFormatInfo() {
+        //Arrange
+        TestClassPrinterInterface printer = new TestClassPrinterInterface();
+
+        //Act
+        printer.printFormatInfo("test12");
+
+        //Assert
+        assertEquals("test12                              ", TestClassPrinterInterface.outCome);
+    }
 }
