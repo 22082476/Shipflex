@@ -264,6 +264,7 @@ public class Quote {
     }
 
     public void printTotal() {
+        Printer.getInstance().emptyLine();
         //Totaal prijs boot
         double totalPriceBoat = calculateBoatPrice();
         Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot:"));
@@ -283,7 +284,7 @@ public class Quote {
         //prijs arbeids uren
         Printer.getInstance().emptyLine();
         double workCost = workHoursCost;
-        Printer.getInstance().printFormatInfo("Prijs arbeids uren:");
+        Printer.getInstance().printFormatInfo("Prijs arbeids uren:    ");
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
         Printer.getInstance().emptyLine();
@@ -308,7 +309,7 @@ public class Quote {
         Printer.getInstance().printFormatInfo("");Printer.getInstance().printSpaces(64);
         Printer.getInstance().printCharacters(1,'+');
         Printer.getInstance().emptyLine();
-        Printer.getInstance().printFormatInfo(String.format("Totaal prijs offerte:"));
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs offerte:    "));
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
 

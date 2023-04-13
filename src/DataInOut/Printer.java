@@ -51,7 +51,7 @@ public void printCharacters(int number, char character){
         int amountOfSpaces = 30;
 
         if(property.length() > amountOfSpaces) {
-            amountOfSpaces = property.length() + 5;
+            amountOfSpaces = property.length() + 6;
         }
 
         Printer.getInstance().print(property);
