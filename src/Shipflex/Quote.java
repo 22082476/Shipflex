@@ -32,16 +32,10 @@ public class Quote {
         this.boat = boat;
     }
 
-    public String getAbout() {
-        return about;
-    }
+
 
     public void setAbout(String about) {
         this.about = about;
-    }
-
-    public void setCompanyShipbuild(Company companyShipbuild) {
-        this.companyShipbuild = companyShipbuild;
     }
 
     public void setCustomer(Customer customer) {
@@ -72,21 +66,10 @@ public class Quote {
         this.boat = boat;
     }
 
-    public Company getCompanyShipbuild() {
-        return companyShipbuild;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
 
-    public String getQuoteDate() {
-        return quoteDate;
-    }
 
     public Boat getBoat() {
         return boat;
@@ -102,10 +85,6 @@ public class Quote {
 
     public FoundationCustomer getFoundationCustomer() {
         return foundationCustomer;
-    }
-
-    public double getWorkHoursCost() {
-        return workHoursCost;
     }
 
     public void setWorkHoursCost(double workHoursCost) {
@@ -165,10 +144,6 @@ public class Quote {
         } else {
             Printer.getInstance().printLine("Datum nog niet ingevuld");
     }
-        if(this.quoteDate != null && !this.quoteDate.equals("")){
-            Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
-            Printer.getInstance().printLine("Datum nog niet ingevuld");
-        }
         if (this.quoteDate != null && !this.quoteDate.equals("")) {
             Printer.getInstance().printLine("Geldigsheid datum: " + this.quoteDate);
         } else {
@@ -196,19 +171,19 @@ public class Quote {
     }
 
     public void printQuote() {
-        Printer.getInstance().printCharacters(75, '━');
+        Printer.getInstance().printCharacters(100, '━');
         Printer.getInstance().emptyLine();
         this.printBasicInformation();
-        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().printCharacters(60, '﹏');
         Printer.getInstance().emptyLine();
         boat.printBoat();
-        Printer.getInstance().printCharacters(15, '﹏');
+        Printer.getInstance().printCharacters(60, '﹏');
         Printer.getInstance().emptyLine();
         this.printOptions();
-        Printer.getInstance().printCharacters(15, '﹏');
         Printer.getInstance().emptyLine();
         this.printTotal();
-        Printer.getInstance().printCharacters(75, '━');
+        Printer.getInstance().emptyLine();
+        Printer.getInstance().printCharacters(100, '━');
     }
 
     public void printOptions() {
@@ -268,24 +243,15 @@ public class Quote {
     }
 
     public void printTotal() {
-
-        double workCost = workHoursCost;
-
-        Printer.getInstance().printFormatInfo("Prijs arbeids uren:");
-        Printer.getInstance().printFormatInfo("");
-        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
         Printer.getInstance().emptyLine();
-        workCost = calculatePercentage(109, workCost);
-        Printer.getInstance().printFormatInfo(String.format("Prijs arbeids uren incl. Btw:"));
-        Printer.getInstance().printFormatInfo("");
-        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
-        Printer.getInstance().emptyLine();
-
+        //Totaal prijs boot
         double totalPriceBoat = calculateBoatPrice();
         Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot:"));
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
         Printer.getInstance().emptyLine();
+
+        //Totaal prijs boot met korting
         if (getDiscount() < 100 && getDiscount() > 0) {
             totalPriceBoat = calculatePercentage(getDiscount(), totalPriceBoat);
             Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot met korting:"));
@@ -293,14 +259,39 @@ public class Quote {
             Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
             Printer.getInstance().emptyLine();
         }
-        Printer.getInstance().printFormatInfo("");Printer.getInstance().printSpaces(38);
-        Printer.getInstance().printCharacters(1,'+');
+
+        //prijs arbeids uren
         Printer.getInstance().emptyLine();
+        double workCost = workHoursCost;
+        Printer.getInstance().printFormatInfo("Prijs arbeids uren:    ");
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
+        Printer.getInstance().emptyLine();
+        Printer.getInstance().emptyLine();
+
+        //prijs arbeids uren incl
+        workCost = calculatePercentage(109, workCost);
+        Printer.getInstance().printFormatInfo(String.format("Prijs arbeids uren incl. Btw(9%%):"));
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
+        Printer.getInstance().emptyLine();
+
+        //Totaal prijs boot incl btw
         totalPriceBoat = calculatePercentage(121, totalPriceBoat);
-        Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot incl. Btw:"));
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs boot incl. Btw(21%%):"));
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
         Printer.getInstance().emptyLine();
+
+        //Totaalprijs offerte
+        totalPriceBoat += workHoursCost;
+        Printer.getInstance().printFormatInfo("");Printer.getInstance().printSpaces(64);
+        Printer.getInstance().printCharacters(1,'+');
+        Printer.getInstance().emptyLine();
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs offerte:    "));
+        Printer.getInstance().printFormatInfo("");
+        Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
+
 
     }
 }

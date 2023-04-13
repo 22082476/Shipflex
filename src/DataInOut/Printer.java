@@ -34,7 +34,7 @@ public void printCharacters(int number, char character){
 }
 
     public void printTextGenerateQuote(String [] input){
-        printLine("Commands: ");
+        print("Commands: ");
         for(int i = 0; i < input.length; i++){
             if(i == input.length-1){
                 printLine("[" +i+ "] " + input[i]);
@@ -45,14 +45,13 @@ public void printCharacters(int number, char character){
             if (i == input.length / 2 && input.length >= 4)
                 emptyLine();
         }
-        print("Voer een command in: ");
     }
 
     public void printFormatInfo(String property) {
         int amountOfSpaces = 30;
 
         if(property.length() > amountOfSpaces) {
-            amountOfSpaces = property.length() + 5;
+            amountOfSpaces = property.length() + 6;
         }
 
         Printer.getInstance().print(property);

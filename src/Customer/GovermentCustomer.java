@@ -9,15 +9,6 @@ public class GovermentCustomer extends Customer{
         this.ministry = ministry;
     }
 
-
-    public String getMinistry() {
-        return ministry;
-    }
-
-    public void setMinistry(String ministry) {
-        this.ministry = ministry;
-    }
-
     @Override
     public void printCustomer(){
         Printer.getInstance().printLine("Ministerie: " + this.ministry);

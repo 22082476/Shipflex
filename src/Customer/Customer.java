@@ -32,26 +32,6 @@ public class Customer {
         this.name = name;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
-    }
-
-    public void setDiscount(int discount) {
-        this.discount = discount;
-    }
-
     public void addExtraGegeven(String type, String value) {
         this.extraData.put(type, value);
     }
@@ -62,18 +42,6 @@ public class Customer {
 
     public String getStreet() {
         return street;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public int getHouseNumber() {
-        return houseNumber;
     }
 
     public int getDiscount() {

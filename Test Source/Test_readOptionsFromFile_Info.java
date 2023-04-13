@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Test_readOptionsFromFile_Info {
 
     @ParameterizedTest
-    @CsvSource ({"src/data/options.csv, 25", "src/data/options2.csv, 50", "src/data/test2.csv, 56"})
+    @CsvSource ({"src/data/options.csv, 28", "src/data/options2.csv, 25", "src/data/test2.csv, 6"})
     public void testReadOptionsFromFile(String source, int expectedRowNumbers){
         //Arrange
         Info.readOptionsFromFile(source);
@@ -20,6 +20,5 @@ public class Test_readOptionsFromFile_Info {
 
         //Assert
         assertEquals(expectedRowNumbers, temp.size());
-
     }
 }

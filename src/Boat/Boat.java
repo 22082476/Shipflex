@@ -77,7 +77,7 @@ public abstract class Boat {
     public void printBoat(){
         Printer.getInstance().printLine("Bootnaam: " + getName());
         Printer.getInstance().printLine("Bootsoort: " + getType());
-        Printer.getInstance().printLine("Basisprijs: " + getBasePrice());
+        Printer.getInstance().printLine("Basisprijs: " + String.format("%.2f", getBasePrice()));
 
     }
 
