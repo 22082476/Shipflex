@@ -35,6 +35,11 @@ protected static String outCome = null;
     }
 
     @Override
+    public void printCharacters(int number, char character) {
+
+    }
+
+    @Override
     public void printTextGenerateQuote(String[] input) {
         String output = "Commands: ";
         for(int i = 0; i < input.length; i++){
@@ -48,6 +53,11 @@ protected static String outCome = null;
                 emptyLine();
         }
         outCome = output + " Voer een command in: ";
+    }
+
+    @Override
+    public void printFormatInfo(String property) {
+
     }
 
 }

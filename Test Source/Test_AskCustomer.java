@@ -5,107 +5,87 @@ import Boat.Boat;
 import Shipflex.Company;
 import Shipflex.MakeQuote;
 import Shipflex.MakeQuoteCustomer;
-import Shipflex.Quote;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+
 
 
 public class Test_AskCustomer {
 
     @Test //
-    public void Test_AskcustomerZakelijk() {
+    public void Test_AskCustomerZakelijk() {
         //Arange
-        MakeQuote makequote = new MakeQuote();
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
         MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
 
 
-
         //Act
-        String inputData = "zakelijk\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam";
+        String inputData = "zakelijk\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam\nstop";
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
         makequotecustomer.askCustomer();
 
 
         //Assert
-        assertEquals(makequotecustomer.);
-
+        assertEquals("naam", MakeQuote.getQuote().getBusinessCustomer().getName());
 
     }
 
-}
-/*
-    @ParameterizedTest
-    @CsvSource({"overheid\\nNaam\\nStraatnaam\\n1234 AB\\nPlaatsnaam\\n1\\n10\\nBedrijfsnaam BV\", Naam, Straatnaam, 1234AB, Plaatsnaam, Huisnummer, Korting, Overheidsnaam", ""})
-    public void Test_AskcustomerGoverment(String expectedName, String expectedStreet, String expectedPostcode, String expectedCity, String expectedHouseNumber, int expectedDiscount, String expectedMinisty){
+
+
+
+    @Test
+    public void Test_AskCustomerStichting() {
         //Arange
-        ByteArrayInputStream in = new ByteArrayInputStream("overheid\nNaam\nStraatnaam\n1234 AB\nPlaatsnaam\n1\n10\nOverheidsnaam".getBytes());
-        System.setIn(in);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
+        MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
+
 
         //Act
-        Quote quote = new Quote();
-        quote.askCustomer();
+        String inputData = "stichting\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam\nstop";
+        System.setIn(new ByteArrayInputStream(inputData.getBytes()));
+        makequotecustomer.askCustomer();
+
 
         //Assert
-        assertEquals(expectedName, quote.getBusinessCustomer().getName());
-        assertEquals(expectedStreet, quote.getBusinessCustomer().getStreet());
-        assertEquals(expectedPostcode, quote.getBusinessCustomer().getPostcode());
-        assertEquals(expectedCity, quote.getBusinessCustomer().getCity());
-        assertEquals(expectedHouseNumber, quote.getBusinessCustomer().getHouseNumber());
-        assertEquals(expectedDiscount, quote.getBusinessCustomer().getDiscount());
-        assertEquals(expectedMinisty, quote.getBusinessCustomer().getCustomer());
+        assertEquals("naam", MakeQuote.getQuote().getFoundationCustomer().getName());
     }
 
-}
 
-    @ParameterizedTest
-    @CsvSource({"Klant\\nNaam\\nStraatnaam\\n1234 AB\\nPlaatsnaam\\n1\\n10\", Naam, Straatnaam, 1234AB, Plaatsnaam, Huisnummer, Korting", ""})
-    public void Test_AskcustomerCustomer(String expectedName, String expectedStreet, String expectedPostcode, String expectedCity, String expectedHouseNumber, int expectedDiscount){
+
+
+    @Test
+    public void Test_AskCustomerOverheid() {
         //Arange
-        ByteArrayInputStream in = new ByteArrayInputStream("klant\nNaam\nStraatnaam\n1234 AB\nPlaatsnaam\n1\n10".getBytes());
-        System.setIn(in);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
+        MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
+
 
         //Act
-        Quote quote = new Quote();
-        quote.askCustomer();
+        String inputData = "overheid\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam\nstop";
+        System.setIn(new ByteArrayInputStream(inputData.getBytes()));
+        makequotecustomer.askCustomer();
+
 
         //Assert
-        assertEquals(expectedName, quote.getBusinessCustomer().getName());
-        assertEquals(expectedStreet, quote.getBusinessCustomer().getStreet());
-        assertEquals(expectedPostcode, quote.getBusinessCustomer().getPostcode());
-        assertEquals(expectedCity, quote.getBusinessCustomer().getCity());
-        assertEquals(expectedHouseNumber, quote.getBusinessCustomer().getHouseNumber());
-        assertEquals(expectedDiscount, quote.getBusinessCustomer().getDiscount());
+        assertEquals("naam", MakeQuote.getQuote().getGovermentCustomer().getName());
     }
 
-    @ParameterizedTest
-    @CsvSource({"Stichting\\nNaam\\nStraatnaam\\n1234 AB\\nPlaatsnaam\\n1\\n10\\nStichtingnaam\", Naam, Straatnaam, 1234AB, Plaatsnaam, Huisnummer, Korting, Stichtingsnaam", ""})
-    public void Test_AskcustomerFoundation(String expectedName, String expectedStreet, String expectedPostcode, String expectedCity, String expectedHouseNumber, int expectedDiscount, String expectedFoundation){
+
+
+    @Test
+    public void Test_AskCustomerKlant() {
         //Arange
-        ByteArrayInputStream in = new ByteArrayInputStream("stichting\nNaam\nStraatnaam\n1234 AB\nPlaatsnaam\n1\n10\nStichtingsnaam".getBytes());
-        System.setIn(in);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
+        MakeQuote makequote = new MakeQuote("rubberboot", new Company("", "", "", "", "", 0));
+        MakeQuoteCustomer makequotecustomer = new MakeQuoteCustomer();
+
 
         //Act
-        Quote quote = new Quote();
-        quote.askCustomer();
+        String inputData = "klant\nnaam\nstraat\n1\n2589 EJ\nDenHaag\nNederland\n0\nbedrijfsnaam\nstop";
+        System.setIn(new ByteArrayInputStream(inputData.getBytes()));
+        makequotecustomer.askCustomer();
+
 
         //Assert
-        assertEquals(expectedName, quote.getBusinessCustomer().getName());
-        assertEquals(expectedStreet, quote.getBusinessCustomer().getStreet());
-        assertEquals(expectedPostcode, quote.getBusinessCustomer().getPostcode());
-        assertEquals(expectedCity, quote.getBusinessCustomer().getCity());
-        assertEquals(expectedHouseNumber,quote.getBusinessCustomer().getHouseNumber());
-        assertEquals(expectedDiscount, quote.getBusinessCustomer().getDiscount());
-        assertEquals(expectedFoundation, quote.getBusinessCustomer().getFoundation());
+        assertEquals("naam", MakeQuote.getQuote().getCustomer().getName());
     }
 }
-
