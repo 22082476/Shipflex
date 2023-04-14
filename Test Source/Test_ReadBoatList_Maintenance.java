@@ -23,7 +23,7 @@ public class Test_ReadBoatList_Maintenance {
 
 
         //Act
-        String inputData = expectedOne + "," + expectedTwo + "," + expectedThree +  "\n";
+        String inputData = expectedOne + ", " + expectedTwo + ", " + expectedThree +  "\n";
 
         ByteArrayInputStream in = new ByteArrayInputStream(inputData.getBytes());
         System.setIn(in);
