@@ -85,8 +85,10 @@ public class Option {
         if (this.environmentDiscount > 0) {
             Printer.getInstance().emptyLine();
             Printer.getInstance().printFormatInfo("");
+            Printer.getInstance().printFormatInfo("Korting");
             Printer.getInstance().printFormatInfo(String.valueOf(this.environmentDiscount));
-            Printer.getInstance().print(String.valueOf(this.calculateEnvironmentDiscount()));
+            Printer.getInstance().printFormatInfo(String.valueOf(this.calculateEnvironmentDiscount()));
+            Printer.getInstance().emptyLine();
         }
     }
 
