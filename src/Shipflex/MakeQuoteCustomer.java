@@ -55,16 +55,16 @@ public class MakeQuoteCustomer {
                 break;
         }
 
-        askForExtraGegevens();
+        askForExtraInfo();
     }
 
-    private void askForExtraGegevens() {
+    private void askForExtraInfo() {
         Printer.getInstance().printLine("Wilt u nog extra gegevens toevoegen voor deze klant?");
         String input = ScanInput.inputQuestion("ja of nee in voor extra gegevens");
         String[] gegevens;
 
         if(input.equalsIgnoreCase("ja")) {
-            gegevens = getExtraGegevensFromInput();
+            gegevens = getExtraInfoFromInput();
             if(quote.getCustomCustomer() != null)
                 quote.getCustomCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
             else if (quote.getBusinessCustomer() != null)
@@ -74,11 +74,11 @@ public class MakeQuoteCustomer {
             else if (quote.getGovermentCustomer() != null)
                 quote.getGovermentCustomer().addExtraGegeven(gegevens[0], gegevens[1]);
 
-            askForExtraGegevens();
+            askForExtraInfo();
         }
     }
 
-    private String[] getExtraGegevensFromInput() {
+    private String[] getExtraInfoFromInput() {
         String key = ScanInput.inputQuestion("de type gegeven (bijv. 'email')");
         String value = ScanInput.inputQuestion("de gegeven (bijv. 'jan@gmail.com)'");
 
