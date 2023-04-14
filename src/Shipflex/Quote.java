@@ -254,7 +254,7 @@ public class Quote {
         //prijs arbeids uren
         Printer.getInstance().emptyLine();
         double workCost = workHoursCost;
-        Printer.getInstance().printFormatInfo("Prijs arbeids uren:    ");
+        Printer.getInstance().printFormatInfo("Prijs arbeids uren:");
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", workCost));
         Printer.getInstance().emptyLine();
@@ -276,13 +276,11 @@ public class Quote {
 
         //Totaalprijs offerte
         totalPriceBoat += workHoursCost;
-        Printer.getInstance().printFormatInfo("");Printer.getInstance().printSpaces(64);
+        Printer.getInstance().printSpaces(100);
         Printer.getInstance().printCharacters(1,'+');
         Printer.getInstance().emptyLine();
-        Printer.getInstance().printFormatInfo(String.format("Totaal prijs offerte:    "));
+        Printer.getInstance().printFormatInfo(String.format("Totaal prijs offerte:"));
         Printer.getInstance().printFormatInfo("");
         Printer.getInstance().printFormatInfo(String.format("%.2f", totalPriceBoat));
-
-
     }
 }

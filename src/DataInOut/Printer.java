@@ -48,7 +48,7 @@ public void printCharacters(int number, char character){
     }
 
     public void printFormatInfo(String property) {
-        int amountOfSpaces = 30;
+        int amountOfSpaces = 40;
 
         if(property.length() > amountOfSpaces) {
             amountOfSpaces = property.length() + 6;
