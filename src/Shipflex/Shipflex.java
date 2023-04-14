@@ -8,7 +8,7 @@ import static DataInOut.ScanInput.inputNumber;
 
 
 public class Shipflex {
-    private static Company company = new Company("Scheeps werf den haag", "boatstraat", 14, "2000 EA", "Den haag","Nederland");
+    private static Company company = new Company("Scheeps werf Den haag", "Boatstraat", 14, "2000 EA", "Den haag","Nederland");
 
     private static String [] commands = {"stop", "maak offerte", "onderhoud"};
 
