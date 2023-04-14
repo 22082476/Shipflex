@@ -1,8 +1,13 @@
 package Shipflex;
 
-import Boat.*;
-import Customer.*;
-import DataInOut.*;
+import Boat.Boat;
+import Boat.Option;
+import Customer.CustomCustomer;
+import Customer.BusinessCustomer;
+import Customer.FoundationCustomer;
+import Customer.GovermentCustomer;
+import DataInOut.Info;
+import DataInOut.Printer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +63,7 @@ public class Quote {
         return boat;
     }
 
-    public Customer getCustomCustomer() {
+    public CustomCustomer getCustomCustomer() {
         return customCustomer;
     }
     public BusinessCustomer getBusinessCustomer() {

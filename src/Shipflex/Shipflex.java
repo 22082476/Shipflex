@@ -1,6 +1,8 @@
 package Shipflex;
 
-import DataInOut.*;
+import DataInOut.Printer;
+import DataInOut.Info;
+import DataInOut.ScanInput;
 
 import static DataInOut.ScanInput.inputNumber;
 

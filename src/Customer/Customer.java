@@ -1,6 +1,6 @@
 package Customer;
 
-import DataInOut.*;
+import DataInOut.Printer;
 
 import java.util.HashMap;
 import java.util.Map;

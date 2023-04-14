@@ -1,6 +1,9 @@
 package Shipflex;
 
-import Customer.*;
+import Customer.CustomCustomer;
+import Customer.BusinessCustomer;
+import Customer.FoundationCustomer;
+import Customer.GovermentCustomer;
 import DataInOut.Printer;
 import DataInOut.ScanInput;
 

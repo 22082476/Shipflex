@@ -1,6 +1,6 @@
 package Shipflex;
 
-import Boat.*;
+import Boat.Option;
 import DataInOut.Info;
 import DataInOut.Printer;
 import DataInOut.ScanInput;

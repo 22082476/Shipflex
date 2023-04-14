@@ -1,7 +1,7 @@
 package Customer;
 
+import DataInOut.Printer;
 
-import DataInOut.*;
 
 public class BusinessCustomer extends Customer {
     private String companyname;

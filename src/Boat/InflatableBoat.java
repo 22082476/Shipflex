@@ -1,8 +1,5 @@
 package Boat;
 
-import DataInOut.Info;
-import DataInOut.Printer;
-
 public class InflatableBoat extends Boat{
 
     private String[] optionNames = {"peddel", "reddingsvest"};

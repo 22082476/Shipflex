@@ -1,6 +1,6 @@
 package Customer;
 
-import DataInOut.*;
+import DataInOut.Printer;
 
 public class FoundationCustomer extends  Customer{
     private String foundation;

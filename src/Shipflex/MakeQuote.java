@@ -1,7 +1,13 @@
 package Shipflex;
 
-import Boat.*;
-import DataInOut.*;
+import Boat.Boat;
+import Boat.InflatableBoat;
+import Boat.SailBoat;
+import Boat.PleasureYacht;
+import Boat.SpeedBoat;
+
+import DataInOut.ScanInput;
+import DataInOut.Printer;
 
 public class   MakeQuote {
 
