@@ -32,8 +32,9 @@ public class Maintenance {
 
     public ArrayList<String> parseBoatTextToList(String question) {
         String userInput = ScanInput.inputQuestion(question);
+        String regexStr = "[, ]+|, +";
 
-        String[] boatTypes = userInput.split(", |, "); // Split de input zodat de boat types individueel worden opgeslagen en niet in 1 string
+        String[] boatTypes = userInput.split(regexStr); // Split de input zodat de boat types individueel worden opgeslagen en niet in 1 string
 
         ArrayList<String> boatList = new ArrayList<>(Arrays.asList(boatTypes)); // Voeg ze toe aan de arraylist
 
