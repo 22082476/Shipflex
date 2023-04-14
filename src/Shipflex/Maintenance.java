@@ -7,6 +7,7 @@ import DataInOut.ScanInput;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Maintenance {
     private String [] commands = {"terug", "optie toevoegen"};
@@ -40,13 +41,29 @@ public class Maintenance {
     }
 
     public void addOptionMaintenance(){
-        Info.addOption(new Option(
-                ScanInput.inputQuestion("de naam van het onderdeel"),
-                ScanInput.inputNumberD("de prijs (bijv. 2.99) van het onderdeel"),
-                ScanInput.inputQuestion("categorie van onderdeel"),
-                0,
-                parseBoatTextToList("de boten in waarvoor het onderdeel essentieel is (bijv: rubberboot, plezierjacht)"),
-                parseBoatTextToList("de boten in waarvoor het onderdeel optioneel is (bijv: rubberboot, plezierjacht)")));
+        String name = ScanInput.inputQuestion("de naam van het onderdeel");
+        double price = ScanInput.inputNumberD("de prijs (bijv. 2.99) van het onderdeel");
+        String onderdeel = ScanInput.inputQuestion("categorie van onderdeel");
+        ArrayList<String> essentialBoats = parseBoatTextToList("de boten in waarvoor het onderdeel essentieel is (bijv: rubberboot, plezierjacht)");
+        ArrayList<String> extraBoats = parseBoatTextToList("de boten in waarvoor het onderdeel optioneel is (bijv: rubberboot, plezierjacht)");
+
+        HashSet<String> essentialBoatsSet = new HashSet<>(essentialBoats);
+
+        extraBoats.removeIf(e -> {
+            if (essentialBoatsSet.contains(e)) {
+                Printer.getInstance().printLine(e + " weggehaald van optionele boten lijst, want het is al essentieel.");
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        Printer.getInstance().emptyLine();
+
+        Info.addOption(new Option(name, price, onderdeel, 0, essentialBoats, extraBoats));
+
+        Printer.getInstance().printLine("Optie " + name + " aangemaakt!");
+        Printer.getInstance().emptyLine();
     }
 }
 
