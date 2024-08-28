@@ -1,11 +1,5 @@
-# PROJ1-Milkshake
-Project deel 1
-Groep: Milkshake
+# Shipflex
 
-Groepsleden: 
-1. Lotfi Zizaoui 22105484
-2. Romano Soekhnandan 22013024
-3. Hiresh Sira 22045910
-4. Suraj Soekhoe 22040358
-5. Thom Versluis 22082476
+In project verband realiseren van een offerte applicatie. In opdracht voor een fictieve scheepsbouwer. Waarbij de wens is om via software offertes te kunnen maken voor de te bouwen schepen. Het opstellen van de offertes was voor de realisatie van Shipflex een ingewikkeld en tijdrovend proces. 
 
+Beoordeelt met een 8.
